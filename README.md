@@ -9,12 +9,22 @@ More information at [sparkbase.io](http://www.sparkbase.io)
 ### Coin Specs
 <table>
 <tr><td>Name</td><td>SparkBase</td></tr>
-<tr><td>Symbol</td><td>BASE</td></tr>
-<tr><td>Algo</td><td>Quark</td></tr>
+<tr><td>Ticker Symbol</td><td>BASE</td></tr>
+<tr><td>Algorithm</td><td>Quark</td></tr>
 <tr><td>Block Time</td><td>60 Seconds</td></tr>
+<tr><td>Block Size</td><td>2 MB</td></tr> 
 <tr><td>Difficulty Retargeting</td><td>Every Block</td></tr>
+<tr><td>Consensus Algo</td><td>PoS + zPoS Hybrid</td></tr>
+<tr><td>Mine-able</td><td>No</td></tr>
+<tr><td>Stake-able</td><td>Yes</td></tr>
+<tr><td>Masternode Support</td><td>Yes, 5,000 BASE per masternode</td></tr>
+<tr><td>Block reward</td><td>Max. 60 BASE per block (split dynamically between staker & masternode)</td></tr>
 <tr><td>Max Coin Supply (PoW Phase)</td><td>21,000,000 BASE</td></tr>
 <tr><td>Max Coin Supply (PoS Phase)</td><td>Infinite</td></tr>
+<tr><td>PoS Stake Eligibility</td><td>Maturity Confirms: 101 confirms</td></tr>
+<tr><td>RPC Port</td><td></td></tr>
+<tr><td>Network Port</td><td>/td></tr>
+<tr><td>Explorer</td><td>/td></tr>
 </table>
 
 
