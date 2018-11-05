@@ -1,8 +1,8 @@
 # SparkBase staging repository
 =====================================
 
-SparkBase is building a specialized platform for the serious investor with new sets of innovative cryptocurrency tools. The SparkBase platform provides a new approach to sound decision making in highly volatile trading environments.
-With its BASE coin-powered engine and machine learning AI-capabilities the SparkBase functions as the ideal work space for the savvy cryptocurrency investor while protecting data privacy.
+SparkBase is building a specialized multiservice platform for the serious investor with new sets of innovative cryptocurrency tools. The SparkBase platform provides a new approach to sound decision making in highly volatile trading environments.
+With its BASE coin-powered engine and machine learning AI-capabilities the SparkBase platform functions as the ideal work space for the savvy cryptocurrency investor while protecting data privacy.
 
 More information at [sparkbase.io](http://www.sparkbase.io)
 
