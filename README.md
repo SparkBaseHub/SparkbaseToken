@@ -31,7 +31,7 @@ More information at [sparkbase.io](http://www.sparkbase.io)
 ### PoS Rewards Breakdown
 
 <table>
-<th>Phase</th><th>Block Height</th><th>Reward</th><th>Masternode Rewards</th><th>Staking Rewards</th><th>Governance Rewards</th>
+<th>Phase</th><th>Block Height</th><th>Reward</th><th>Masternode Rewards</th><th>Staking Rewards</th><th>Community Fund</th>
 <tr><td>Phase 1</td><td>1000-43'200</td><td>1 BASE</td><td>70% (0.7 BASE)</td><td>25% (0.25 BASE)</td><td>5% (0.05 BASE)</td></tr>
 <tr><td>Phase 2</td><td>43'201-86'400</td><td>2 BASE</td><td>70% (1.4 BASE)</td><td>25% (0.5 BASE)</td><td>5% (0.1 BASE)</td></tr>
 <tr><td>Phase 3</td><td>86'401-129'600</td><td>5 BASE</td><td>70% (3.5 BASE)</td><td>25% (1.25 BASE)</td><td>5% (0.25 BASE)</td></tr>
