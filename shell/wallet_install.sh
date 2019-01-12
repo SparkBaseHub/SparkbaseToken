@@ -73,6 +73,8 @@ git -C SparkBase pull || git clone https://github.com/SparkBaseHub/SparkBase.git
 
 function compile_wallet() {
 cd /home/SparkBase
+chmod 755 autogen.sh
+chmod 755 share/genbuild.sh
 ./autogen.sh
 ./configure --with-unsupported-ssl
 ./configure --without-gui --with-unsupported-ssl
