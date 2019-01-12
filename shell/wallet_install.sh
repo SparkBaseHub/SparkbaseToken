@@ -37,7 +37,7 @@ sudo ufw allow OpenSSH
 echo -e "Prepare update system"
 sudo apt-get -y update
 
-sudo apt-get install -y build-essential libtool autotools-dev autoconf pkg-config libssl-dev libevent-dev automake git
+sudo apt-get install -y build-essential libtool autotools-dev autoconf pkg-config libssl-dev libgmp3-dev libevent-dev automake git
 
 # new ssl support for SparkBase
 sudo apt-get install -y libsecp256k1-dev
@@ -68,7 +68,7 @@ clear
 
 function fetch_wallet() {
 cd /home
-git clone https://github.com/SparkBaseHub/SparkBase.git
+git -C SparkBase pull || git clone https://github.com/SparkBaseHub/SparkBase.git
 }
 
 function compile_wallet() {
