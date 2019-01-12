@@ -49,7 +49,9 @@ More information at [sparkbase.io](http://www.sparkbase.io)
 
 
 ### Wallet install script (Linux)
+```
 cd /home
 wget https://raw.githubusercontent.com/SparkBaseHub/SparkBase/master/shell/wallet_install.sh
 chmod 755 wallet_install.sh
 ./wallet_install.sh
+```
