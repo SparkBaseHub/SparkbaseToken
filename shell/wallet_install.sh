@@ -76,7 +76,7 @@ cd /home/SparkBase
 chmod 755 autogen.sh
 chmod 755 share/genbuild.sh
 ./autogen.sh
-./configure --with-unsupported-ssl
+#./configure --with-unsupported-ssl
 ./configure --without-gui --with-unsupported-ssl
 make
 make install
