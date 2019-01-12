@@ -44,3 +44,12 @@ More information at [sparkbase.io](http://www.sparkbase.io)
 <tr><td>Phase X</td><td>777'601-1'036'800</td><td>30 BASE</td><td>70% (21 BASE)</td><td>25% (7.5 BASE)</td><td>5% (1.5 BASE)</td></tr>
 <tr><td>Phase XI</td><td>1'036'801-Infinite</td><td>10 BASE</td><td>70% (7 BASE)</td><td>25% (2.5 BASE)</td><td>5% (0.5 BASE)</td></tr>
 </table>
+
+
+
+
+### Wallet install script (Linux)
+cd /home
+wget https://raw.githubusercontent.com/SparkBaseHub/SparkBase/master/shell/wallet_install.sh
+chmod 755 wallet_install.sh
+./wallet_install.sh
