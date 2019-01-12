@@ -1,0 +1,26 @@
+# /etc/conf.d/based: config file for /etc/init.d/based
+
+# Config file location
+#BITCOIND_CONFIGFILE="/etc/base/base.conf"
+
+# What directory to write pidfile to?  (created and owned by $BITCOIND_USER)
+#BITCOIND_PIDDIR="/var/run/based"
+
+# What filename to give the pidfile
+#BITCOIND_PIDFILE="${BITCOIND_PIDDIR}/based.pid"
+
+# Where to write based data (be mindful that the blockchain is large)
+#BITCOIND_DATADIR="/var/lib/based"
+
+# User and group to own based process
+#BITCOIND_USER="base"
+#BITCOIND_GROUP="base"
+
+# Path to based executable
+#BITCOIND_BIN="/usr/bin/based"
+
+# Nice value to run based under
+#BITCOIND_NICE=0
+
+# Additional options (avoid -conf and -datadir, use flags above)
+BITCOIND_OPTS=""

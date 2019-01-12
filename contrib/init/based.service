@@ -1,0 +1,26 @@
+[Unit]
+Description=BASE's distributed currency daemon
+After=network.target
+
+[Service]
+User=base
+Group=base
+
+Type=forking
+PIDFile=/var/lib/based/based.pid
+
+ExecStart=/usr/bin/based -daemon -pid=/var/lib/based/based.pid \
+          -conf=/etc/base/base.conf -datadir=/var/lib/based
+
+ExecStop=-/usr/bin/base-cli -conf=/etc/base/base.conf \
+         -datadir=/var/lib/based stop
+
+Restart=always
+PrivateTmp=true
+TimeoutStopSec=60s
+TimeoutStartSec=2s
+StartLimitInterval=120s
+StartLimitBurst=5
+
+[Install]
+WantedBy=multi-user.target

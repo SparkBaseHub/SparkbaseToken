@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=BASE
+Comment=BASE P2P Cryptocurrency
+Comment[fr]=BASE, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=BASE, eşten eşe kriptografik sanal para birimi
+Exec=base-qt %u
+Terminal=false
+Type=Application
+Icon=base128
+MimeType=x-scheme-handler/base;
+Categories=Office;Finance;
