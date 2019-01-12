@@ -24,7 +24,7 @@ More information at [sparkbase.io](http://www.sparkbase.io)
 <tr><td>PoS Stake Eligibility</td><td>Maturity Confirms: 101 confirms</td></tr>
 <tr><td>RPC Port</td><td>5422</td></tr>
 <tr><td>Network Port</td><td>5421</td></tr>
-<tr><td>Explorer</td><td>http://explorer.sparkbase.io/</td></tr>
+<tr><td>Explorer</td><td>https://explorer.sparkbase.io/</td></tr>
 </table>
 
 
