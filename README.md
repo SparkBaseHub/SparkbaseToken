@@ -60,6 +60,6 @@ chmod 755 wallet_install.sh
 ```
 cd /home
 wget https://raw.githubusercontent.com/SparkBaseHub/SparkBase/master/shell/masternode_install.sh
-chmod 755 wallet_install.sh
+chmod 755 masternode_install.sh
 ./masternode_install.sh
 ```
