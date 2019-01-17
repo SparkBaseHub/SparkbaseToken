@@ -4,7 +4,7 @@
 There are many ways to setup a wallet to support start-many. This guide will walk through two of them.
 
 1. [Importing an existing wallet (recommended if you are consolidating wallets).](#option1)
-2. [Sending 10,000 BASE to new wallet addresses.](#option2)
+2. [Sending 5,000 BASE to new wallet addresses.](#option2)
 
 ## <a name="option1"></a>Option 1. Importing an existing wallet
 
@@ -56,7 +56,7 @@ Create a new wallet address for each MasterNode.
 
 Close your QT Wallet.
 
-### Send 10,000 BASE to New Addresses
+### Send 5,000 BASE to New Addresses
 
 Just like setting up a standard MN. Send exactly 10,000 BASE to each new address created above.
 
