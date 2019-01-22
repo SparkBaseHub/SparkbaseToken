@@ -5,7 +5,7 @@ This guide will show you how to build based (headless client) for OSX.
 Notes
 -----
 
-* Tested on OS X 10.7 through 10.10 on 64-bit Intel processors only.
+* Tested on OS X 10.14 on 64-bit Intel processors.
 
 * All of the commands should be executed in a Terminal application. The
 built-in one is located in `/Applications/Utilities`.
@@ -38,13 +38,13 @@ Instructions: Homebrew
 
 #### Install dependencies using Homebrew
 
-        brew install autoconf automake berkeley-db4 libtool boost miniupnpc openssl pkg-config protobuf qt5 zmq libevent
+        brew install autoconf automake berkeley-db4 libtool boost miniupnpc openssl pkg-config protobuf qt5 zmq libevent gmp
 
 ### Building `based`
 
 1. Clone the github tree to get the source code and go into the directory.
 
-        git clone https://github.com/BASE-Project/BASE.git
+        git clone https://github.com/SparkBaseHub/SparkBase.git
         cd BASE
 
 2.  Make the Homebrew OpenSSL headers visible to the configure script  (do ```brew info openssl``` to find out why this is necessary, or if you use Homebrew with installation folders different from the default).
