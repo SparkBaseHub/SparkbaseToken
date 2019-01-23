@@ -21,7 +21,7 @@ More information at [sparkbase.io](http://www.sparkbase.io)
 <tr><td>Block reward</td><td>Max. 60 BASE per block (split dynamically between staker & masternode)</td></tr>
 <tr><td>Max Coin Supply (PoW Phase)</td><td>21,000,000 BASE</td></tr>
 <tr><td>Max Coin Supply (PoS Phase)</td><td>Infinite</td></tr>
-<tr><td>PoS Stake Eligibility</td><td>Maturity Confirms: 101 confirms</td></tr>
+<tr><td>PoS Stake Eligibility</td><td>Maturity Confirms: 21 confirms</td></tr>
 <tr><td>RPC Port</td><td>5422</td></tr>
 <tr><td>Network Port</td><td>5421</td></tr>
 <tr><td>Explorer</td><td>https://explorer.sparkbase.io/</td></tr>
