@@ -4,7 +4,31 @@
 SparkBase is building a specialized multiservice platform for the serious investor with new sets of innovative cryptocurrency tools. The SparkBase platform provides a new approach to sound decision making in highly volatile trading environments.
 With its BASE coin-powered engine and machine learning AI-capabilities the SparkBase platform functions as the ideal work space for the savvy cryptocurrency investor while protecting data privacy.
 
+  ### Successful crypto trading means making precise and timely decisions. The key to effective portfolio management is correlating your investments with personal objectives, keeping track, continously optimizing and consistently moving with improved strategies.
+
+   ### ✅ Manage & Track Your Portfolio
+   Discover, track, and manage your cryptocurrency assets with a clear overview of your portfolio including all standard features  (profit/loss, trends, trading pairs, performance).
+    
+   ### ✅ Create Watchlists with Alerts
+   Monitor your coin picks. Custom price alerts notify you when a target price has been reached. News keep you updated on continuous developments.
+    
+   ### ✅ Connect with Wallets & Exchanges
+   Simply connect your portfolio with your go to exchanges and wallets. All transactions, airdrops as well as exchange fees will be tracked automatically at a glance.
+
+
+  ### The right asset allocation based on objective scoring, intelligent rebalancing and the use of AI-based investment assistance helps you to weigh your portfolio, create appropriate diversification and maximize your resources. Use individual strategies for individual holdings.
+
+   ### ✅ Pick Coins based on Valuation
+   A detailed and unbiased rating based on various requirements of all supported coins informs you on the fundamental quality standard of the cryptocurrency asset.
+    
+   ### ✅ Assess & Rebalance Your Investments
+   SparkBase offers a detailed assessment of and recommendations for your asset diversification, source, location, most used exchanges, trades and investment status.
+    
+   ### ✅ Use Predictive Trading Algorithms
+   Market, Technical & Social Indicators combined equal SparkDetection, self-learning AI for data-driven investments with ever-increasing accuracy considering Chart Analysis.
+
 More information at [sparkbase.io](http://www.sparkbase.io)
+
 
 ### Coin Specs
 <table>
