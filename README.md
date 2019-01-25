@@ -4,7 +4,7 @@
 SparkBase is building a specialized multiservice platform for the serious investor with new sets of innovative cryptocurrency tools. The SparkBase platform provides a new approach to sound decision making in highly volatile trading environments.
 With its BASE coin-powered engine and machine learning AI-capabilities the SparkBase platform functions as the ideal work space for the savvy cryptocurrency investor while protecting data privacy.
 
-  ### Successful crypto trading means making precise and timely decisions. The key to effective portfolio management is correlating your investments with personal objectives, keeping track, continously optimizing and consistently moving with improved strategies.
+  ### Successful crypto trading means making precise and timely decisions. The key to effective portfolio management is correlating your investments with personal objectives, keeping track, continuously optimizing and consistently moving forward with improved strategies.
 
    ### ✅ Manage & Track Your Portfolio
    Discover, track, and manage your cryptocurrency assets with a clear overview of your portfolio including all standard features  (profit/loss, trends, trading pairs, performance).
