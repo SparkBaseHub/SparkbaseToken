@@ -58,7 +58,7 @@ sudo apt-get install -y libminiupnpc-dev
 sudo apt-get install -y libzmq3-dev
 
 # Dependencies for the GUI: Ubuntu
-sudo apt-get install libqt5gui5 libqt5core5a libqt5dbus5 qttools5-dev qttools5-dev-tools libprotobuf-dev protobuf-compiler
+#sudo apt-get install libqt5gui5 libqt5core5a libqt5dbus5 qttools5-dev qttools5-dev-tools libprotobuf-dev protobuf-compiler
 
 # libqrencode (optional) can be installed with:
 sudo apt-get install -y libqrencode-dev
@@ -76,7 +76,7 @@ cd /home/SparkBase
 chmod 755 autogen.sh
 chmod 755 share/genbuild.sh
 ./autogen.sh
-./configure --with-unsupported-ssl
+./configure --without-gui --with-unsupported-ssl
 make
 make install
 }
