@@ -72,11 +72,18 @@ More information at [sparkbase.io](http://www.sparkbase.io)
 
 
 
-### Wallet install script (Linux)
+### QT Wallet (gui) install script (Linux)
 ```
 cd /home
 wget https://raw.githubusercontent.com/SparkBaseHub/SparkBase/master/shell/wallet_install.sh
 chmod 755 wallet_install.sh
+./wallet_install.sh
+```
+### Staking Wallet (no gui) install script (Linux)
+```
+cd /home
+wget https://raw.githubusercontent.com/SparkBaseHub/SparkBase/master/shell/wallet_install.sh
+chmod 755 staking_install.sh
 ./wallet_install.sh
 ```
 
