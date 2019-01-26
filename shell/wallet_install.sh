@@ -14,14 +14,14 @@ else
 cat <<EOF >> /etc/fstab
 /swapfile none swap sw 0 0
 EOF
-exit
+#exit
 
 #sudo su -
 cat <<EOF >> /etc/sysctl.conf
 vm.swappiness=10
 vm.vfs_cache_pressure=50
 EOF
-exit
+#exit
 
 fi
 
