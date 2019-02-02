@@ -87,7 +87,7 @@ chmod 755 staking_install.sh
 ./staking_install.sh
 ```
 
-### Masternode install script (Linux)
+### Masternode install script (Ubuntu 16.04)
 ```
 cd /home
 wget https://raw.githubusercontent.com/SparkBaseHub/SparkBase/master/shell/masternode_install.sh
