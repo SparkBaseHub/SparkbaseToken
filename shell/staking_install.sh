@@ -1,4 +1,4 @@
-
+#!/bin/bash
 
 function prepare_system() {
 if [[ $(swapon -s | wc -l) -gt 1 ]] ; then
