@@ -1,10 +1,10 @@
-# SparkBase staging repository
+# Sparkbase staging repository
 =====================================
 
-SparkBase is building a specialized multiservice platform for the serious investor with new sets of innovative cryptocurrency tools. The SparkBase platform provides a new approach to sound decision making in highly volatile trading environments.
-With its BASE coin-powered engine and machine learning AI-capabilities the SparkBase platform functions as the ideal work space for the savvy cryptocurrency investor while protecting data privacy.
+Sparkbase is building a specialized multiservice platform for the serious investor with new sets of innovative cryptocurrency tools. The Sparkbase platform provides a new approach to sound decision making in highly volatile trading environments.
+With its BASE coin-powered engine and machine learning AI-capabilities the Sparkbase platform functions as the ideal work space for the savvy cryptocurrency investor while protecting data privacy.
 
-  ### Successful crypto trading means making precise and timely decisions. The key to effective portfolio management is correlating your investments with personal objectives, keeping track, continuously optimizing and consistently moving forward with improved strategies.
+  ### Successful crypto trading means making precise and timely decisions. The key to effective portfolio management is correlating your investments with personal objectives, keeping track, manage, continuously optimizing and consistently moving forward with improved strategies.
 
    ### ✅ Manage & Track Your Portfolio
    Discover, track, and manage your cryptocurrency assets with a clear overview of your portfolio including all standard features  (profit/loss, trends, trading pairs, performance).
@@ -18,14 +18,14 @@ With its BASE coin-powered engine and machine learning AI-capabilities the Spark
 
   ### The right asset allocation based on objective scoring, intelligent rebalancing and the use of AI-based investment assistance helps you to weigh your portfolio, create appropriate diversification and maximize your resources. Use individual strategies for individual holdings.
 
-   ### ✅ Pick Coins based on Valuation
-   A detailed and unbiased rating based on various requirements of all supported coins informs you on the fundamental quality standard of the cryptocurrency asset.
+   ### ✅ Pick Coins based on Metrics
+   A detailed and unbiased rating based on various metrics of all supported assets informs you on the fundamental quality standard for your investment.
     
    ### ✅ Assess & Rebalance Your Investments
-   SparkBase offers a detailed assessment of and recommendations for your asset diversification, source, location, most used exchanges, trades and investment status.
+   Sparkbase offers a detailed assessment of and recommendations for your asset diversification, source, location, most used exchanges, trades and investment status.
     
    ### ✅ Use Predictive Trading Algorithms
-   Market, Technical & Social Indicators combined equal SparkDetection, self-learning AI for data-driven investments with ever-increasing accuracy considering Chart Analysis.
+   Sparkbase harnesses the best of wealth creation: tracking, analysis, risk management, indicators and measurability. Integrated algorithms support data-driven investments with ever-increasing accuracy and efficiency.
 
 More information at [sparkbase.io](http://www.sparkbase.io)
 
@@ -33,7 +33,7 @@ More information at [sparkbase.io](http://www.sparkbase.io)
 ### Coin Specs
 <table>
 <tr><td>Ticker Symbol</td><td>BASE</td></tr>
-<tr><td>Name</td><td>SparkBase</td></tr>
+<tr><td>Name</td><td>Sparkbase</td></tr>
 <tr><td>Algorithm</td><td>Quark</td></tr>
 <tr><td>Block Time</td><td>60 Seconds</td></tr>
 <tr><td>Block Size</td><td>2 MB</td></tr> 
