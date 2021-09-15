@@ -1,13 +1,12 @@
 # Sparkbase staging repository
 =====================================
 
-Sparkbase is building a specialized multiservice platform for the serious investor with new sets of innovative cryptocurrency tools. The Sparkbase platform provides a new approach to sound decision making in highly volatile trading environments.
-With its BASE coin-powered engine and machine learning AI-capabilities the Sparkbase platform functions as the ideal work space for the savvy cryptocurrency investor while protecting data privacy.
+Sparkbase is building a specialized multiservice platform for the serious investor with the integration of innovative tools. The Sparkbase platform provides a new approach to sound decision making in highly volatile trading environments. With its BASE token-driven engine and algorithmic capabilities, the Sparkbase platform acts as an ideal workspace for the savvy cryptocurrency investor while protecting privacy.
 
   ### Successful crypto trading means making precise and timely decisions. The key to effective portfolio management is correlating your investments with personal objectives, keeping track, manage, continuously optimizing and consistently moving forward with improved strategies.
 
    ### ✅ Manage & Track Your Portfolio
-   Discover, track, and manage your cryptocurrency assets with a clear overview of your portfolio including all standard features  (profit/loss, trends, trading pairs, performance).
+   Discover, track, and manage your assets with a clear overview of your portfolio including all standard features  (profit/loss, trends, trading pairs, performance).
     
    ### ✅ Create Watchlists with Alerts
    Monitor your coin picks. Custom price alerts notify you when a target price has been reached. News keep you updated on continuous developments.
@@ -18,13 +17,13 @@ With its BASE coin-powered engine and machine learning AI-capabilities the Spark
 
   ### The right asset allocation based on objective scoring, intelligent rebalancing and the use of AI-based investment assistance helps you to weigh your portfolio, create appropriate diversification and maximize your resources. Use individual strategies for individual holdings.
 
-   ### ✅ Pick Coins based on Metrics
+   ### ✅ Pick Assets based on Metrics
    A detailed and unbiased rating based on various metrics of all supported assets informs you on the fundamental quality standard for your investment.
     
    ### ✅ Assess & Rebalance Your Investments
    Sparkbase offers a detailed assessment of and recommendations for your asset diversification, source, location, most used exchanges, trades and investment status.
     
-   ### ✅ Use Predictive Trading Algorithms
+   ### ✅ Use Predictive Algorithms
    Sparkbase harnesses the best of wealth creation: tracking, analysis, risk management, indicators and measurability. Integrated algorithms support data-driven investments with ever-increasing accuracy and efficiency.
 
 More information at [sparkbase.io](http://www.sparkbase.io)
