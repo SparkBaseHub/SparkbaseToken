@@ -7,10 +7,10 @@ Sparkbase is building a specialized multiservice platform for the serious invest
 
    ### ✅ Manage & Track Your Portfolio
    Discover, track, and manage your assets with a clear overview of your portfolio including all standard features  (profit/loss, trends, trading pairs, performance).
-    
+
    ### ✅ Create Watchlists with Alerts
    Monitor your coin picks. Custom price alerts notify you when a target price has been reached. News keep you updated on continuous developments.
-    
+
    ### ✅ Connect with Wallets & Exchanges
    Simply connect your portfolio with your go to exchanges and wallets. All transactions, airdrops as well as exchange fees will be tracked automatically at a glance.
 
@@ -19,10 +19,10 @@ Sparkbase is building a specialized multiservice platform for the serious invest
 
    ### ✅ Pick Assets based on Metrics
    A detailed and unbiased rating based on various metrics of all supported assets informs you on the fundamental quality standard for your investment.
-    
+
    ### ✅ Assess & Rebalance Your Investments
    Sparkbase offers a detailed assessment of and recommendations for your asset diversification, source, location, most used exchanges, trades and investment status.
-    
+
    ### ✅ Use Predictive Algorithms
    Sparkbase harnesses the best of wealth creation: tracking, analysis, risk management, indicators and measurability. Integrated algorithms support data-driven investments with ever-increasing accuracy and efficiency.
 
@@ -35,7 +35,7 @@ More information at [sparkbase.io](https://www.sparkbase.io)
 <tr><td>Name</td><td>Sparkbase</td></tr>
 <tr><td>Algorithm</td><td>Quark</td></tr>
 <tr><td>Block Time</td><td>60 Seconds</td></tr>
-<tr><td>Block Size</td><td>2 MB</td></tr> 
+<tr><td>Block Size</td><td>2 MB</td></tr>
 <tr><td>Difficulty Retargeting</td><td>Every Block</td></tr>
 <tr><td>Consensus Algo</td><td>PoS + zPoS Hybrid</td></tr>
 <tr><td>Masternode Support</td><td>Yes, 5,000 BASE per masternode</td></tr>
@@ -92,4 +92,9 @@ cd /home
 wget https://raw.githubusercontent.com/SparkBaseHub/SparkBase/master/shell/masternode_install.sh
 chmod 755 masternode_install.sh
 ./masternode_install.sh
+```
+
+### Staking Wallet (no gui) install script (Ubuntu 20.04)
+```
+(coming soon)
 ```
