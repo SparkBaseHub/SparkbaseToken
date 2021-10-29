@@ -13,7 +13,6 @@
 // limitations under the License.
 
 #include <algorithm>
-#include <cstring>
 #include <set>
 
 #include "bls.hpp"
@@ -50,35 +49,6 @@ const std::string BasicSchemeMPL::CIPHERSUITE_ID = "BLS_SIG_BLS12381G2_XMD:SHA-2
 const std::string AugSchemeMPL::CIPHERSUITE_ID = "BLS_SIG_BLS12381G2_XMD:SHA-256_SSWU_RO_AUG_";
 const std::string PopSchemeMPL::CIPHERSUITE_ID = "BLS_SIG_BLS12381G2_XMD:SHA-256_SSWU_RO_POP_";
 const std::string PopSchemeMPL::POP_CIPHERSUITE_ID = "BLS_POP_BLS12381G2_XMD:SHA-256_SSWU_RO_POP_";
-
-static void HashPubKeys(bn_t* computedTs, std::vector<Bytes> vecPubKeyBytes)
-{
-    bn_t order;
-    bn_new(order);
-    g2_get_ord(order);
-
-    std::vector<uint8_t> vecBuffer(vecPubKeyBytes.size() * G1Element::SIZE);
-
-    for (size_t i = 0; i < vecPubKeyBytes.size(); i++) {
-        memcpy(vecBuffer.data() + i * G1Element::SIZE, vecPubKeyBytes[i].begin(), G1Element::SIZE);
-    }
-
-    uint8_t pkHash[32];
-    Util::Hash256(pkHash, vecBuffer.data(), vecPubKeyBytes.size() * G1Element::SIZE);
-    for (size_t i = 0; i < vecPubKeyBytes.size(); ++i) {
-        uint8_t hash[32];
-        uint8_t buffer[4 + 32];
-        memset(buffer, 0, 4);
-        // Set first 4 bytes to index, to generate different ts
-        Util::IntToFourBytes(buffer, i);
-        // Set next 32 bytes as the hash of all the public keys
-        std::memcpy(buffer + 4, pkHash, 32);
-        Util::Hash256(hash, buffer, 4 + 32);
-
-        bn_read_bin(computedTs[i], hash, 32);
-        bn_mod_basic(computedTs[i], computedTs[i], order);
-    }
-}
 
 PrivateKey CoreMPL::KeyGen(const vector<uint8_t>& seed) {
     return HDKeys::KeyGen(seed);
@@ -178,78 +148,6 @@ G1Element CoreMPL::Aggregate(const vector<G1Element> &publicKeys)
         aggregated += publicKey;
     }
     return aggregated;
-}
-
-G2Element CoreMPL::AggregateSecure(std::vector<G1Element> const &vecPublicKeys,
-                                   std::vector<G2Element> const &vecSignatures,
-                                   const Bytes& message) {
-    if (vecSignatures.size() != vecPublicKeys.size()) {
-        throw std::invalid_argument("AggregateSigs sigs.size() != pubKeys.size()");
-    }
-
-    bn_t* computedTs = new bn_t[vecPublicKeys.size()];
-    std::vector<std::pair<vector<uint8_t>, const G2Element*>> vecSorted(vecPublicKeys.size());
-    for (size_t i = 0; i < vecPublicKeys.size(); i++) {
-        bn_new(computedTs[i]);
-        vecSorted[i] = std::make_pair(vecPublicKeys[i].Serialize(), &vecSignatures[i]);
-    }
-    std::sort(vecSorted.begin(), vecSorted.end(), [](const auto& a, const auto& b) {
-        return std::memcmp(a.first.data(), b.first.data(), G1Element::SIZE) < 0;
-    });
-
-    std::vector<Bytes> vecPublicKeyBytes;
-    vecPublicKeyBytes.reserve(vecPublicKeys.size());
-    for (const auto& it : vecSorted) {
-        vecPublicKeyBytes.push_back(Bytes{it.first});
-    }
-
-    HashPubKeys(computedTs, vecPublicKeyBytes);
-
-    // Raise all signatures to power of the corresponding t's and aggregate the results into aggSig
-    // Also accumulates aggregation info for each signature
-    std::vector<G2Element> expSigs;
-    expSigs.reserve(vecSorted.size());
-    for (size_t i = 0; i < vecSorted.size(); i++) {
-        expSigs.emplace_back(*vecSorted[i].second * computedTs[i]);
-    }
-
-    G2Element aggSig = CoreMPL::Aggregate(expSigs);
-
-    delete[] computedTs;
-
-    return aggSig;
-}
-
-bool CoreMPL::VerifySecure(const std::vector<G1Element>& vecPublicKeys,
-                           const G2Element& signature,
-                           const Bytes& message) {
-    bn_t one;
-    bn_new(one);
-    bn_zero(one);
-    bn_set_dig(one, 1);
-
-    bn_t* computedTs = new bn_t[vecPublicKeys.size()];
-    std::vector<vector<uint8_t>> vecSorted(vecPublicKeys.size());
-    for (size_t i = 0; i < vecPublicKeys.size(); i++) {
-        bn_new(computedTs[i]);
-        vecSorted[i] = vecPublicKeys[i].Serialize();
-    }
-    std::sort(vecSorted.begin(), vecSorted.end(), [](const auto& a, const auto& b) -> bool {
-        return std::memcmp(a.data(), b.data(), G1Element::SIZE) < 0;
-    });
-
-    HashPubKeys(computedTs, {vecSorted.begin(), vecSorted.end()});
-
-    G1Element publicKey;
-    for (size_t i = 0; i < vecSorted.size(); ++i) {
-        G1Element g1 = G1Element::FromBytes(Bytes(vecSorted[i]));
-        publicKey = CoreMPL::Aggregate({publicKey, g1 * computedTs[i]});
-    }
-
-    bn_free(one);
-    delete[] computedTs;
-
-    return AggregateVerify({publicKey}, {message}, {signature});
 }
 
 bool CoreMPL::AggregateVerify(const vector<vector<uint8_t>> &pubkeys,

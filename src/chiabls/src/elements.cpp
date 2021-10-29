@@ -32,23 +32,21 @@ G1Element G1Element::FromBytes(const Bytes& bytes)
     buffer[0] = 0x00;
     buffer[1] &= 0x1f;  // erase 3 msbs from given input
 
+    bool fZerosOnly = Util::HasOnlyZeros(Bytes(buffer, G1Element::SIZE + 1));
     if ((bytes[0] & 0xc0) == 0xc0) {  // representing infinity
         // enforce that infinity must be 0xc0000..00
-        if (bytes[0] != 0xc0) {
-            throw std::invalid_argument(
-                "Given G1 infinity element must be canonical");
-        }
-        for (int i = 1; i < G1Element::SIZE; ++i) {
-            if (bytes[i] != 0x00) {
-                throw std::invalid_argument(
-                    "Given G1 infinity element must be canonical");
-            }
+        if (bytes[0] != 0xc0 || !fZerosOnly) {
+            throw std::invalid_argument("Given G1 infinity element must be canonical");
         }
         return ele;
     } else {
         if ((bytes[0] & 0xc0) != 0x80) {
             throw std::invalid_argument(
                 "Given G1 non-infinity element must start with 0b10");
+        }
+
+        if (fZerosOnly) {
+            throw std::invalid_argument("G1 non-infinity element can't have only zeros");
         }
 
         if (bytes[0] & 0x20) {  // sign bit
@@ -58,6 +56,7 @@ G1Element G1Element::FromBytes(const Bytes& bytes)
         }
     }
     g1_read_bin(ele.p, buffer, G1Element::SIZE + 1);
+    BLS::CheckRelicErrors();
     ele.CheckValid();
     return ele;
 }
@@ -127,6 +126,8 @@ G1Element G1Element::Negate() const
     BLS::CheckRelicErrors();
     return ans;
 }
+
+GTElement G1Element::Pair(const G2Element& b) const { return (*this) & b; }
 
 uint32_t G1Element::GetFingerprint() const
 {
@@ -215,17 +216,12 @@ G2Element G2Element::FromBytes(const Bytes& bytes)
         throw std::invalid_argument(
             "Given G2 element must always have 48th byte start with 0b000");
     }
+    bool fZerosOnly = Util::HasOnlyZeros(Bytes(buffer, G2Element::SIZE + 1));
     if (((bytes[0] & 0xc0) == 0xc0)) {  // infinity
         // enforce that infinity must be 0xc0000..00
-        if (bytes[0] != 0xc0) {
+        if (bytes[0] != 0xc0 || !fZerosOnly) {
             throw std::invalid_argument(
                 "Given G2 infinity element must be canonical");
-        }
-        for (int i = 1; i < G2Element::SIZE; ++i) {
-            if (bytes[i] != 0x00) {
-                throw std::invalid_argument(
-                    "Given G2 infinity element must be canonical");
-            }
         }
         return ele;
     } else {
@@ -233,6 +229,11 @@ G2Element G2Element::FromBytes(const Bytes& bytes)
             throw std::invalid_argument(
                 "G2 non-inf element must have 0th byte start with 0b10");
         }
+
+        if (fZerosOnly) {
+            throw std::invalid_argument("G2 non-infinity element can't have only zeros");
+        }
+
         if (bytes[0] & 0x20) {
             buffer[0] = 0x03;
         } else {
@@ -241,6 +242,7 @@ G2Element G2Element::FromBytes(const Bytes& bytes)
     }
 
     g2_read_bin(ele.q, buffer, G2Element::SIZE + 1);
+    BLS::CheckRelicErrors();
     ele.CheckValid();
     return ele;
 }
@@ -311,6 +313,8 @@ G2Element G2Element::Negate() const
     return ans;
 }
 
+GTElement G2Element::Pair(const G1Element& a) const { return a & (*this); }
+
 std::vector<uint8_t> G2Element::Serialize() const {
     uint8_t buffer[G2Element::SIZE + 1];
     g2_write_bin(buffer, G2Element::SIZE + 1, (g2_st*)q, 1);
@@ -373,5 +377,89 @@ G2Element operator*(const G2Element& a, const bn_t& k)
 }
 
 G2Element operator*(const bn_t& k, const G2Element& a) { return a * k; }
+
+
+
+// GTElement
+
+GTElement GTElement::FromBytes(const Bytes& bytes)
+{
+    if (bytes.size() != SIZE) {
+        throw std::invalid_argument("GTElement::FromBytes: Invalid size");
+    }
+    GTElement ele = GTElement();
+    gt_read_bin(ele.r, bytes.begin(), GTElement::SIZE);
+    if (gt_is_valid(*(gt_t*)&ele) == 0)
+        throw std::invalid_argument("GTElement is invalid");
+    BLS::CheckRelicErrors();
+    return ele;
+}
+
+GTElement GTElement::FromByteVector(const std::vector<uint8_t>& bytevec)
+{
+    return GTElement::FromBytes(Bytes(bytevec));
+}
+
+GTElement GTElement::FromNative(const gt_t* element)
+{
+    GTElement ele = GTElement();
+    gt_copy(ele.r, *(gt_t*)element);
+    return ele;
+}
+
+GTElement GTElement::Unity() {
+    GTElement ele = GTElement();
+    gt_set_unity(ele.r);
+    return ele;
+}
+
+
+bool operator==(GTElement const& a, GTElement const& b)
+{
+    return gt_cmp(*(gt_t*)(a.r), *(gt_t*)(b.r)) == RLC_EQ;
+}
+
+bool operator!=(GTElement const& a, GTElement const& b) { return !(a == b); }
+
+std::ostream& operator<<(std::ostream& os, GTElement const& ele)
+{
+    return os << Util::HexStr(ele.Serialize());
+}
+
+GTElement operator&(const G1Element& a, const G2Element& b)
+{
+    G1Element nonConstA(a);
+    gt_t ans;
+    gt_new(ans);
+    g2_t tmp;
+    g2_null(tmp);
+    g2_new(tmp);
+    b.ToNative(tmp);
+    pp_map_oatep_k12(ans, nonConstA.p, tmp);
+    GTElement ret = GTElement::FromNative(&ans);
+    gt_free(ans);
+    g2_free(tmp);
+    return ret;
+}
+
+GTElement operator*(GTElement& a, GTElement& b)
+{
+    GTElement ans;
+    fp12_mul(ans.r, a.r, b.r);
+    BLS::CheckRelicErrors();
+    return ans;
+}
+
+void GTElement::Serialize(uint8_t* buffer) const
+{
+    gt_write_bin(buffer, GTElement::SIZE, *(gt_t*)&r, 1);
+}
+
+std::vector<uint8_t> GTElement::Serialize() const
+{
+    std::vector<uint8_t> data(GTElement::SIZE);
+    Serialize(data.data());
+    return data;
+}
 
 }  // end namespace bls
