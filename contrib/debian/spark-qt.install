@@ -1,0 +1,6 @@
+usr/local/bin/spark-qt usr/bin
+share/pixmaps/spark32.xpm usr/share/pixmaps
+share/pixmaps/spark16.xpm usr/share/pixmaps
+share/pixmaps/spark128.png usr/share/pixmaps
+debian/spark-qt.desktop usr/share/applications
+debian/spark-qt.protocol usr/share/kde4/services/

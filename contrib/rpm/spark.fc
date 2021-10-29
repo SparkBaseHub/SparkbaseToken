@@ -1,0 +1,8 @@
+/usr/bin/spark-cli		--	gen_context(system_u:object_r:spark_exec_t,s0)
+/usr/sbin/sparkd		--	gen_context(system_u:object_r:spark_exec_t,s0)
+/usr/lib(64)?/spark/sparkd		--	gen_context(system_u:object_r:spark_exec_t,s0)
+
+/etc/spark(/.*)?		gen_context(system_u:object_r:spark_conf_t,s0)
+/var/lib/spark(/.*)?		gen_context(system_u:object_r:spark_var_lib_t,s0)
+
+(/var)?/run/sparkd(/.*)?   gen_context(system_u:object_r:spark_var_run_t,s0)

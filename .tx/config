@@ -1,0 +1,7 @@
+[main]
+host = https://www.transifex.com
+
+[spark-project-translations.qt-translation-50x]
+file_filter = src/qt/locale/spark_<lang>.ts
+source_file = src/qt/locale/spark_en.ts
+source_lang = en

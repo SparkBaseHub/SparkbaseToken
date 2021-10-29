@@ -1,4 +1,5 @@
-// Copyright (c) 2017-2018 The PIVX developers
+// Copyright (c) 2017-2019 The PIVX developers
+// Copyright (c) 2017-2021 Sparkbase AG
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -13,10 +14,10 @@ CoinDenomination IntToZerocoinDenomination(int64_t amount)
 {
     CoinDenomination denomination;
     switch (amount) {
-    case 1:		denomination = CoinDenomination::ZQ_ONE; break;
-    case 5:	denomination = CoinDenomination::ZQ_FIVE; break;
-    case 10:	denomination = CoinDenomination::ZQ_TEN; break;
-    case 50:	denomination = CoinDenomination::ZQ_FIFTY; break;
+    case 1:        denomination = CoinDenomination::ZQ_ONE; break;
+    case 5:    denomination = CoinDenomination::ZQ_FIVE; break;
+    case 10:    denomination = CoinDenomination::ZQ_TEN; break;
+    case 50:    denomination = CoinDenomination::ZQ_FIFTY; break;
     case 100: denomination = CoinDenomination::ZQ_ONE_HUNDRED; break;
     case 500: denomination = CoinDenomination::ZQ_FIVE_HUNDRED; break;
     case 1000: denomination = CoinDenomination::ZQ_ONE_THOUSAND; break;
@@ -60,7 +61,7 @@ CoinDenomination AmountToZerocoinDenomination(CAmount amount)
 }
 
 // return the highest denomination that is less than or equal to the amount given
-// use case: converting BASE to zBASE without user worrying about denomination math themselves
+// use case: converting SPARKS to zSPARKS without user worrying about denomination math themselves
 CoinDenomination AmountToClosestDenomination(CAmount nAmount, CAmount& nRemaining)
 {
     if (nAmount < 1 * COIN)

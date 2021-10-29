@@ -1,266 +1,136 @@
-// Copyright (c) 2017-2018 The PIVX developers
+// Copyright (c) 2017-2020 The PIVX developers
+// Copyright (c) 2017-2021 Sparkbase AG
 // Distributed under the MIT software license, see the accompanying
-// file COPYING or http://www.opensource.org/licenses/mit-license.php.
+// file COPYING or https://www.opensource.org/licenses/mit-license.php.
 
-#include "accumulators.h"
-#include "chain.h"
-#include "primitives/deterministicmint.h"
-#include "main.h"
 #include "stakeinput.h"
-#include "wallet.h"
 
-CZBaseStake::CZBaseStake(const libzerocoin::CoinSpend& spend)
+#include "chain.h"
+#include "txdb.h"
+#include "wallet/wallet.h"
+
+static bool HasStakeMinAgeOrDepth(int nHeight, uint32_t nTime, const CBlockIndex* pindex)
 {
-    this->nChecksum = spend.getAccumulatorChecksum();
-    this->denom = spend.getDenomination();
-    uint256 nSerial = spend.getCoinSerialNumber().getuint256();
-    this->hashSerial = Hash(nSerial.begin(), nSerial.end());
-    this->pindexFrom = nullptr;
-    fMint = false;
+    const Consensus::Params& consensus = Params().GetConsensus();
+    if (consensus.NetworkUpgradeActive(nHeight + 1, Consensus::UPGRADE_ZC_PUBLIC) &&
+            !consensus.HasStakeMinAgeOrDepth(nHeight, nTime, pindex->nHeight, pindex->nTime)) {
+        return error("%s : min age violation - height=%d - time=%d, nHeightBlockFrom=%d, nTimeBlockFrom=%d",
+                     __func__, nHeight, nTime, pindex->nHeight, pindex->nTime);
+    }
+    return true;
 }
 
-int CZBaseStake::GetChecksumHeightFromMint()
+CSparkStake* CSparkStake::NewSparkStake(const CTxIn& txin, int nHeight, uint32_t nTime)
 {
-    int nHeightChecksum = chainActive.Height() - Params().Zerocoin_RequiredStakeDepth();
-
-    //Need to return the first occurance of this checksum in order for the validation process to identify a specific
-    //block height
-    uint32_t nChecksum = 0;
-    nChecksum = ParseChecksum(chainActive[nHeightChecksum]->nAccumulatorCheckpoint, denom);
-    return GetChecksumHeight(nChecksum, denom);
-}
-
-int CZBaseStake::GetChecksumHeightFromSpend()
-{
-    return GetChecksumHeight(nChecksum, denom);
-}
-
-uint32_t CZBaseStake::GetChecksum()
-{
-    return nChecksum;
-}
-
-// The zBASE block index is the first appearance of the accumulator checksum that was used in the spend
-// note that this also means when staking that this checksum should be from a block that is beyond 60 minutes old and
-// 100 blocks deep.
-CBlockIndex* CZBaseStake::GetIndexFrom()
-{
-    if (pindexFrom)
-        return pindexFrom;
-
-    int nHeightChecksum = 0;
-
-    if (fMint)
-        nHeightChecksum = GetChecksumHeightFromMint();
-    else
-        nHeightChecksum = GetChecksumHeightFromSpend();
-
-    if (nHeightChecksum < Params().Zerocoin_StartHeight() || nHeightChecksum > chainActive.Height()) {
-        pindexFrom = nullptr;
-    } else {
-        //note that this will be a nullptr if the height DNE
-        pindexFrom = chainActive[nHeightChecksum];
+    if (txin.IsZerocoinSpend()) {
+        error("%s: unable to initialize CSparkStake from zerocoin spend", __func__);
+        return nullptr;
     }
 
-    return pindexFrom;
-}
-
-CAmount CZBaseStake::GetValue()
-{
-    return denom * COIN;
-}
-
-//Use the first accumulator checkpoint that occurs 60 minutes after the block being staked from
-bool CZBaseStake::GetModifier(uint64_t& nStakeModifier)
-{
-    CBlockIndex* pindex = GetIndexFrom();
-    if (!pindex)
-        return false;
-
-    int64_t nTimeBlockFrom = pindex->GetBlockTime();
-    while (true) {
-        if (pindex->GetBlockTime() - nTimeBlockFrom > 60*60) {
-            nStakeModifier = pindex->nAccumulatorCheckpoint.Get64();
-            return true;
+    // Look for the stake input in the coins cache first
+    const Coin& coin = pcoinsTip->AccessCoin(txin.prevout);
+    if (!coin.IsSpent()) {
+        const CBlockIndex* pindexFrom = mapBlockIndex.at(chainActive[coin.nHeight]->GetBlockHash());
+        // Check that the stake has the required depth/age
+        if (!HasStakeMinAgeOrDepth(nHeight, nTime, pindexFrom)) {
+            return nullptr;
         }
-
-        if (pindex->nHeight + 1 <= chainActive.Height())
-            pindex = chainActive.Next(pindex);
-        else
-            return false;
-    }
-}
-
-CDataStream CZBaseStake::GetUniqueness()
-{
-    //The unique identifier for a zBASE is a hash of the serial
-    CDataStream ss(SER_GETHASH, 0);
-    ss << hashSerial;
-    return ss;
-}
-
-bool CZBaseStake::CreateTxIn(CWallet* pwallet, CTxIn& txIn, uint256 hashTxOut)
-{
-    CBlockIndex* pindexCheckpoint = GetIndexFrom();
-    if (!pindexCheckpoint)
-        return error("%s: failed to find checkpoint block index", __func__);
-
-    CZerocoinMint mint;
-    if (!pwallet->GetMintFromStakeHash(hashSerial, mint))
-        return error("%s: failed to fetch mint associated with serial hash %s", __func__, hashSerial.GetHex());
-
-    if (libzerocoin::ExtractVersionFromSerial(mint.GetSerialNumber()) < 2)
-        return error("%s: serial extract is less than v2", __func__);
-
-    int nSecurityLevel = 100;
-    CZerocoinSpendReceipt receipt;
-    if (!pwallet->MintToTxIn(mint, nSecurityLevel, hashTxOut, txIn, receipt, libzerocoin::SpendType::STAKE, GetIndexFrom()))
-        return error("%s\n", receipt.GetStatusMessage());
-
-    return true;
-}
-
-bool CZBaseStake::CreateTxOuts(CWallet* pwallet, vector<CTxOut>& vout, CAmount nTotal)
-{
-    //Create an output returning the zBASE that was staked
-    CTxOut outReward;
-    libzerocoin::CoinDenomination denomStaked = libzerocoin::AmountToZerocoinDenomination(this->GetValue());
-    CDeterministicMint dMint;
-    if (!pwallet->CreateZBASEOutPut(denomStaked, outReward, dMint))
-        return error("%s: failed to create zBASE output", __func__);
-    vout.emplace_back(outReward);
-
-    //Add new staked denom to our wallet
-    if (!pwallet->DatabaseMint(dMint))
-        return error("%s: failed to database the staked zBASE", __func__);
-
-    for (unsigned int i = 0; i < 3; i++) {
-        CTxOut out;
-        CDeterministicMint dMintReward;
-        if (!pwallet->CreateZBASEOutPut(libzerocoin::CoinDenomination::ZQ_ONE, out, dMintReward))
-            return error("%s: failed to create zBASE output", __func__);
-        vout.emplace_back(out);
-
-        if (!pwallet->DatabaseMint(dMintReward))
-            return error("%s: failed to database mint reward", __func__);
+        // All good
+        return new CSparkStake(coin.out, txin.prevout, pindexFrom);
     }
 
+    // Otherwise find the previous transaction in database
+    uint256 hashBlock;
+    CTransactionRef txPrev;
+    if (!GetTransaction(txin.prevout.hash, txPrev, hashBlock, true)) {
+        error("%s : INFO: read txPrev failed, tx id prev: %s", __func__, txin.prevout.hash.GetHex());
+        return nullptr;
+    }
+    const CBlockIndex* pindexFrom = nullptr;
+    if (mapBlockIndex.count(hashBlock)) {
+        CBlockIndex* pindex = mapBlockIndex.at(hashBlock);
+        if (chainActive.Contains(pindex)) pindexFrom = pindex;
+    }
+    // Check that the input is in the active chain
+    if (!pindexFrom) {
+        error("%s : Failed to find the block index for stake origin", __func__);
+        return nullptr;
+    }
+    // Check that the stake has the required depth/age
+    if (!HasStakeMinAgeOrDepth(nHeight, nTime, pindexFrom)) {
+        return nullptr;
+    }
+    // All good
+    return new CSparkStake(txPrev->vout[txin.prevout.n], txin.prevout, pindexFrom);
+}
+
+bool CSparkStake::GetTxOutFrom(CTxOut& out) const
+{
+    out = outputFrom;
     return true;
 }
 
-bool CZBaseStake::GetTxFrom(CTransaction& tx)
+CTxIn CSparkStake::GetTxIn() const
 {
-    return false;
+    return CTxIn(outpointFrom.hash, outpointFrom.n);
 }
 
-bool CZBaseStake::MarkSpent(CWallet *pwallet, const uint256& txid)
+CAmount CSparkStake::GetValue() const
 {
-    CzBASETracker* zbaseTracker = pwallet->zbaseTracker.get();
-    CMintMeta meta;
-    if (!zbaseTracker->GetMetaFromStakeHash(hashSerial, meta))
-        return error("%s: tracker does not have serialhash", __func__);
-
-    zbaseTracker->SetPubcoinUsed(meta.hashPubcoin, txid);
-    return true;
+    return outputFrom.nValue;
 }
 
-//!BASE Stake
-bool CBaseStake::SetInput(CTransaction txPrev, unsigned int n)
+bool CSparkStake::CreateTxOuts(const CWallet* pwallet, std::vector<CTxOut>& vout, CAmount nTotal) const
 {
-    this->txFrom = txPrev;
-    this->nPosition = n;
-    return true;
-}
-
-bool CBaseStake::GetTxFrom(CTransaction& tx)
-{
-    tx = txFrom;
-    return true;
-}
-
-bool CBaseStake::CreateTxIn(CWallet* pwallet, CTxIn& txIn, uint256 hashTxOut)
-{
-    txIn = CTxIn(txFrom.GetHash(), nPosition);
-    return true;
-}
-
-CAmount CBaseStake::GetValue()
-{
-    return txFrom.vout[nPosition].nValue;
-}
-
-bool CBaseStake::CreateTxOuts(CWallet* pwallet, vector<CTxOut>& vout, CAmount nTotal)
-{
-    vector<valtype> vSolutions;
+    std::vector<valtype> vSolutions;
     txnouttype whichType;
-    CScript scriptPubKeyKernel = txFrom.vout[nPosition].scriptPubKey;
-    if (!Solver(scriptPubKeyKernel, whichType, vSolutions)) {
-        LogPrintf("CreateCoinStake : failed to parse kernel\n");
-        return false;
+    CScript scriptPubKeyKernel = outputFrom.scriptPubKey;
+    if (!Solver(scriptPubKeyKernel, whichType, vSolutions))
+        return error("%s: failed to parse kernel", __func__);
+
+    if (whichType != TX_PUBKEY && whichType != TX_PUBKEYHASH && whichType != TX_COLDSTAKE)
+        return error("%s: type=%d (%s) not supported for scriptPubKeyKernel", __func__, whichType, GetTxnOutputType(whichType));
+
+    CKey key;
+    if (whichType == TX_PUBKEYHASH || whichType == TX_COLDSTAKE) {
+        // if P2PKH or P2CS check that we have the input private key
+        if (!pwallet->GetKey(CKeyID(uint160(vSolutions[0])), key))
+            return error("%s: Unable to get staking private key", __func__);
     }
 
-    if (whichType != TX_PUBKEY && whichType != TX_PUBKEYHASH)
-        return false; // only support pay to public key and pay to address
-
-    CScript scriptPubKey;
-    if (whichType == TX_PUBKEYHASH) // pay to address type
-    {
-        //convert to pay to public key type
-        CKey key;
-        CKeyID keyID = CKeyID(uint160(vSolutions[0]));
-        if (!pwallet->GetKey(keyID, key))
-            return false;
-
-        scriptPubKey << key.GetPubKey() << OP_CHECKSIG;
-    } else
-        scriptPubKey = scriptPubKeyKernel;
-
-    vout.emplace_back(CTxOut(0, scriptPubKey));
+    vout.emplace_back(0, scriptPubKeyKernel);
 
     // Calculate if we need to split the output
-    if (nTotal / 2 > (CAmount)(pwallet->nStakeSplitThreshold * COIN))
-        vout.emplace_back(CTxOut(0, scriptPubKey));
+    if (pwallet->nStakeSplitThreshold > 0) {
+        int nSplit = static_cast<int>(nTotal / pwallet->nStakeSplitThreshold);
+        if (nSplit > 1) {
+            // if nTotal is twice or more of the threshold; create more outputs
+            int txSizeMax = MAX_STANDARD_TX_SIZE >> 11; // limit splits to <10% of the max TX size (/2048)
+            if (nSplit > txSizeMax)
+                nSplit = txSizeMax;
+            for (int i = nSplit; i > 1; i--) {
+                LogPrintf("%s: StakeSplit: nTotal = %d; adding output %d of %d\n", __func__, nTotal, (nSplit-i)+2, nSplit);
+                vout.emplace_back(0, scriptPubKeyKernel);
+            }
+        }
+    }
 
     return true;
 }
 
-bool CBaseStake::GetModifier(uint64_t& nStakeModifier)
+CDataStream CSparkStake::GetUniqueness() const
 {
-    int nStakeModifierHeight = 0;
-    int64_t nStakeModifierTime = 0;
-    GetIndexFrom();
-    if (!pindexFrom)
-        return error("%s: failed to get index from", __func__);
-
-    if (!GetKernelStakeModifier(pindexFrom->GetBlockHash(), nStakeModifier, nStakeModifierHeight, nStakeModifierTime, false))
-        return error("CheckStakeKernelHash(): failed to get kernel stake modifier \n");
-
-    return true;
-}
-
-CDataStream CBaseStake::GetUniqueness()
-{
-    //The unique identifier for a BASE stake is the outpoint
+    //The unique identifier for a SPARKS stake is the outpoint
     CDataStream ss(SER_NETWORK, 0);
-    ss << nPosition << txFrom.GetHash();
+    ss << outpointFrom.n << outpointFrom.hash;
     return ss;
 }
 
 //The block that the UTXO was added to the chain
-CBlockIndex* CBaseStake::GetIndexFrom()
+const CBlockIndex* CSparkStake::GetIndexFrom() const
 {
-    uint256 hashBlock = 0;
-    CTransaction tx;
-    if (GetTransaction(txFrom.GetHash(), tx, hashBlock, true)) {
-        // If the index is in the chain, then set it as the "index from"
-        if (mapBlockIndex.count(hashBlock)) {
-            CBlockIndex* pindex = mapBlockIndex.at(hashBlock);
-            if (chainActive.Contains(pindex))
-                pindexFrom = pindex;
-        }
-    } else {
-        LogPrintf("%s : failed to find tx %s\n", __func__, txFrom.GetHash().GetHex());
-    }
-
+    // Sanity check, pindexFrom is set on the constructor.
+    if (!pindexFrom) throw std::runtime_error("CSparkStake: uninitialized pindexFrom");
     return pindexFrom;
 }
+

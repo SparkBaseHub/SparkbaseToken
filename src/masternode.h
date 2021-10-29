@@ -1,98 +1,70 @@
 // Copyright (c) 2014-2015 The Dash developers
-// Copyright (c) 2015-2018 The PIVX developers
-// Copyright (c) 2016-2019 The SparkBase developers
+// Copyright (c) 2015-2020 The PIVX developers
+// Copyright (c) 2017-2021 Sparkbase AG
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #ifndef MASTERNODE_H
 #define MASTERNODE_H
 
-#include "base58.h"
+#include "key_io.h"
 #include "key.h"
-#include "main.h"
+#include "messagesigner.h"
 #include "net.h"
+#include "primitives/transaction.h"
+#include "serialize.h"
 #include "sync.h"
 #include "timedata.h"
-#include "util.h"
+#include "util/system.h"
 
-#define MASTERNODE_MIN_CONFIRMATIONS 15
-#define MASTERNODE_MIN_MNP_SECONDS (10 * 60)
-#define MASTERNODE_MIN_MNB_SECONDS (5 * 60)
-#define MASTERNODE_PING_SECONDS (5 * 60)
-#define MASTERNODE_EXPIRATION_SECONDS (120 * 60)
-#define MASTERNODE_REMOVAL_SECONDS (130 * 60)
-#define MASTERNODE_CHECK_SECONDS 5
-#define MASTERNODE_AMOUNT 5000
-#define MASTERNODE_AMOUNT2 4999.99
-
-using namespace std;
+/* Depth of the block pinged by masternodes */
+static const unsigned int MNPING_DEPTH = 12;
 
 class CMasternode;
 class CMasternodeBroadcast;
 class CMasternodePing;
-extern map<int64_t, uint256> mapCacheBlockHashes;
 
-bool GetBlockHash(uint256& hash, int nBlockHeight);
+typedef std::shared_ptr<CMasternode> MasternodeRef;
 
+class CDeterministicMN;
+typedef std::shared_ptr<const CDeterministicMN> CDeterministicMNCPtr;
+
+int MasternodeMinPingSeconds();
+int MasternodeBroadcastSeconds();
+int MasternodeCollateralMinConf();
+int MasternodePingSeconds();
+int MasternodeExpirationSeconds();
+int MasternodeRemovalSeconds();
 
 //
 // The Masternode Ping Class : Contains a different serialize method for sending pings from masternodes throughout the network
 //
 
-class CMasternodePing
+class CMasternodePing : public CSignedMessage
 {
 public:
     CTxIn vin;
     uint256 blockHash;
     int64_t sigTime; //mnb message times
-    std::vector<unsigned char> vchSig;
-    //removed stop
 
     CMasternodePing();
-    CMasternodePing(CTxIn& newVin);
+    CMasternodePing(const CTxIn& newVin, const uint256& nBlockHash, uint64_t _sigTime);
 
-    ADD_SERIALIZE_METHODS;
+    SERIALIZE_METHODS(CMasternodePing, obj) { READWRITE(obj.vin, obj.blockHash, obj.sigTime, obj.vchSig, obj.nMessVersion); }
 
-    template <typename Stream, typename Operation>
-    inline void SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion)
-    {
-        READWRITE(vin);
-        READWRITE(blockHash);
-        READWRITE(sigTime);
-        READWRITE(vchSig);
-    }
+    uint256 GetHash() const;
 
-    bool CheckAndUpdate(int& nDos, bool fRequireEnabled = true, bool fCheckSigTimeOnly = false);
-    bool Sign(CKey& keyMasternode, CPubKey& pubKeyMasternode);
-    bool VerifySignature(CPubKey& pubKeyMasternode, int &nDos);
+    // override CSignedMessage functions
+    uint256 GetSignatureHash() const override { return GetHash(); }
+    std::string GetStrMessage() const override;
+    const CTxIn GetVin() const { return vin; };
+    bool IsNull() const { return blockHash.IsNull() || vin.prevout.IsNull(); }
+
+    bool CheckAndUpdate(int& nDos, int nChainHeight, bool fRequireAvailable = true, bool fCheckSigTimeOnly = false);
     void Relay();
 
-    uint256 GetHash()
-    {
-        CHashWriter ss(SER_GETHASH, PROTOCOL_VERSION);
-        ss << vin;
-        ss << sigTime;
-        return ss.GetHash();
-    }
+    CMasternodePing& operator=(const CMasternodePing& other) = default;
 
-    void swap(CMasternodePing& first, CMasternodePing& second) // nothrow
-    {
-        // enable ADL (not necessary in our case, but good practice)
-        using std::swap;
-
-        // by swapping the members of two classes,
-        // the two classes are effectively swapped
-        swap(first.vin, second.vin);
-        swap(first.blockHash, second.blockHash);
-        swap(first.sigTime, second.sigTime);
-        swap(first.vchSig, second.vchSig);
-    }
-
-    CMasternodePing& operator=(CMasternodePing from)
-    {
-        swap(*this, from);
-        return *this;
-    }
     friend bool operator==(const CMasternodePing& a, const CMasternodePing& b)
     {
         return a.vin == b.vin && a.blockHash == b.blockHash;
@@ -104,87 +76,68 @@ public:
 };
 
 //
-// The Masternode Class. For managing the Obfuscation process. It contains the input of the 5000 BASE, signature to prove
+// The Masternode Class. It contains the input of the 5000 SPARKS, signature to prove
 // it's the one who own that ip address and code for calculating the payment election.
 //
-class CMasternode
+class CMasternode : public CSignedMessage
 {
 private:
     // critical section to protect the inner data structures
-    mutable CCriticalSection cs;
-    int64_t lastTimeChecked;
+    mutable RecursiveMutex cs;
+    bool fCollateralSpent{false};
 
 public:
     enum state {
         MASTERNODE_PRE_ENABLED,
         MASTERNODE_ENABLED,
         MASTERNODE_EXPIRED,
-        MASTERNODE_OUTPOINT_SPENT,
         MASTERNODE_REMOVE,
-        MASTERNODE_WATCHDOG_EXPIRED,
-        MASTERNODE_POSE_BAN,
         MASTERNODE_VIN_SPENT,
-        MASTERNODE_POS_ERROR
     };
 
     CTxIn vin;
     CService addr;
     CPubKey pubKeyCollateralAddress;
     CPubKey pubKeyMasternode;
-    CPubKey pubKeyCollateralAddress1;
-    CPubKey pubKeyMasternode1;
-    std::vector<unsigned char> sig;
-    int activeState;
     int64_t sigTime; //mnb message time
-    int cacheInputAge;
-    int cacheInputAgeBlock;
-    bool unitTest;
-    bool allowFreeTx;
     int protocolVersion;
-    int nActiveState;
-    int64_t nLastDsq; //the dsq count from the last dsq broadcast of this node
     int nScanningErrorCount;
     int nLastScanningErrorBlockHeight;
     CMasternodePing lastPing;
+    // Whether the MN addr is in BIP155 format. Required for the signature hash.
+    bool isBIP155Addr{false};
 
-    int64_t nLastDsee;  // temporary, do not save. Remove after migration to v12
-    int64_t nLastDseep; // temporary, do not save. Remove after migration to v12
-
-    CMasternode();
+    explicit CMasternode();
     CMasternode(const CMasternode& other);
-    CMasternode(const CMasternodeBroadcast& mnb);
 
+    // Initialize from DMN. Used by the compatibility code.
+    CMasternode(const CDeterministicMNCPtr& dmn, int64_t registeredTime, const uint256& registeredHash);
 
-    void swap(CMasternode& first, CMasternode& second) // nothrow
+    // override CSignedMessage functions
+    uint256 GetSignatureHash() const override;
+    std::string GetStrMessage() const override;
+    const CTxIn GetVin() const { return vin; };
+    CPubKey GetPubKey() const { return pubKeyMasternode; }
+
+    void SetLastPing(const CMasternodePing& _lastPing) { WITH_LOCK(cs, lastPing = _lastPing;); }
+
+    CMasternode& operator=(const CMasternode& other)
     {
-        // enable ADL (not necessary in our case, but good practice)
-        using std::swap;
-
-        // by swapping the members of two classes,
-        // the two classes are effectively swapped
-        swap(first.vin, second.vin);
-        swap(first.addr, second.addr);
-        swap(first.pubKeyCollateralAddress, second.pubKeyCollateralAddress);
-        swap(first.pubKeyMasternode, second.pubKeyMasternode);
-        swap(first.sig, second.sig);
-        swap(first.activeState, second.activeState);
-        swap(first.sigTime, second.sigTime);
-        swap(first.lastPing, second.lastPing);
-        swap(first.cacheInputAge, second.cacheInputAge);
-        swap(first.cacheInputAgeBlock, second.cacheInputAgeBlock);
-        swap(first.unitTest, second.unitTest);
-        swap(first.allowFreeTx, second.allowFreeTx);
-        swap(first.protocolVersion, second.protocolVersion);
-        swap(first.nLastDsq, second.nLastDsq);
-        swap(first.nScanningErrorCount, second.nScanningErrorCount);
-        swap(first.nLastScanningErrorBlockHeight, second.nLastScanningErrorBlockHeight);
-    }
-
-    CMasternode& operator=(CMasternode from)
-    {
-        swap(*this, from);
+        nMessVersion = other.nMessVersion;
+        vchSig = other.vchSig;
+        vin = other.vin;
+        addr = other.addr;
+        pubKeyCollateralAddress = other.pubKeyCollateralAddress;
+        pubKeyMasternode = other.pubKeyMasternode;
+        sigTime = other.sigTime;
+        lastPing = other.lastPing;
+        protocolVersion = other.protocolVersion;
+        nScanningErrorCount = other.nScanningErrorCount;
+        nLastScanningErrorBlockHeight = other.nLastScanningErrorBlockHeight;
+        isBIP155Addr = other.isBIP155Addr;
         return *this;
     }
+
     friend bool operator==(const CMasternode& a, const CMasternode& b)
     {
         return a.vin == b.vin;
@@ -194,98 +147,95 @@ public:
         return !(a.vin == b.vin);
     }
 
-    uint256 CalculateScore(int mod = 1, int64_t nBlockHeight = 0);
+    arith_uint256 CalculateScore(const uint256& hash) const;
 
-    ADD_SERIALIZE_METHODS;
-
-    template <typename Stream, typename Operation>
-    inline void SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion)
+    SERIALIZE_METHODS(CMasternode, obj)
     {
-        LOCK(cs);
+        LOCK(obj.cs);
+        READWRITE(obj.vin, obj.addr, obj.pubKeyCollateralAddress);
+        READWRITE(obj.pubKeyMasternode, obj.vchSig, obj.sigTime, obj.protocolVersion);
+        READWRITE(obj.lastPing, obj.nScanningErrorCount, obj.nLastScanningErrorBlockHeight);
 
-        READWRITE(vin);
-        READWRITE(addr);
-        READWRITE(pubKeyCollateralAddress);
-        READWRITE(pubKeyMasternode);
-        READWRITE(sig);
-        READWRITE(sigTime);
-        READWRITE(protocolVersion);
-        READWRITE(activeState);
-        READWRITE(lastPing);
-        READWRITE(cacheInputAge);
-        READWRITE(cacheInputAgeBlock);
-        READWRITE(unitTest);
-        READWRITE(allowFreeTx);
-        READWRITE(nLastDsq);
-        READWRITE(nScanningErrorCount);
-        READWRITE(nLastScanningErrorBlockHeight);
+        if (obj.protocolVersion >= MIN_BIP155_PROTOCOL_VERSION) {
+            READWRITE(obj.isBIP155Addr);
+        }
     }
 
-    int64_t SecondsSincePayment();
-
-    bool UpdateFromNewBroadcast(CMasternodeBroadcast& mnb);
-
-    inline uint64_t SliceHash(uint256& hash, int slice)
-    {
-        uint64_t n = 0;
-        memcpy(&n, &hash + slice * 64, 64);
-        return n;
+    template <typename Stream>
+    CMasternode(deserialize_type, Stream& s) {
+        Unserialize(s);
     }
 
-    void Check(bool forceCheck = false);
+    bool UpdateFromNewBroadcast(CMasternodeBroadcast& mnb, int chainHeight);
+
+    CMasternode::state GetActiveState() const;
 
     bool IsBroadcastedWithin(int seconds)
     {
         return (GetAdjustedTime() - sigTime) < seconds;
     }
 
-    bool IsPingedWithin(int seconds, int64_t now = -1)
+    bool IsPingedWithin(int seconds, int64_t now = -1) const
     {
         now == -1 ? now = GetAdjustedTime() : now;
+        return lastPing.IsNull() ? false : now - lastPing.sigTime < seconds;
+    }
 
-        return (lastPing == CMasternodePing()) ? false : now - lastPing.sigTime < seconds;
+    void SetSpent()
+    {
+        LOCK(cs);
+        fCollateralSpent = true;
     }
 
     void Disable()
     {
+        LOCK(cs);
         sigTime = 0;
         lastPing = CMasternodePing();
     }
 
-    bool IsEnabled()
+    bool IsEnabled() const
     {
-        return activeState == MASTERNODE_ENABLED;
+        return GetActiveState() == MASTERNODE_ENABLED;
     }
 
-    int GetMasternodeInputAge()
+    bool IsPreEnabled() const
     {
-        if (chainActive.Tip() == NULL) return 0;
-
-        if (cacheInputAge == 0) {
-            cacheInputAge = GetInputAge(vin);
-            cacheInputAgeBlock = chainActive.Tip()->nHeight;
-        }
-
-        return cacheInputAge + (chainActive.Tip()->nHeight - cacheInputAgeBlock);
+        return GetActiveState() == MASTERNODE_PRE_ENABLED;
     }
 
-    std::string GetStatus();
-
-    std::string Status()
+    bool IsAvailableState() const
     {
-        std::string strStatus = "ACTIVE";
-
-        if (activeState == CMasternode::MASTERNODE_ENABLED) strStatus = "ENABLED";
-        if (activeState == CMasternode::MASTERNODE_EXPIRED) strStatus = "EXPIRED";
-        if (activeState == CMasternode::MASTERNODE_VIN_SPENT) strStatus = "VIN_SPENT";
-        if (activeState == CMasternode::MASTERNODE_REMOVE) strStatus = "REMOVE";
-        if (activeState == CMasternode::MASTERNODE_POS_ERROR) strStatus = "POS_ERROR";
-
-        return strStatus;
+        state s = GetActiveState();
+        return s == MASTERNODE_ENABLED || s == MASTERNODE_PRE_ENABLED;
     }
 
-    int64_t GetLastPaid();
-    bool IsValidNetAddr();
+    std::string Status() const
+    {
+        auto activeState = GetActiveState();
+        if (activeState == CMasternode::MASTERNODE_PRE_ENABLED) return "PRE_ENABLED";
+        if (activeState == CMasternode::MASTERNODE_ENABLED)     return "ENABLED";
+        if (activeState == CMasternode::MASTERNODE_EXPIRED)     return "EXPIRED";
+        if (activeState == CMasternode::MASTERNODE_VIN_SPENT)   return "VIN_SPENT";
+        if (activeState == CMasternode::MASTERNODE_REMOVE)      return "REMOVE";
+        return strprintf("INVALID_%d", activeState);
+    }
+
+    bool IsValidNetAddr() const;
+
+    /*
+     * This is used only by the compatibility code for DMN, which don't share the public key (but the keyid).
+     * Used by the payment-logic to include the necessary information in a temporary MasternodeRef object
+     * (which is not indexed in the maps of the legacy manager).
+     * A non-empty mnPayeeScript identifies this object as a "deterministic" masternode.
+     * Note: this is the single payout for the masternode (if the dmn is configured to pay a portion of the reward
+     * to the operator, this is done only after the disabling of the legacy system).
+     */
+    CScript mnPayeeScript{};
+    CScript GetPayeeScript() const {
+        return mnPayeeScript.empty() ? GetScriptForDestination(pubKeyCollateralAddress.GetID())
+                                     : mnPayeeScript;
+    }
 };
 
 
@@ -297,45 +247,40 @@ class CMasternodeBroadcast : public CMasternode
 {
 public:
     CMasternodeBroadcast();
-    CMasternodeBroadcast(CService newAddr, CTxIn newVin, CPubKey newPubkey, CPubKey newPubkey2, int protocolVersionIn);
+    CMasternodeBroadcast(CService newAddr, CTxIn newVin, CPubKey newPubkey, CPubKey newPubkey2, int protocolVersionIn, const CMasternodePing& _lastPing);
     CMasternodeBroadcast(const CMasternode& mn);
 
-    bool CheckAndUpdate(int& nDoS);
-    bool CheckInputsAndAdd(int& nDos);
-    bool Sign(CKey& keyCollateralAddress);
-    bool VerifySignature();
+    bool CheckAndUpdate(int& nDoS, int nChainHeight);
+
+    uint256 GetHash() const;
+
     void Relay();
-    std::string GetOldStrMessage();
-    std::string GetNewStrMessage();
 
-    ADD_SERIALIZE_METHODS;
+    // special sign/verify
+    bool Sign(const CKey& key, const CPubKey& pubKey);
+    bool CheckSignature() const;
 
-    template <typename Stream, typename Operation>
-    inline void SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion)
+    SERIALIZE_METHODS(CMasternodeBroadcast, obj)
     {
-        READWRITE(vin);
-        READWRITE(addr);
-        READWRITE(pubKeyCollateralAddress);
-        READWRITE(pubKeyMasternode);
-        READWRITE(sig);
-        READWRITE(sigTime);
-        READWRITE(protocolVersion);
-        READWRITE(lastPing);
-        READWRITE(nLastDsq);
-    }
-
-    uint256 GetHash()
-    {
-        CHashWriter ss(SER_GETHASH, PROTOCOL_VERSION);
-        ss << sigTime;
-        ss << pubKeyCollateralAddress;
-        return ss.GetHash();
+        READWRITE(obj.vin);
+        READWRITE(obj.addr);
+        READWRITE(obj.pubKeyCollateralAddress);
+        READWRITE(obj.pubKeyMasternode);
+        READWRITE(obj.vchSig);
+        READWRITE(obj.sigTime);
+        READWRITE(obj.protocolVersion);
+        READWRITE(obj.lastPing);
+        READWRITE(obj.nMessVersion);
     }
 
     /// Create Masternode broadcast, needs to be relayed manually after that
-    static bool Create(CTxIn vin, CService service, CKey keyCollateralAddressNew, CPubKey pubKeyCollateralAddressNew, CKey keyMasternodeNew, CPubKey pubKeyMasternodeNew, std::string& strErrorRet, CMasternodeBroadcast& mnbRet);
-    static bool Create(std::string strService, std::string strKey, std::string strTxHash, std::string strOutputIndex, std::string& strErrorRet, CMasternodeBroadcast& mnbRet, bool fOffline = false);
-    static bool CheckDefaultPort(std::string strService, std::string& strErrorRet, std::string strContext);
+    static bool Create(const CTxIn& vin, const CService& service, const CKey& keyCollateralAddressNew, const CPubKey& pubKeyCollateralAddressNew, const CKey& keyMasternodeNew, const CPubKey& pubKeyMasternodeNew, std::string& strErrorRet, CMasternodeBroadcast& mnbRet);
+    static bool Create(const std::string& strService, const std::string& strKey, const std::string& strTxHash, const std::string& strOutputIndex, std::string& strErrorRet, CMasternodeBroadcast& mnbRet, bool fOffline, int chainHeight);
+    static bool CheckDefaultPort(CService service, std::string& strErrorRet, const std::string& strContext);
 };
+
+// Temporary function used for payment compatibility code.
+// Returns a shared pointer to a masternode object initialized from a DMN.
+MasternodeRef MakeMasternodeRefForDMN(const CDeterministicMNCPtr& dmn);
 
 #endif

@@ -1,0 +1,18 @@
+<!DOCTYPE RCC><RCC version="1.0">
+    <qresource prefix="/translations">
+        <file alias="de">locale/spark_de.qm</file>
+        <file alias="en">locale/spark_en.qm</file>
+        <file alias="en_US">locale/spark_en_US.qm</file>
+        <file alias="es">locale/spark_es.qm</file>
+        <file alias="es_ES">locale/spark_es_ES.qm</file>
+        <file alias="fr_FR">locale/spark_fr_FR.qm</file>
+        <file alias="hr_HR">locale/spark_hr_HR.qm</file>
+        <file alias="it">locale/spark_it.qm</file>
+        <file alias="ko_KR">locale/spark_ko_KR.qm</file>
+        <file alias="nl">locale/spark_nl.qm</file>
+        <file alias="pl">locale/spark_pl.qm</file>
+        <file alias="ru">locale/spark_ru.qm</file>
+        <file alias="tr">locale/spark_tr.qm</file>
+        <file alias="zh_CN">locale/spark_zh_CN.qm</file>
+    </qresource>
+</RCC>

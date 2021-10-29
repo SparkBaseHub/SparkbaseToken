@@ -1,9 +1,11 @@
-// Copyright (c) 2015 The Bitcoin Core developers
+// Copyright (c) 2015-2021 The Bitcoin Core developers
+// Copyright (c) 2021 The PIVX developers
+// Copyright (c) 2017-2021 Sparkbase AG
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOIN_HTTPSERVER_H
-#define BITCOIN_HTTPSERVER_H
+#ifndef SPARK_HTTPSERVER_H
+#define SPARK_HTTPSERVER_H
 
 #include <string>
 #include <stdint.h>
@@ -31,6 +33,10 @@ bool StartHTTPServer();
 void InterruptHTTPServer();
 /** Stop HTTP server */
 void StopHTTPServer();
+
+/** Change logging level for libevent. Removes BCLog::LIBEVENT from log categories if
+ * libevent doesn't support debug logging.*/
+bool UpdateHTTPServerLogging(bool enable);
 
 /** Handler for requests to a certain HTTP path */
 typedef std::function<void(HTTPRequest* req, const std::string &)> HTTPRequestHandler;
@@ -82,7 +88,7 @@ public:
 
     /**
      * Get the request header specified by hdr, or an empty string.
-     * Return an pair (isPresent,string).
+     * Return an pair (isPresent,std::string).
      */
     std::pair<bool, std::string> GetHeader(const std::string& hdr);
 
@@ -144,4 +150,6 @@ private:
     struct event* ev;
 };
 
-#endif // BITCOIN_HTTPSERVER_H
+std::string urlDecode(const std::string &urlEncoded);
+
+#endif // SPARK_HTTPSERVER_H

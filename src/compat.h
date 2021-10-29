@@ -8,7 +8,7 @@
 #define BITCOIN_COMPAT_H
 
 #if defined(HAVE_CONFIG_H)
-#include "config/base-config.h"
+#include "config/spark-config.h"
 #endif
 
 #ifdef WIN32
@@ -92,6 +92,12 @@ typedef u_int SOCKET;
 #if HAVE_DECL_STRNLEN == 0
 size_t strnlen( const char *start, size_t max_len);
 #endif // HAVE_DECL_STRNLEN
+
+#ifndef WIN32
+typedef void* sockopt_arg_type;
+#else
+typedef char* sockopt_arg_type;
+#endif
 
 bool static inline IsSelectableSocket(SOCKET s)
 {

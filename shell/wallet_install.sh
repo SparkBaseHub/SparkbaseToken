@@ -37,19 +37,21 @@ sudo ufw allow OpenSSH
 echo -e "Prepare update system"
 sudo apt-get -y update
 
-sudo apt-get install -y build-essential libtool autotools-dev autoconf pkg-config libssl-dev libgmp3-dev libevent-dev automake git
+#sudo apt-get install -y build-essential libtool autotools-dev autoconf pkg-config libssl-dev libgmp3-dev libevent-dev automake git
+sudo apt-get install -y build-essential libtool bsdmainutils autotools-dev autoconf pkg-config automake python3 automake git cargo
 
 # new ssl support for SparkBase
 sudo apt-get install -y libsecp256k1-dev
 
 # libboost library
-sudo apt-get install -y libboost-system-dev libboost-filesystem-dev libboost-chrono-dev libboost-program-options-dev libboost-test-dev libboost-thread-dev
+#sudo apt-get install -y libboost-system-dev libboost-filesystem-dev libboost-chrono-dev libboost-program-options-dev libboost-test-dev libboost-thread-dev
+sudo apt-get install -y libgmp-dev libevent-dev libboost-all-dev libsodium-dev
 
 # for wallet
 sudo apt-get install -y software-properties-common
-sudo add-apt-repository -y ppa:bitcoin/bitcoin
+sudo add-apt-repository ppa:pivx/pivx
 sudo apt-get update
-sudo apt-get install -y libdb4.8-dev libdb4.8++-dev
+sudo apt-get install libdb4.8-dev libdb4.8++-dev
 
 #Optional
 sudo apt-get install -y libminiupnpc-dev
@@ -58,7 +60,9 @@ sudo apt-get install -y libminiupnpc-dev
 sudo apt-get install -y libzmq3-dev
 
 # Dependencies for the GUI: Ubuntu
-sudo apt-get install libqt5gui5 libqt5core5a libqt5dbus5 qttools5-dev qttools5-dev-tools libprotobuf-dev protobuf-compiler
+#sudo apt-get install libqt5gui5 libqt5core5a libqt5dbus5 qttools5-dev qttools5-dev-tools libprotobuf-dev protobuf-compiler
+sudo apt-get install libqt5gui5 libqt5core5a libqt5dbus5 libqt5svg5-dev libqt5charts5-dev qttools5-dev qttools5-dev-tools libqrencode-dev
+
 
 # libqrencode (optional) can be installed with:
 sudo apt-get install -y libqrencode-dev
@@ -83,16 +87,5 @@ make install
 
 
 prepare_system
-fetch_wallet
-compile_wallet
-
-
-
-
-
-
-
-
-
-
-
+#fetch_wallet
+#compile_wallet

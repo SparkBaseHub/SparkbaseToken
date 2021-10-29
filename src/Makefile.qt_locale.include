@@ -1,0 +1,15 @@
+QT_TS = \
+  qt/locale/spark_de.ts \
+  qt/locale/spark_en.ts \
+  qt/locale/spark_en_US.ts \
+  qt/locale/spark_es.ts \
+  qt/locale/spark_es_ES.ts \
+  qt/locale/spark_fr_FR.ts \
+  qt/locale/spark_hr_HR.ts \
+  qt/locale/spark_it.ts \
+  qt/locale/spark_ko_KR.ts \
+  qt/locale/spark_nl.ts \
+  qt/locale/spark_pl.ts \
+  qt/locale/spark_ru.ts \
+  qt/locale/spark_tr.ts \
+  qt/locale/spark_zh_CN.ts

@@ -1,6 +1,5 @@
 // Copyright (c) 2012-2017 The Bitcoin Core developers
-// Copyright (c) 2016-2017 The PIVX developers
-// Copyright (c) 2016-2019 The SparkBase developers
+// Copyright (c) 2016-2019 The PIVX developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -11,10 +10,10 @@
 
 /**
  * Name of client reported in the 'version' message. Report the same name
- * for both based and base-qt, to make it harder for attackers to
+ * for both sparkd and spark-qt, to make it harder for attackers to
  * target servers or GUI users specifically.
  */
-const std::string CLIENT_NAME("SparkBase");
+const std::string CLIENT_NAME(PACKAGE_NAME);
 
 /**
  * Client version number
@@ -44,10 +43,11 @@ const std::string CLIENT_NAME("SparkBase");
 #endif
 
 //! git will put "#define GIT_ARCHIVE 1" on the next line inside archives.
+// @todo: change GIT_COMMIT_ID
 #define GIT_ARCHIVE 1
 #ifdef GIT_ARCHIVE
-#define GIT_COMMIT_ID "$Format:%H$"
-#define GIT_COMMIT_DATE "$Format:%cD$"
+#define GIT_COMMIT_ID "3fa9d83522241ed5aeeb93ab805c5f0f2e5ab79e"
+#define GIT_COMMIT_DATE "Mon, 25 Oct 2021 10:28:39 -0300"
 #endif
 
 #define BUILD_DESC_WITH_SUFFIX(maj, min, rev, build, suffix) \
@@ -69,16 +69,7 @@ const std::string CLIENT_NAME("SparkBase");
 #endif
 #endif
 
-#ifndef BUILD_DATE
-#ifdef GIT_COMMIT_DATE
-#define BUILD_DATE GIT_COMMIT_DATE
-#else
-#define BUILD_DATE __DATE__ ", " __TIME__
-#endif
-#endif
-
 const std::string CLIENT_BUILD(BUILD_DESC CLIENT_VERSION_SUFFIX);
-const std::string CLIENT_DATE(BUILD_DATE);
 
 static std::string FormatVersion(int nVersion)
 {
@@ -91,6 +82,11 @@ static std::string FormatVersion(int nVersion)
 std::string FormatFullVersion()
 {
     return CLIENT_BUILD;
+}
+
+std::string FormatVersionFriendly()
+{
+    return FormatVersion(CLIENT_VERSION);
 }
 
 /**

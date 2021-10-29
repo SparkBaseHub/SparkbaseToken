@@ -1,5 +1,6 @@
 // Copyright (c) 2011-2013 The Bitcoin developers
-// Copyright (c) 2017-2018 The PIVX developers
+// Copyright (c) 2017-2019 The PIVX developers
+// Copyright (c) 2017-2021 Sparkbase AG
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -37,6 +38,11 @@ public:
     };
 
     void setDateRange(const QDateTime& from, const QDateTime& to);
+    void clearDateRange() {
+        if (dateFrom != MIN_DATE || dateTo == MAX_DATE)
+            setDateRange(MIN_DATE, MAX_DATE);
+    }
+
     void setAddressPrefix(const QString& addrPrefix);
     /**
       @note Type filter takes a bit field created with TYPE() or ALL_TYPES
@@ -54,6 +60,9 @@ public:
     /** Set whether to hide orphan stakes. */
     void setHideOrphans(bool fHide);
 
+    /** Only stakes txes **/
+    void setOnlyStakes(bool fOnlyStakes);
+
     int rowCount(const QModelIndex& parent = QModelIndex()) const;
     static bool isOrphan(const int status, const int type);
 
@@ -69,7 +78,14 @@ private:
     CAmount minAmount;
     int limitRows;
     bool showInactive;
-    bool fHideOrphans;
+    bool fHideOrphans = true;
+    bool fOnlyZc = false;
+    bool fOnlyStakes = false;
+    bool fOnlyColdStaking = false;
+
+    bool isZcTx(int type) const;
+    bool isStakeTx(int type) const;
+    bool isColdStake(int type) const;
 };
 
 #endif // BITCOIN_QT_TRANSACTIONFILTERPROXY_H

@@ -1,0 +1,13 @@
+[Desktop Entry]
+Version=1.0
+Name=Spark Core
+Comment=Spark P2P Cryptocurrency
+Comment[fr]=Spark, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=Spark, eşten eşe kriptografik sanal para birimi
+Exec=spark-qt %u
+Terminal=false
+Type=Application
+Icon=spark128
+MimeType=x-scheme-handler/spark;
+Categories=Office;Finance;
+StartupWMClass=Spark-qt

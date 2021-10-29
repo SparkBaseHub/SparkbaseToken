@@ -10,7 +10,7 @@ import operator
 import os
 import sys
 
-OUT_CPP="qt/basestrings.cpp"
+OUT_CPP="qt/sparkstrings.cpp"
 EMPTY=['""']
 
 def parse_po(text):
@@ -62,7 +62,7 @@ child = Popen([XGETTEXT,'--output=-','-n','--keyword=_'] + files, stdout=PIPE)
 
 messages = parse_po(out.decode('utf-8'))
 
-f = open(OUT_CPP, 'w')
+f = open(OUT_CPP, 'w', encoding="utf8")
 f.write("""
 
 #include <QtGlobal>
@@ -74,10 +74,10 @@ f.write("""
 #define UNUSED
 #endif
 """)
-f.write('static const char UNUSED *base_strings[] = {\n')
+f.write('static const char UNUSED *spark_strings[] = {\n')
 messages.sort(key=operator.itemgetter(0))
 for (msgid, msgstr) in messages:
     if msgid != EMPTY:
-        f.write('QT_TRANSLATE_NOOP("spark-base", %s),\n' % ('\n'.join(msgid)))
+        f.write('QT_TRANSLATE_NOOP("spark-core", %s),\n' % ('\n'.join(msgid)))
 f.write('};\n')
 f.close()
