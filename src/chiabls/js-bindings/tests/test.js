@@ -1,6 +1,6 @@
 const assert = require('assert');
 const binascii = require('binascii');
-const blsjs = require('../blsjs');
+const blsjs = require('../../js_build/js-bindings/blsjs.js');
 
 function bytes(x) {
     return Buffer.from(binascii.unhexlify(x), 'binary');

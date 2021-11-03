@@ -40,7 +40,7 @@ PrivateKey PrivateKey::FromBytes(const Bytes& bytes, bool modOrder)
 }
 
 // Construct a private key from a bytearray.
-PrivateKey PrivateKey::FromByteVector(const std::vector<uint8_t> bytes, bool modOrder)
+PrivateKey PrivateKey::FromByteVector(const std::vector<uint8_t>& bytes, bool modOrder)
 {
     return PrivateKey::FromBytes(Bytes(bytes), modOrder);
 }
@@ -152,6 +152,19 @@ G2Element operator*(const G2Element &a, const PrivateKey &k)
 }
 
 G2Element operator*(const PrivateKey &k, const G2Element &a) { return a * k; }
+
+PrivateKey operator*(const PrivateKey& k, const bn_t& a)
+{
+    k.CheckKeyData();
+    bn_t order;
+    bn_new(order);
+    g2_get_ord(order);
+
+    PrivateKey ret;
+    bn_mul_comba(ret.keydata, k.keydata, a);
+    bn_mod_basic(ret.keydata, ret.keydata, order);
+    return ret;
+}
 
 G2Element PrivateKey::GetG2Power(const G2Element& element) const
 {

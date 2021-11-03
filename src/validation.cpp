@@ -829,13 +829,13 @@ CAmount GetBlockValue(int nHeight)
     if (Params().IsRegTestNet()) {
         return 250 * COIN;
     }
-    // Testnet high-inflation blocks [2, 200] with value 250k SPARKS
+    // Testnet high-inflation blocks [2, 200] with value 250 SPARKS
     const bool isTestnet = Params().IsTestnet();
     if (isTestnet && nHeight < 201 && nHeight > 1) {
-        return 250000 * COIN;
+        return 250 * COIN;
     }
     // Mainnet/Testnet block reward reduction schedule
-    const int nLast = Params().GetConsensus().vUpgrades[Consensus::UPGRADE_ZC_V2].nActivationHeight;
+    //const int nLast = Params().GetConsensus().vUpgrades[Consensus::UPGRADE_ZC_V2].nActivationHeight;
     //if (nHeight > nLast)   return 5    * COIN;
     /*if (nHeight > 1036800)  return 5  * COIN;//Phase X
     if (nHeight > 777600)  return 9    * COIN;//Phase 10
@@ -847,7 +847,7 @@ CAmount GetBlockValue(int nHeight)
     if (nHeight > 129600)  return 36   * COIN;//Phase 4
     if (nHeight > 86400)  return 40.5 * COIN;//Phase 3
     if (nHeight > 43200)  return 45   * COIN;//Phase 2*/
-    if (nHeight > 1000)   return 5  * COIN;//Phase 1
+    if (nHeight > 1000)   return 0.4  * COIN;//Phase 1
     if (nHeight !=1)       return 100  * COIN;
     // Premine for 6 masternodes at block 1
     return 30001 * COIN;
@@ -855,7 +855,8 @@ CAmount GetBlockValue(int nHeight)
 
 int64_t GetMasternodePayment()
 {
-    return 3 * COIN;
+    //return 3 * COIN;
+    return 0.6 * COIN;
 }
 
 bool IsInitialBlockDownload()

@@ -1,6 +1,6 @@
 # BLS Signatures implementation
 
-[![Build and Test C++, Javascript, and Python](https://github.com/Chia-Network/bls-signatures/actions/workflows/build-test.yaml/badge.svg)](https://github.com/Chia-Network/bls-signatures/actions/workflows/build-test.yaml)
+![Build](https://github.com/Chia-Network/bls-signatures/workflows/Build/badge.svg)
 ![PyPI](https://img.shields.io/pypi/v/blspy?logo=pypi)
 ![PyPI - Format](https://img.shields.io/pypi/format/blspy?logo=pypi)
 ![GitHub](https://img.shields.io/github/license/Chia-Network/bls-signatures?logo=Github)
@@ -209,12 +209,14 @@ g++ -Wl,-no_pie -std=c++11  -Ibls-signatures/build/_deps/relic-src/include -Ibls
 
 ## Notes on dependencies
 
-We use Libsodium and have GMP as an optional dependency: libsodium gives secure memory
+Libsodium and GMP are optional dependencies: libsodium gives secure memory
 allocation, and GMP speeds up the library by ~ 3x. MPIR is used on Windows via
 GitHub Actions instead. To install them, either download them from github and
 follow the instructions for each repo, or use a package manager like APT or
 brew. You can follow the recipe used to build python wheels for multiple
-platforms in `.github/workflows/`.
+platforms in `.github/workflows/`. libsodium is dynamically linked unless
+the environment variable $CIBUILDWHEEL is set which will then cause
+libsodium to statically link.
 
 ## Discussion
 

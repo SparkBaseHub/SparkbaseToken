@@ -70,6 +70,14 @@ public:
     virtual G2Element Aggregate(const vector<G2Element> &signatures);
 
     virtual G1Element Aggregate(const vector<G1Element> &publicKeys);
+    
+    virtual G2Element AggregateSecure(const std::vector<G1Element>& vecPublicKeys,
+                                      const std::vector<G2Element>& vecSignatures,
+                                      const Bytes& message);
+
+    virtual bool VerifySecure(const std::vector<G1Element>& vecPublicKeys,
+                              const G2Element& signature,
+                              const Bytes& message);
 
     virtual bool AggregateVerify(const vector<vector<uint8_t>> &pubkeys,
                                  const vector<vector<uint8_t>> &messages,

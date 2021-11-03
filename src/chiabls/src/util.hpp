@@ -15,7 +15,6 @@
 #ifndef SRC_BLSUTIL_HPP_
 #define SRC_BLSUTIL_HPP_
 
-#include <algorithm>
 #include <iomanip>
 #include <sstream>
 #include <string>
@@ -54,23 +53,19 @@ class Util {
  public:
     static void Hash256(uint8_t* output, const uint8_t* message,
                         size_t messageLen) {
-        md_map_sh256(output, message, messageLen);
+        md_map_sh256(output, message, (int) messageLen);
     }
 
     static std::string HexStr(const uint8_t* data, size_t len) {
         std::stringstream s;
         s << std::hex;
-        for (int i=0; i < len; ++i)
+        for (size_t i=0; i < len; ++i)
             s << std::setw(2) << std::setfill('0') << static_cast<int>(data[i]);
         return s.str();
     }
 
     static std::string HexStr(const std::vector<uint8_t> &data) {
-        std::stringstream s;
-        s << std::hex;
-        for (int i=0; i < data.size(); ++i)
-            s << std::setw(2) << std::setfill('0') << static_cast<int>(data[i]);
-        return s.str();
+        return HexStr(data.data(), data.size());
     }
 
     /*
@@ -105,7 +100,7 @@ class Util {
     /*
      * Converts a hex string into a vector of bytes.
      */
-    static std::vector<uint8_t> HexToBytes(const std::string hex) {
+    static std::vector<uint8_t> HexToBytes(const std::string& hex) {
         if (hex.size() % 2 != 0) {
             throw std::invalid_argument("Invalid input string, length must be multple of 2");
         }
@@ -141,10 +136,6 @@ class Util {
             sum += addend;
         }
         return sum;
-    }
-
-    static bool HasOnlyZeros(const Bytes& bytes) {
-        return std::all_of(bytes.begin(), bytes.end(), [](uint8_t byte){ return byte == 0x00; });
     }
 
  private:

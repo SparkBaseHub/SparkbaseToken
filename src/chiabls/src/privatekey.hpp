@@ -26,6 +26,8 @@
 namespace bls {
 class PrivateKey {
  public:
+    PrivateKey();
+
     // Private keys are represented as 32 byte field elements. Note that
     // not all 32 byte integers are valid keys, the private key must be
     // less than the group order (which is in bls.hpp).
@@ -35,7 +37,7 @@ class PrivateKey {
     static PrivateKey FromBytes(const Bytes& bytes, bool modOrder = false);
 
     // Construct a private key from a bytearray.
-    static PrivateKey FromByteVector(const std::vector<uint8_t> bytes, bool modOrder = false);
+    static PrivateKey FromByteVector(const std::vector<uint8_t>& bytes, bool modOrder = false);
 
     // Aggregate many private keys into one (sum of keys mod order)
     static PrivateKey Aggregate(std::vector<PrivateKey> const &privateKeys);
@@ -67,6 +69,9 @@ class PrivateKey {
 
     friend G2Element operator*(const G2Element &a, const PrivateKey &k);
     friend G2Element operator*(const PrivateKey &k, const G2Element &a);
+    
+    friend PrivateKey operator*(const PrivateKey& a, const bn_t& k);
+    friend PrivateKey operator*(const bn_t& k, const PrivateKey& a);
 
     // Serialize the key into bytes
     void Serialize(uint8_t *buffer) const;
@@ -77,11 +82,8 @@ class PrivateKey {
         size_t len,
         const uint8_t *dst,
         size_t dst_len) const;
-
+    
  private:
-    // Don't allow public construction, force static methods
-    PrivateKey();
-
     // Allocate memory for private key
     void AllocateKeyData();
     /// Throw an error if keydata isn't initialized

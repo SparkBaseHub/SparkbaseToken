@@ -21,6 +21,7 @@
 #include "elements.hpp"
 #include "hkdf.hpp"
 #include "hdkeys.hpp"
+#include "threshold.hpp"
 
 namespace bls {
 

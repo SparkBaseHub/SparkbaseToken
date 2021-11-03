@@ -40,8 +40,6 @@ public:
 
     G1ElementWrapper Mul(const BignumWrapper &other);
 
-    bool EqualTo(const G1ElementWrapper &others);
-
     G1ElementWrapper Negate();
 
     G1ElementWrapper Deepcopy();
