@@ -103,7 +103,7 @@ public:
     {
         strNetworkID = "main";
 
-        bnProofOfWorkLimit = ~uint256(0) >> 20;
+        //bnProofOfWorkLimit = ~uint256(0) >> 20;
 
         //genesis = CreateGenesisBlock(1545066000, 3497963, 0x1e0ffff0, 1, 100 * COIN);
         genesis = CreateGenesisBlock(1545066000, 3497963, 504365055, 1, 100 * COIN);
