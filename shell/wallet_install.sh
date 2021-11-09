@@ -72,11 +72,11 @@ clear
 
 function fetch_wallet() {
 cd /home
-git -C SparkBase pull || git clone https://github.com/SparkBaseHub/SparkBase.git
+git -C SparkToken pull || git clone https://github.com/SparkBaseHub/SparkToken.git
 }
 
 function compile_wallet() {
-cd /home/SparkBase
+cd /home/SparkToken
 chmod 755 autogen.sh
 chmod 755 share/genbuild.sh
 ./autogen.sh
@@ -87,5 +87,5 @@ make install
 
 
 prepare_system
-#fetch_wallet
-#compile_wallet
+fetch_wallet
+compile_wallet
