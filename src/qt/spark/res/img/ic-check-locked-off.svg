@@ -1,9 +1,20 @@
-<svg xmlns="http://www.w3.org/2000/svg" id="ic_unlocked" width="24" height="24" viewBox="0 0 24 24" shape-rendering="geometricPrecision">
-    <defs>
-        <style type="text/css">
-            .cls-1{fill:#7c7687}.cls-2{fill:none}
-        </style>
-    </defs>
-    <path id="Path_18909" d="M8 10V8a4 4 0 0 1 6.827-2.83l1.412-1.416A6 6 0 0 0 6 8v2H4v12h16V10zm10 10H6v-8h12z" class="cls-1" data-name="Path 18909"/>
-    <path id="Rectangle_4444" d="M0 0h24v24H0z" class="cls-2" data-name="Rectangle 4444"/>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 25.4.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="ic_unlocked" shape-rendering="geometricPrecision"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 24 24"
+	 style="enable-background:new 0 0 24 24;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:none;}
+	.st1{fill:none;stroke:#000000;stroke-miterlimit:10;}
+</style>
+<path id="Rectangle_4444" class="st0" d="M0,0h24v24H0V0z"/>
+<g id="Secret_LIght">
+	<g id="Lock_3_">
+		<path class="st1" d="M6.8,10.6V7.1c0-2.9,2.3-5.2,5.2-5.2c2.9,0,5.2,2.3,5.2,5.2v3.5"/>
+		<circle class="st1" cx="12" cy="15" r="6.9"/>
+		<path d="M13.5,13.6c0,0.8-0.7,1.5-1.5,1.5c-0.8,0-1.5-0.7-1.5-1.5c0-0.8,0.7-1.5,1.5-1.5C12.8,12.1,13.5,12.8,13.5,13.6z"/>
+		<path d="M10.5,17.8l0.7-3.3c0-0.1,0.1-0.2,0.3-0.2h1.1c0.1,0,0.3,0.1,0.3,0.2l0.7,3.3c0,0.2-0.1,0.4-0.3,0.4h-2.4
+			C10.6,18.2,10.5,18,10.5,17.8z"/>
+	</g>
+</g>
 </svg>

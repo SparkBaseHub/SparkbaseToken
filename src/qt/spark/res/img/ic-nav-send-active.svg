@@ -1,17 +1,18 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="24px" height="40px" viewBox="0 0 24 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 52.6 (67491) - http://www.bohemiancoding.com/sketch -->
-    <title>Send</title>
-    <desc>Created with Sketch.</desc>
-    <g id="Send" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="ic-send" transform="translate(-1.000000, 11.000000)">
-            <g id="Group_8811" transform="translate(1.000000, 1.000000)" fill="#B088FF">
-                <polygon id="Path_18865" points="0.352 9.1 7.562 13.606 9.014 12.154 4.914 9.59 19.714 4.283 14.407 19.083 11.842 14.983 10.391 16.434 14.9 23.648 23.025 0.975"></polygon>
-                <g id="Group_8810" transform="translate(8.000000, 8.000000)">
-                    <polygon id="Rectangle_4394" transform="translate(3.823718, 4.176339) rotate(-45.000000) translate(-3.823718, -4.176339) " points="-0.176282346 3.17633883 7.82371765 3.17633883 7.82371765 5.17633883 -0.176282346 5.17633883"></polygon>
-                </g>
-            </g>
-            <polygon id="Rectangle_4395" points="0 0 26 0 26 26 0 26"></polygon>
-        </g>
-    </g>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 25.4.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 24 40" style="enable-background:new 0 0 24 40;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFFFFF;}
+</style>
+<desc>Created with Sketch.</desc>
+<g id="Blocks_Dark_1_">
+	<polygon points="23.3,20.7 23.4,15 18.7,17.6 18.7,23.4 	"/>
+	<polygon points="18.4,17.1 20.3,16.1 23.1,14.5 17.8,11.7 13.2,14.4 	"/>
+	<polygon class="st0" points="10.9,27.6 11,21.9 6.3,24.5 6.3,30.3 	"/>
+	<path d="M12.9,14.9l-0.1,5.3l2.1-1.2l0,0c0-0.4,0.3-0.8,0.6-0.8s0.6,0.4,0.6,0.8s-0.3,0.8-0.6,0.8c-0.2,0-0.3-0.1-0.4-0.2L13,20.7
+		l5.1,2.7l0.1-5.8L12.9,14.9z"/>
+	<polygon class="st0" points="0.4,27.5 5.7,30.3 5.7,24.5 2.5,22.8 0.5,21.8 	"/>
+	<polygon class="st0" points="6,24 7.9,23 10.7,21.4 5.4,18.6 0.8,21.3 	"/>
+</g>
 </svg>

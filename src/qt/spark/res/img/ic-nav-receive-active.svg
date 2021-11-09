@@ -1,17 +1,18 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="24px" height="40px" viewBox="0 0 24 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 52.6 (67491) - http://www.bohemiancoding.com/sketch -->
-    <title>Receive off</title>
-    <desc>Created with Sketch.</desc>
-    <g id="Receive-off" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="ic-receive-on" transform="translate(-1.000000, 11.000000)">
-            <polygon id="Rectangle_4413" points="0 0 26 0 26 26 0 26"></polygon>
-            <g id="Group_8987" transform="translate(2.000000, 2.000000)" fill="#B088FF">
-                <g id="Group_8986">
-                    <polygon id="Path_18953" points="18.178 10.734 16.822 9.265 12 13.716 12 0 10 0 10 13.716 5.178 9.266 3.822 10.734 11 17.361"></polygon>
-                    <polygon id="Path_18954" points="20 15 20 20 2 20 2 15 0 15 0 22 22 22 22 15"></polygon>
-                </g>
-            </g>
-        </g>
-    </g>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 25.4.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 24 40" style="enable-background:new 0 0 24 40;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFFFFF;}
+</style>
+<desc>Created with Sketch.</desc>
+<g id="Blocks_Dark_1_">
+	<polygon class="st0" points="23.3,20.7 23.4,15 18.7,17.6 18.7,23.4 	"/>
+	<polygon class="st0" points="18.4,17.1 20.3,16.1 23.1,14.5 17.8,11.7 13.2,14.4 	"/>
+	<polygon points="10.9,27.6 11,21.9 6.3,24.5 6.3,30.3 	"/>
+	<path class="st0" d="M12.9,14.9l-0.1,5.3l2.1-1.2l0,0c0-0.4,0.3-0.8,0.6-0.8s0.6,0.4,0.6,0.8s-0.3,0.8-0.6,0.8
+		c-0.2,0-0.3-0.1-0.4-0.2L13,20.7l5.1,2.7l0.1-5.8L12.9,14.9z"/>
+	<polygon points="0.4,27.5 5.7,30.3 5.7,24.5 2.5,22.8 0.5,21.8 	"/>
+	<polygon points="6,24 7.9,23 10.7,21.4 5.4,18.6 0.8,21.3 	"/>
+</g>
 </svg>
