@@ -1,0 +1,2 @@
+contrib/sparkd.bash-completion	sparkd
+contrib/spark-cli.bash-completion spark-cli
