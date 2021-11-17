@@ -1,14 +1,14 @@
 #!/bin/bash
 
 TMP_FOLDER=$(mktemp -d)
-CONFIG_FILE='base.conf'
-CONFIGFOLDER='/root/.base'
-COIN_DAEMON='based'
-COIN_CLI='base-cli'
+CONFIG_FILE='spark.conf'
+CONFIGFOLDER='/root/.spark'
+COIN_DAEMON='sparkd'
+COIN_CLI='spark-cli'
 COIN_PATH='/usr/local/bin/'
-COIN_TGZ='https://github.com/SparkBaseHub/SparkBase/releases/download/v1.0.7/SparkBase-1.0.7-x86_64-linux-gnu_masternode-only.tar.gz'
+COIN_TGZ='https://github.com/SparkBaseHub/SparkToken/releases/download/v1.0.7/SparkBase-1.0.7-x86_64-linux-gnu_masternode-only.tar.gz'
 COIN_ZIP=$(echo $COIN_TGZ | awk -F'/' '{print $NF}')
-COIN_NAME='base'
+COIN_NAME='spark'
 COIN_PORT=5421
 RPC_PORT=5422
 
