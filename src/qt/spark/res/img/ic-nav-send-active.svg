@@ -3,16 +3,17 @@
 <svg version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 24 40" style="enable-background:new 0 0 24 40;" xml:space="preserve">
 <style type="text/css">
-	.st0{fill:#FFFFFF;}
+	.st0{fill:#00F3FF;}
+	.st1{fill:#FFFFFF;}
 </style>
 <desc>Created with Sketch.</desc>
 <g id="Blocks_Dark_1_">
-	<polygon points="23.3,20.7 23.4,15 18.7,17.6 18.7,23.4 	"/>
-	<polygon points="18.4,17.1 20.3,16.1 23.1,14.5 17.8,11.7 13.2,14.4 	"/>
-	<polygon class="st0" points="10.9,27.6 11,21.9 6.3,24.5 6.3,30.3 	"/>
-	<path d="M12.9,14.9l-0.1,5.3l2.1-1.2l0,0c0-0.4,0.3-0.8,0.6-0.8s0.6,0.4,0.6,0.8s-0.3,0.8-0.6,0.8c-0.2,0-0.3-0.1-0.4-0.2L13,20.7
-		l5.1,2.7l0.1-5.8L12.9,14.9z"/>
-	<polygon class="st0" points="0.4,27.5 5.7,30.3 5.7,24.5 2.5,22.8 0.5,21.8 	"/>
-	<polygon class="st0" points="6,24 7.9,23 10.7,21.4 5.4,18.6 0.8,21.3 	"/>
+	<polygon class="st0" points="23.3,20.7 23.4,15 18.7,17.6 18.7,23.4 	"/>
+	<polygon class="st0" points="18.4,17.1 20.3,16.1 23.1,14.5 17.8,11.7 13.2,14.4 	"/>
+	<polygon class="st1" points="10.9,27.6 11,21.9 6.3,24.5 6.3,30.3 	"/>
+	<path class="st0" d="M12.9,14.9l-0.1,5.3l2.1-1.2l0,0c0-0.4,0.3-0.8,0.6-0.8s0.6,0.4,0.6,0.8s-0.3,0.8-0.6,0.8
+		c-0.2,0-0.3-0.1-0.4-0.2L13,20.7l5.1,2.7l0.1-5.8L12.9,14.9z"/>
+	<polygon class="st1" points="0.4,27.5 5.7,30.3 5.7,24.5 2.5,22.8 0.5,21.8 	"/>
+	<polygon class="st1" points="6,24 7.9,23 10.7,21.4 5.4,18.6 0.8,21.3 	"/>
 </g>
 </svg>
