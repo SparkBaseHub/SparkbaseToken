@@ -1,14 +1,14 @@
 #!/bin/bash
 
 TMP_FOLDER=$(mktemp -d)
-CONFIG_FILE='base.conf'
-CONFIGFOLDER='/root/.base'
-COIN_DAEMON='based'
-COIN_CLI='base-cli'
+CONFIG_FILE='spark.conf'
+CONFIGFOLDER='/root/.spark'
+COIN_DAEMON='sparkd'
+COIN_CLI='spark-cli'
 COIN_PATH='/usr/local/bin/'
-COIN_TGZ='https://github.com/SparkBaseHub/SparkBase/releases/download/v1.0.7/SparkBase-1.0.7-x86_64-linux-gnu_masternode-only.tar.gz'
+COIN_TGZ='https://github.com/SparkBaseHub/SparkToken/releases/download/v5.3.0/SparkToken-5.3.0-x86_64-linux-gnu_masternode-only.tar.gz'
 COIN_ZIP=$(echo $COIN_TGZ | awk -F'/' '{print $NF}')
-COIN_NAME='base'
+COIN_NAME='spark'
 COIN_PORT=5421
 RPC_PORT=5422
 
@@ -58,7 +58,7 @@ echo -e "Prepare update system"
 sudo apt-get -y update
 
 
-echo -e "Prepare the system to install ${GREEN}$COIN_NAME${NC} master node."
+echo -e "Prepare the system to install ${GREEN}$COIN_NAME${NC} Masternode."
 apt-get update >/dev/null 2>&1
 DEBIAN_FRONTEND=noninteractive apt-get update > /dev/null 2>&1
 DEBIAN_FRONTEND=noninteractive apt-get -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" -y -qq upgrade >/dev/null 2>&1
@@ -68,8 +68,8 @@ apt-add-repository -y ppa:bitcoin/bitcoin >/dev/null 2>&1
 echo -e "Installing required packages, it may take some time to finish.${NC}"
 apt-get update >/dev/null 2>&1
 apt-get install -y -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" make software-properties-common \
-build-essential libtool autoconf libssl-dev libboost-dev libboost-chrono-dev libboost-filesystem-dev libboost-program-options-dev \
-libboost-system-dev libboost-test-dev libboost-thread-dev sudo automake git wget curl libdb4.8-dev bsdmainutils libdb4.8++-dev \
+build-essential libtool autoconf libssl-dev libboost-all-dev libsodium-dev \
+sudo automake git wget curl libdb4.8-dev bsdmainutils libdb4.8++-dev \
 libminiupnpc-dev libgmp3-dev ufw pkg-config libevent-dev  unzip libzmq5 >/dev/null 2>&1
 if [ "$?" -gt "0" ];
   then
