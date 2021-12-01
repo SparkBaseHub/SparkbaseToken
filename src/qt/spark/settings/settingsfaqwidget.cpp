@@ -76,22 +76,14 @@ SettingsFaqWidget::SettingsFaqWidget(SPARKGUI* parent, ClientModel* _model) :
     // Set FAQ content strings
     QString introContent = formatFAQContent(
         formatFAQParagraph(
-            tr("SPARK is a form of utility token using blockchain technology "
-               "that can be easily transferred globally, instantly, and with near "
-               "zero fees. SPARK incorporates market leading security & "
-               "privacy and is also the first PoS (Proof of Stake) Cryptocurrency "
-               "to implement Sapling(SHIELD), a zk-SNARKs based privacy protocol.")) +
+            tr("SPARK is a form of utility token using blockchain technology that can be easily transferred globally, instantly, and with near zero fees. SPARK incorporates market leading security & privacy and is also the first PoS (Proof of Stake) Cryptocurrency to implement Sapling(SHIELD), a zk-SNARKs based privacy protocol.")) +
         formatFAQParagraph(
-            tr("SPARK utilizes a Proof of Stake (PoS) consensus system algorithm, "
-               "allowing all owners of SPARK to participate in earning block rewards "
-               "while securing the network with full node wallets, as well as to "
-               "run Masternodes to create and vote on proposals.")));
+            tr("SPARK utilizes a Proof of Stake (PoS) consensus system algorithm, allowing all owners of SPARK to participate in earning block rewards while securing the network with full node wallets, as well as to run Masternodes to create and vote on proposals.")));
     ui->labelContent_Intro->setText(introContent);
 
     QString unspendableSPARKSContent = formatFAQContent(
         formatFAQParagraph(
-            tr("Newly received SPARK requires 6 confirmations on the network "
-               "to become eligible for spending which can take ~6 minutes.")) +
+            tr("Newly received SPARK requires 6 confirmations on the network to become eligible for spending which can take ~6 minutes.")) +
         formatFAQParagraph(
             tr("Your SPARK wallet also needs to be completely synchronized "
                "to see and spend balances on the network.")));
@@ -104,11 +96,7 @@ SettingsFaqWidget::SettingsFaqWidget(SPARKGUI* parent, ClientModel* _model) :
             formatFAQListItem(tr("Your wallet must stay online and be unlocked for staking purposes.")) +
             formatFAQListItem(tr("Once all those steps are followed staking should be enabled."))) +
         formatFAQParagraph(
-            tr("You can see the status of staking in the wallet by mousing over the "
-               "package icon in the row on the top left of the wallet interface. The "
-               "package will be lit up and will state \"Staking Enabled\" to indicate "
-               "it is staking. Using the command line interface (%1); the command %2 "
-               "will confirm that staking is active.")
+            tr("You can see the status of staking in the wallet by mousing over the package icon in the row on the top left of the wallet interface. The package will be lit up and will state \"Staking Enabled\" to indicate it is staking. Using the command line interface (%1); the command %2 will confirm that staking is active.")
                 .arg("spark-cli", "<span style=\"font-style:italic\">getstakingstatus</span>")));
     ui->labelContent_Stake->setText(stakeContent);
 
@@ -120,10 +108,7 @@ SettingsFaqWidget::SettingsFaqWidget(SPARKGUI* parent, ClientModel* _model) :
 
     QString masternodeContent = formatFAQContent(
         formatFAQParagraph(
-            tr("A masternode is a computer running a full node %1 wallet with a "
-               "requirement of %2 secured collateral to provide extra services "
-               "to the network and in return, receive a portion of the block reward "
-               "regularly. These services include:")
+            tr("A masternode is a computer running a full node %1 wallet with a requirement of %2 secured collateral to provide extra services to the network and in return, receive a portion of the block reward regularly. These services include:")
                 .arg(PACKAGE_NAME)
                 .arg(GUIUtil::formatBalance(clientModel->getMNCollateralRequiredAmount(), BitcoinUnits::SPARKS)) +
             formatFAQUnorderedList(
@@ -132,9 +117,7 @@ SettingsFaqWidget::SettingsFaqWidget(SPARKGUI* parent, ClientModel* _model) :
                 formatFAQListItem(tr("Validation of transactions within each block")) +
                 formatFAQListItem(tr("Act as an additional full node in the network")))) +
         formatFAQParagraph(
-            tr("For providing such services, masternodes are also paid a certain portion "
-               "of reward for each block. This can serve as a passive income to the "
-               "masternode owners minus their running cost.")) +
+            tr("For providing such services, masternodes are also paid a certain portion of reward for each block. This can serve as a passive income to the masternode owners minus their running cost.")) +
         formatFAQParagraph(
             tr("Masternode Perks:") +
             formatFAQUnorderedList(
@@ -154,10 +137,7 @@ SettingsFaqWidget::SettingsFaqWidget(SPARKGUI* parent, ClientModel* _model) :
 
     QString mNControllerContent = formatFAQContent(
         formatFAQParagraph(
-            tr("A Masternode Controller wallet is where the %1 collateral "
-               "can reside during a Controller-Remote masternode setup. It is a wallet "
-               "that can activate the remote masternode wallet(s) and allows you to keep "
-               "your collateral coins offline while the remote masternode remains online.")
+            tr("The Sparkbase app is an innovative portfolio tracker, manager and master available on iOS and Android, which enables you to:")
                     .arg(GUIUtil::formatBalance(clientModel->getMNCollateralRequiredAmount(), BitcoinUnits::SPARKS))));
     ui->labelContent_MNController->setText(mNControllerContent);
 

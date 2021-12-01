@@ -122,12 +122,12 @@
         <translation>Ontvangstadressen</translation>
     </message>
     <message>
-        <source>These are your SPARK addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Dit zijn uw SPARK adressen om betalingen mee te verzenden. Controleer altijd zowel het bedrag als het ontvangstadres voor het verzenden van geld.</translation>
+        <source>These are your Sparkbase addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>Dit zijn uw Sparkbase adressen om betalingen mee te verzenden. Controleer altijd zowel het bedrag als het ontvangstadres voor het verzenden van geld.</translation>
     </message>
     <message>
-        <source>These are your SPARK addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
-        <translation>Dit zijn uw SPARK adressen waarop betalingen kunnen worden ontvangen. Het wordt aangeraden om een nieuw ontvangstadres voor elke transactie te gebruiken.</translation>
+        <source>These are your Sparkbase addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <translation>Dit zijn uw Sparkbase adressen waarop betalingen kunnen worden ontvangen. Het wordt aangeraden om een nieuw ontvangstadres voor elke transactie te gebruiken.</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -364,8 +364,8 @@ voor bewijs van Inzet</translation>
         <translation>Annuleren</translation>
     </message>
     <message>
-        <source>SPARK will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your SPARKS from being stolen by malware infecting your computer.</source>
-        <translation>SPARK zal nu afsluiten om het versleutelingsproces te voltooien. Onthoud dat het versleutelen van uw portemonnee u niet volledig kan beschermen tegen malware infecties op uw computer die uw SPARKS's kunnen stelen.</translation>
+        <source>Sparkbase will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your SPARKS from being stolen by malware infecting your computer.</source>
+        <translation>Sparkbase zal nu afsluiten om het versleutelingsproces te voltooien. Onthoud dat het versleutelen van uw portemonnee u niet volledig kan beschermen tegen malware infecties op uw computer die uw SPARKS's kunnen stelen.</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
@@ -1061,8 +1061,8 @@ Het zal automatisch starten zodra de portemonnee voldoende bevestigingen heeft o
         <translation>Wijzig verzend adres</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid SPARK address.</source>
-        <translation>Het ingevoerde adres: "%1" is geen geldig SPARK adres.</translation>
+        <source>The entered address "%1" is not a valid Sparkbase address.</source>
+        <translation>Het ingevoerde adres: "%1" is geen geldig Sparkbase adres.</translation>
     </message>
     <message>
         <source>The entered address "%1" is already in the address book.</source>
@@ -1114,16 +1114,16 @@ Het zal automatisch starten zodra de portemonnee voldoende bevestigingen heeft o
         <translation>versie</translation>
     </message>
     <message>
-        <source>SPARK Token</source>
-        <translation>SPARK Token</translation>
+        <source>Sparkbase Token</source>
+        <translation>Sparkbase</translation>
     </message>
     <message>
         <source>(%1-bit)</source>
         <translation>(%1-bit)</translation>
     </message>
     <message>
-        <source>About SPARK Token</source>
-        <translation>Over SPARK Token</translation>
+        <source>About Sparkbase Token</source>
+        <translation>Over Sparkbase</translation>
     </message>
     <message>
         <source>Command-line options</source>
@@ -1177,16 +1177,16 @@ Het zal automatisch starten zodra de portemonnee voldoende bevestigingen heeft o
         <translation>Welkom</translation>
     </message>
     <message>
-        <source>Welcome to SPARK Token.</source>
-        <translation>Welkom bij SPARK Token.</translation>
+        <source>Welcome to Sparkbase.</source>
+        <translation>Welkom bij Sparkbase.</translation>
     </message>
     <message>
-        <source>As this is the first time the program is launched, you can choose where SPARK Token will store its data.</source>
-        <translation>Aangezien dit de eerste keer is dat het programma is gestart, kun je kiezen waar SPARK Token zijn data opslaat.</translation>
+        <source>As this is the first time the program is launched, you can choose where Sparkbase Token will store its data.</source>
+        <translation>Aangezien dit de eerste keer is dat het programma is gestart, kun je kiezen waar Sparkbase Token zijn data opslaat.</translation>
     </message>
     <message>
-        <source>SPARK Token will download and store a copy of the SPARK block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
-        <translation>SPARK Token zal een kopie van de SPARK blockchain downloaden en opslaan. Tenminste %1GB aan data zal worden opgeslagen in deze map en het zal over de tijd groeien. De portemonnee zal ook in deze map worden opgeslagen.</translation>
+        <source>Sparkbase Token will download and store a copy of the Sparkbase block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
+        <translation>Sparkbase Token zal een kopie van de Sparkbase blockchain downloaden en opslaan. Tenminste %1GB aan data zal worden opgeslagen in deze map en het zal over de tijd groeien. De portemonnee zal ook in deze map worden opgeslagen.</translation>
     </message>
     <message>
         <source>Use the default data directory</source>
@@ -1205,8 +1205,8 @@ Het zal automatisch starten zodra de portemonnee voldoende bevestigingen heeft o
         <translation>Akkoord</translation>
     </message>
     <message>
-        <source>SPARK Token</source>
-        <translation>SPARK Token</translation>
+        <source>Sparkbase Token</source>
+        <translation>Sparkbase</translation>
     </message>
     <message>
         <source>Error: Specified data directory "%1" cannot be created.</source>
@@ -1313,8 +1313,8 @@ Het zal automatisch starten zodra de portemonnee voldoende bevestigingen heeft o
         <translation>Creëer Nieuwe Masternode Controller</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;To create a SPARK Masternode you must dedicate 5,000 SPARKS (the unit of SPARK) to the network (however, these coins are still yours and will never leave your possession). &lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;You can deactivate the node and unlock the coins at any time.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Om een SPARK Masternode te creëren moet u 5.000 SPARKS (de eenheid van SPARK) aan het netwerk wijden (deze munten zijn echter nog steeds van u en zullen nooit uw bezit verlaten). &lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;U kunt de node op elk gewenst moment deactiveren en de munten ontgrendelen.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;To create a Sparkbase Masternode you must dedicate 5,000 SPARKS (the unit of SPARK) to the network (however, these coins are still yours and will never leave your possession). &lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;You can deactivate the node and unlock the coins at any time.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Om een Sparkbase Masternode te creëren moet u 5.000 SPARKS (de eenheid van SPARK) aan het netwerk wijden (deze munten zijn echter nog steeds van u en zullen nooit uw bezit verlaten). &lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;U kunt de node op elk gewenst moment deactiveren en de munten ontgrendelen.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Set Masternode Name</source>
@@ -1784,8 +1784,8 @@ STAKING</translation>
         <translation>Als je de uitgaven van onbevestigde wijzigingen uitschakelt, de wijziging van een transactie&lt;br/&gt;kan niet worden gebruikt tot die transactie tenminste één bevestiging heeft.&lt;br/&gt;Dit beïnvloedt ook hoe uw saldo is berekend.</translation>
     </message>
     <message>
-        <source>Automatically open the SPARK client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Open de SPARK client poort automatisch op de router. Dit werkt alleen als je router UPnP ondersteunt en het is ingeschakeld.</translation>
+        <source>Automatically open the Sparkbase client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Open de Sparkbase client poort automatisch op de router. Dit werkt alleen als je router UPnP ondersteunt en het is ingeschakeld.</translation>
     </message>
     <message>
         <source>Accept connections from outside</source>
@@ -1804,12 +1804,12 @@ STAKING</translation>
         <translation>Expert</translation>
     </message>
     <message>
-        <source>Automatically start SPARK after logging in to the system.</source>
-        <translation>SPARK automatisch opstarten na inloggen op het systeem.</translation>
+        <source>Automatically start Sparkbase after logging in to the system.</source>
+        <translation>Sparkbase automatisch opstarten na inloggen op het systeem.</translation>
     </message>
     <message>
-        <source>&amp;Start SPARK on system login</source>
-        <translation>&amp;SPARK starten bij systeemlogin</translation>
+        <source>&amp;Start Sparkbase on system login</source>
+        <translation>&amp;Sparkbase starten bij systeemlogin</translation>
     </message>
     <message>
         <source>Whether to show coin control features or not.</source>
@@ -1886,8 +1886,8 @@ https://www.transifex.com/spark-project/spark-project-translations</translation>
         <translation>Stake splitsdrempel:</translation>
     </message>
     <message>
-        <source>Connect to the SPARK network through a SOCKS5 proxy.</source>
-        <translation>Maak verbinding met het SPARK netwerk via een SOCKS5 proxy.</translation>
+        <source>Connect to the Sparkbase network through a SOCKS5 proxy.</source>
+        <translation>Maak verbinding met het Sparkbase netwerk via een SOCKS5 proxy.</translation>
     </message>
     <message>
         <source>Proxy &amp;IP:</source>
@@ -2033,8 +2033,8 @@ https://www.transifex.com/spark-project/spark-project-translations</translation>
 <context>
     <name>SPARKGUI</name>
     <message>
-        <source>SPARK Token</source>
-        <translation>SPARK Token</translation>
+        <source>Sparkbase Token</source>
+        <translation>Sparkbase</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -2061,8 +2061,8 @@ https://www.transifex.com/spark-project/spark-project-translations</translation>
         <translation>Programma afsluiten</translation>
     </message>
     <message>
-        <source>SPARK Token client</source>
-        <translation>SPARK Token client</translation>
+        <source>Sparkbase Token client</source>
+        <translation>Sparkbase Token client</translation>
     </message>
     <message>
         <source>Error</source>
@@ -2132,8 +2132,8 @@ Adres: %4
         <translation>Kan spark niet starten: click-to-pay handler</translation>
     </message>
     <message>
-        <source>URI cannot be parsed! This can be caused by an invalid SPARK address or malformed URI parameters.</source>
-        <translation>URL kan niet ontleed worden! Dit kan worden veroorzaakt door een ongeldig SPARK adres of misvormde URL parameters.</translation>
+        <source>URI cannot be parsed! This can be caused by an invalid Sparkbase address or malformed URI parameters.</source>
+        <translation>URL kan niet ontleed worden! Dit kan worden veroorzaakt door een ongeldig Sparkbase adres of misvormde URL parameters.</translation>
     </message>
     <message>
         <source>Payment request file cannot be read! This can be caused by an invalid payment request file.</source>
@@ -2222,8 +2222,8 @@ Adres: %4
         <translation>Bedrag</translation>
     </message>
     <message>
-        <source>Enter SPARK address (e.g. %1)</source>
-        <translation>Voer een SPARK adres in (b.v. %1)</translation>
+        <source>Enter Sparkbase address (e.g. %1)</source>
+        <translation>Voer een Sparkbase adres in (b.v. %1)</translation>
     </message>
     <message>
         <source>%1 d</source>
@@ -2266,12 +2266,12 @@ Adres: %4
         <translation>%1 ms</translation>
     </message>
     <message>
-        <source>A fatal error occurred. SPARK can no longer continue safely and will quit.</source>
-        <translation>Een kritieke fout is opgelopen. SPARK kan niet langer veilig uitgevoerd worden en zal afsluiten.</translation>
+        <source>A fatal error occurred. Sparkbase can no longer continue safely and will quit.</source>
+        <translation>Een kritieke fout is opgelopen. Sparkbase kan niet langer veilig uitgevoerd worden en zal afsluiten.</translation>
     </message>
     <message>
-        <source>SPARK Token</source>
-        <translation>SPARK Token</translation>
+        <source>Sparkbase Token</source>
+        <translation>Sparkbase</translation>
     </message>
     <message>
         <source>Error: Specified data directory "%1" does not exist.</source>
@@ -2290,8 +2290,8 @@ Adres: %4
         <translation>Fout bij het lezen van het masternode configuratiebestand: %1</translation>
     </message>
     <message>
-        <source>SPARK Token didn't yet exit safely...</source>
-        <translation>SPARK Token is nog niet veilig afgesloten...</translation>
+        <source>Sparkbase Token didn't yet exit safely...</source>
+        <translation>Sparkbase Token is nog niet veilig afgesloten...</translation>
     </message>
     <message>
         <source>Contact</source>
@@ -2529,8 +2529,8 @@ Adres: %4
         <translation>Blockchain</translation>
     </message>
     <message>
-        <source>Open the SPARK debug log file from the current data directory. This can take a few seconds for large log files.</source>
-        <translation>Open het SPARK debug log bestand uit de huidige data directory. Dit kan enkele seconden duren voor grote logbestanden.</translation>
+        <source>Open the Sparkbase debug log file from the current data directory. This can take a few seconds for large log files.</source>
+        <translation>Open het Sparkbase debug log bestand uit de huidige data directory. Dit kan enkele seconden duren voor grote logbestanden.</translation>
     </message>
     <message>
         <source>Number of Masternodes</source>
@@ -2753,8 +2753,8 @@ Adres: %4
         <translation>Uit:</translation>
     </message>
     <message>
-        <source>Welcome to the SPARK RPC console.</source>
-        <translation>Welkom bij de SPARK RPC console.</translation>
+        <source>Welcome to the Sparkbase RPC console.</source>
+        <translation>Welkom bij de Sparkbase RPC console.</translation>
     </message>
     <message>
         <source>&amp;Disconnect Node</source>
@@ -3021,7 +3021,7 @@ Adres: %4
         <translation>SPARKS</translation>
     </message>
     <message>
-        <source>Instead of sharing only a SPARK address, you can create a payment request, bundling up more information</source>
+        <source>Instead of sharing only a Sparkbase address, you can create a payment request, bundling up more information</source>
         <translation>In plaats van een SPARK-adres te delen, kunt u een betalingsverzoek creëren dat meer informatie bundelt.</translation>
     </message>
     <message>
@@ -3112,7 +3112,7 @@ Adres: %4
         <translation>Aangepast wijzigingsadres</translation>
     </message>
     <message>
-        <source>The remainder of the value resultant from the inputs minus the outputs value goes to the "change" SPARK address</source>
+        <source>The remainder of the value resultant from the inputs minus the outputs value goes to the "change" Sparkbase address</source>
         <translation>De rest van de waarde die resulteert uit de ingangen minus de waarde van de uitgangen gaat naar het "wijzig" SPARK-adres</translation>
     </message>
     <message>
@@ -3442,7 +3442,7 @@ Vergeet deze niet op te schrijven en veilig te bewaren, anders verlies je mogeli
         <translation>BIP38 Tool</translation>
     </message>
     <message>
-        <source>Encrypt your SPARK addresses (key pair actually) using BIP38 encryption.
+        <source>Encrypt your Sparkbase addresses (key pair actually) using BIP38 encryption.
 Using this mechanism you can share your keys without middle-man risk, only need to store your passphrase safely</source>
         <translation>Encrypteer uw SPARK-adressen (met key pair) gebruikmakende van BIP38 versleuteling.
 Door gebruik te maken van dit mechanisme kan je jouw sleutels delen zonder het risico van een tussenpersoon, je moet enkel je wachtwoordzin veilig opbergen</translation>
@@ -3480,8 +3480,8 @@ Door gebruik te maken van dit mechanisme kan je jouw sleutels delen zonder het r
         <translation>DECRYPTEER SLEUTEL</translation>
     </message>
     <message>
-        <source>SPARK address</source>
-        <translation>SPARK adres</translation>
+        <source>Sparkbase address</source>
+        <translation>Sparkbase adres</translation>
     </message>
     <message>
         <source>Enter address</source>
@@ -3613,8 +3613,8 @@ Verify that you have installed a predetermined text editor.</source>
 Controleer of u een vooraf bepaalde teksteditor hebt geïnstalleerd.</translation>
     </message>
     <message>
-        <source>Welcome to the SPARK RPC console.</source>
-        <translation>Welkom bij de SPARK RPC console.</translation>
+        <source>Welcome to the Sparkbase RPC console.</source>
+        <translation>Welkom bij de Sparkbase RPC console.</translation>
     </message>
     <message>
         <source>Use up and down arrows to navigate history, and %1 to clear screen.</source>
@@ -3827,20 +3827,20 @@ Er was een fout opgetreden tijdens het opslaan van deze adreslijst naar %1. Prob
     </message>
     <message>
         <source>
-                           &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;
-                           Newly received SPARK requires 6 confirmations on the network
+                           &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="left"&gt;
+                           Newly received Sparkbase requires 6 confirmations on the network
                            to become eligible for spending which can take ~6 minutes.
-                           &lt;/p&gt;&lt;p align="justify"&gt;
-                           Your SPARK wallet also needs to be completely synchronized
+                           &lt;/p&gt;&lt;p align="left"&gt;
+                           Your Sparkbase Wallet also needs to be completely synchronized
                            to see and spend balances on the network.
                            &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                          </source>
         <translation>
-                           &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;
-                           Nieuw ontvangen SPARK vereist 6 bevestigingen op het netwerk
+                           &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="left"&gt;
+                           Nieuw ontvangen Sparkbase vereist 6 bevestigingen op het netwerk
                            om in aanmerking te komen voor uitgaven die ongeveer 6 minuten in beslag kunnen nemen.
-                           &lt;/p&gt;&lt;p align="justify"&gt;
-                           Uw SPARK portemonnee moet ook volledig gesynchroniseerd zijn
+                           &lt;/p&gt;&lt;p align="left"&gt;
+                           Uw Sparkbase portemonnee moet ook volledig gesynchroniseerd zijn
                            om de balans te zien en uit te geven op het netwerk.
                            &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                          </translation>
@@ -3854,8 +3854,8 @@ Er was een fout opgetreden tijdens het opslaan van deze adreslijst naar %1. Prob
         <translation>Hoe stake ik SPARKS?</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;ol style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;"&gt;&lt;li align="justify" style=" margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Make sure your wallet is completely synchronized and you are using the latest release. &lt;/li&gt;&lt;li align="justify" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;You must have a balance of SPARK with a minimum of 600 confirmations. &lt;/li&gt;&lt;li align="justify" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Your wallet must stay online and be unlocked for staking purposes. &lt;/li&gt;&lt;li align="justify" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Once all those steps are followed staking should be enabled. &lt;/li&gt;&lt;li align="justify" style=" margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;You can see the status of staking in the wallet by mousing over the package icon in the row on the top left of the wallet interface. There package will be lit up and will state &amp;quot;Staking Enabled&amp;quot; to indicate it is staking. Using the command line interface (spark-cli); the command &lt;span style=" font-style:italic;"&gt;getstakingstatus&lt;/span&gt; will confirm that staking is active. &lt;/li&gt;&lt;/ol&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;ol style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;"&gt;&lt;li align="justify" style=" margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Zorg ervoor dat uw portemonnee volledig gesynchroniseerd is en je op de juiste versie zit. &lt;/li&gt;&lt;li align="justify" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Je moet een balans van SPARK hebben met een minimum van 600 bevestigingen. &lt;/li&gt;&lt;li align="justify" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Uw portemonnee moet steeds online en ontgrendeld blijven voor stakingsdoeleinden. &lt;/li&gt;&lt;li align="justify" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Van zodra al deze stappen gevolgd zijn, zou staking ingeschakeld moeten zijn. &lt;/li&gt;&lt;li align="justify" style=" margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Je kan de stakingsstatus controleren door over het pakketicoontje te gaan gaan met je muis. Deze staat op de linker van de portemonnee interface. Dit pakketje zal oplichten en zal &amp;quot;Staking Inschakeld&amp;quot; vermelden om aan te geven dat staking actief is. Als je gebruik maakt van de command line interface (spark-cli); het commando &lt;span style=" font-style:italic;"&gt;getstakingstatus&lt;/span&gt; zal bevestigen dat staking actief is. &lt;/li&gt;&lt;/ol&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;ol style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;"&gt;&lt;li align="left" style=" margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Make sure your wallet is completely synchronized and you are using the latest release. &lt;/li&gt;&lt;li align="left" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;You must have a balance of Sparkbase with a minimum of 600 confirmations. &lt;/li&gt;&lt;li align="left" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Your wallet must stay online and be unlocked for staking purposes. &lt;/li&gt;&lt;li align="left" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Once all those steps are followed staking should be enabled. &lt;/li&gt;&lt;li align="left" style=" margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;You can see the status of staking in the wallet by mousing over the package icon in the row on the top left of the wallet interface. There package will be lit up and will state &amp;quot;Staking Enabled&amp;quot; to indicate it is staking. Using the command line interface (spark-cli); the command &lt;span style=" font-style:italic;"&gt;getstakingstatus&lt;/span&gt; will confirm that staking is active. &lt;/li&gt;&lt;/ol&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;ol style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;"&gt;&lt;li align="left" style=" margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Zorg ervoor dat uw portemonnee volledig gesynchroniseerd is en je op de juiste versie zit. &lt;/li&gt;&lt;li align="left" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Je moet een balans van Sparkbase hebben met een minimum van 600 bevestigingen. &lt;/li&gt;&lt;li align="left" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Uw portemonnee moet steeds online en ontgrendeld blijven voor stakingsdoeleinden. &lt;/li&gt;&lt;li align="left" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Van zodra al deze stappen gevolgd zijn, zou staking ingeschakeld moeten zijn. &lt;/li&gt;&lt;li align="left" style=" margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Je kan de stakingsstatus controleren door over het pakketicoontje te gaan gaan met je muis. Deze staat op de linker van de portemonnee interface. Dit pakketje zal oplichten en zal &amp;quot;Staking Inschakeld&amp;quot; vermelden om aan te geven dat staking actief is. Als je gebruik maakt van de command line interface (spark-cli); het commando &lt;span style=" font-style:italic;"&gt;getstakingstatus&lt;/span&gt; zal bevestigen dat staking actief is. &lt;/li&gt;&lt;/ol&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>4</source>
@@ -3875,23 +3875,23 @@ Er was een fout opgetreden tijdens het opslaan van deze adreslijst naar %1. Prob
     </message>
     <message>
         <source>
-                           &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;
+                           &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="left"&gt;
                            We have support channels in most of our official chat groups, for example
-                           &lt;a style='color: #b088ff' href='https://discord.SPARK.org'&gt;
+                           &lt;a style='color: #b088ff' href='https://discord.gg/4Vvvbbg'&gt;
                            #support in our Discord&lt;/a&gt;.
                            If you prefer to submit a ticket, You can do so at
-                           &lt;a style='color: #b088ff' href='https://SPARK.freshdesk.com'&gt;
-                           our Freshdesk support site&lt;/a&gt;.
+                           &lt;a style='color: #b088ff' href='https://www.sparkbase.io/help'&gt;
+                           our Sparkbase support site&lt;/a&gt;.
                            &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                          </source>
         <translation>
-                           &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;
+                           &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="left"&gt;
                            We hebben ondersteuningskanalen in de meeste van onze officiële chatgroepen, bijvoorbeeld
-                           &lt;a style='color: #b088ff' href='https://discord.SPARK.org'&gt;
+                           &lt;a style='color: #b088ff' href='https://discord.gg/4Vvvbbg'&gt;
                            #support in onze Discord&lt;/a&gt;.
                            Als u liever een ticket indient, kan jedat
-                           &lt;a style='color: #b088ff' href='https://SPARK.freshdesk.com'&gt;
-                           op onze Freshdesk ondersteuningssite.
+                           &lt;a style='color: #b088ff' href='https://www.sparkbase.io/help'&gt;
+                           op onze Sparkbase ondersteuningssite.
                            &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                          </translation>
     </message>
@@ -3900,21 +3900,21 @@ Er was een fout opgetreden tijdens het opslaan van deze adreslijst naar %1. Prob
         <translation>Wat is een Masternode?</translation>
     </message>
     <message>
-        <source>What is a Masternode Controller?</source>
+        <source>What is the Sparkbase app?</source>
         <translation>Wat is een Masternode Controller</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;A Masternode Controller wallet is where the 5,000 SPARKS collateral can reside during a Controller-Remote masternode setup. It is a wallet that can activate the remote masternode wallet(s) and allows you to keep your collateral coins offline while the remote masternode remains online. &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;Een Masternode Controller portemonnee is waar de 5.000 SPARKS onderpand zich kan bevinden tijdens een Controller-Remote masternode setup. Het is een portemonnee die de remote masternode portemonnee(s) kan activeren en waarmee u uw ondergepande munten offline kunt houden terwijl de remote masternode online blijft. &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="left"&gt;A Masternode Controller wallet is where the 5,000 SPARKS collateral can reside during a Controller-Remote masternode setup. It is a wallet that can activate the remote masternode wallet(s) and allows you to keep your collateral coins offline while the remote masternode remains online. &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="left"&gt;Een Masternode Controller portemonnee is waar de 5.000 SPARKS onderpand zich kan bevinden tijdens een Controller-Remote masternode setup. Het is een portemonnee die de remote masternode portemonnee(s) kan activeren en waarmee u uw ondergepande munten offline kunt houden terwijl de remote masternode online blijft. &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>
-                           &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;
-                           A masternode is a computer running a full node SPARK core wallet with a
+                           &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="left"&gt;
+                           A masternode is a computer running a full node Sparkbase core wallet with a
                            requirement of 5,000 SPARKS secured collateral to provide extra services
                            to the network and in return, receive a portion of the block reward
                            regularly.  These services include:
-                           &lt;/p&gt;&lt;p align="justify"&gt;
+                           &lt;/p&gt;&lt;p align="left"&gt;
 
                            &lt;ul&gt;
                            &lt;li&gt;Instant transactions (SwiftX)&lt;/li&gt;
@@ -3924,24 +3924,24 @@ Er was een fout opgetreden tijdens het opslaan van deze adreslijst naar %1. Prob
                            &lt;li&gt;Act as an additional full node in the network&lt;/li&gt;
                            &lt;/ul&gt;
 
-                           &lt;/p&gt;&lt;p align="justify"&gt;
+                           &lt;/p&gt;&lt;p align="left"&gt;
                            For providing such services, masternodes are also paid a certain portion
                            of reward for each block. This can serve as a passive income to the
                            masternode owners minus their running cost.
-                           &lt;/p&gt;&lt;p align="justify"&gt;
+                           &lt;/p&gt;&lt;p align="left"&gt;
 
                            Masternode Perks:
-                           &lt;/p&gt;&lt;p align="justify"&gt;
+                           &lt;/p&gt;&lt;p align="left"&gt;
                            &lt;ul&gt;
-                           &lt;li&gt;Participate in SPARK Governance&lt;/li&gt;
+                           &lt;li&gt;Participate in Sparkbase Governance&lt;/li&gt;
                            &lt;li&gt;Earn Masternode Rewards&lt;/li&gt;
                            &lt;li&gt;Commodity option for future sale&lt;/li&gt;
-                           &lt;li&gt;Help secure the SPARK network&lt;/li&gt;
+                           &lt;li&gt;Help secure the Sparkbase network&lt;/li&gt;
                            &lt;/ul&gt;
-                           &lt;/p&gt;&lt;p align="justify"&gt;
+                           &lt;/p&gt;&lt;p align="left"&gt;
 
                            Requirements:
-                           &lt;/p&gt;&lt;p align="justify"&gt;
+                           &lt;/p&gt;&lt;p align="left"&gt;
                            &lt;ul&gt;
                            &lt;li&gt;5,000 SPARKS per single Masternode instance&lt;/li&gt;
                            &lt;li&gt;Must be stored in a core wallet&lt;/li&gt;
@@ -3951,12 +3951,12 @@ Er was een fout opgetreden tijdens het opslaan van deze adreslijst naar %1. Prob
                            &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                          </source>
         <translation>
-                           &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;
-                           Een masternode is een computer met een volledige node SPARK core portemonnee met een
+                           &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="left"&gt;
+                           Een masternode is een computer met een volledige node Sparkbase core portemonnee met een
                            vereiste van 5.000 SPARKS onderpand om extra diensten te kunnen verlenen
                            aan het netwerk en in ruil daarvoor ontvangt u regelmatig een deel van de blokbeloning.
                            Deze diensten omvatten::
-                           &lt;/p&gt;&lt;p align="justify"&gt;
+                           &lt;/p&gt;&lt;p align="left"&gt;
 
                            &lt;ul&gt;
                            &lt;li&gt;Directe transacties (SwiftX)&lt;/li&gt;
@@ -3966,24 +3966,24 @@ Er was een fout opgetreden tijdens het opslaan van deze adreslijst naar %1. Prob
                            &lt;li&gt;Fungeert als een extra volledige node in het netwerk&lt;/li&gt;
                            &lt;/ul&gt;
 
-                           &lt;/p&gt;&lt;p align="justify"&gt;
+                           &lt;/p&gt;&lt;p align="left"&gt;
                            Voor het verlenen van dergelijke diensten wordt ook een bepaald deel van de masternodes betaald
                             van beloning voor elk blok. Dit kan dienen als een passief inkomen voor de
                            masternode eigenaars minus hun exploitatiekosten.
-                           &lt;/p&gt;&lt;p align="justify"&gt;
+                           &lt;/p&gt;&lt;p align="left"&gt;
 
                            Masternode Voordelen:
-                           &lt;/p&gt;&lt;p align="justify"&gt;
+                           &lt;/p&gt;&lt;p align="left"&gt;
                            &lt;ul&gt;
-                           &lt;li&gt;Deelnemen in het SPARK Bestuur&lt;/li&gt;
+                           &lt;li&gt;Deelnemen in het Sparkbase Bestuur&lt;/li&gt;
                            &lt;li&gt;Verdien Masternode Beloningen&lt;/li&gt;
                            &lt;li&gt;Commodity-optie voor toekomstige verkoop&lt;/li&gt;
-                           &lt;li&gt;Helpt bij het beveiligen van het SPARK netwerk&lt;/li&gt;
+                           &lt;li&gt;Helpt bij het beveiligen van het Sparkbase netwerk&lt;/li&gt;
                            &lt;/ul&gt;
-                           &lt;/p&gt;&lt;p align="justify"&gt;
+                           &lt;/p&gt;&lt;p align="left"&gt;
 
                            Vereisten:
-                           &lt;/p&gt;&lt;p align="justify"&gt;
+                           &lt;/p&gt;&lt;p align="left"&gt;
                            &lt;ul&gt;
                            &lt;li&gt;5,000 SPARKS per Masternode instance&lt;/li&gt;
                            &lt;li&gt;Moet in een kernportemonnee worden opgeborgen&lt;/li&gt;
@@ -4010,7 +4010,7 @@ Er was een fout opgetreden tijdens het opslaan van deze adreslijst naar %1. Prob
         <translation>5) Wat is een Masternode?</translation>
     </message>
     <message>
-        <source>6) What is a Masternode Controller?</source>
+        <source>6) What is the Sparkbase app?</source>
         <translation>6) Wat is een Masternode Controller?</translation>
     </message>
     <message>
@@ -4172,8 +4172,8 @@ Er was een fout opgetreden tijdens het opslaan van deze adreslijst naar %1. Prob
         <translation>Aantal van script verificatiethreads</translation>
     </message>
     <message>
-        <source>Start SPARK on system login</source>
-        <translation>Start SPARK bij systeemlogin</translation>
+        <source>Start Sparkbase on system login</source>
+        <translation>Start Sparkbase bij systeemlogin</translation>
     </message>
     <message>
         <source>Minimize to the tray instead of the taskbar</source>
@@ -4260,7 +4260,7 @@ Weet u het zeker?
         <translation>Selectievakje</translation>
     </message>
     <message>
-        <source>MultiSend allows you to automatically send up to 100% of your stake or masternode reward to a list of other SPARK addresses after it matures.</source>
+        <source>MultiSend allows you to automatically send up to 100% of your stake or masternode reward to a list of other Sparkbase addresses after it matures.</source>
         <translation>Met MultiSend kunt u automatisch tot 100% van uw inzet of masternode beloning naar een lijst met andere SPARK-adressen sturen nadat deze volwaardig zijn geworden.</translation>
     </message>
     <message>
@@ -4387,8 +4387,8 @@ Vink één of beide selectievakjes aan om beloningen op de inzet en/of masternod
         <translation>Bericht</translation>
     </message>
     <message>
-        <source>SPARK address or contact label</source>
-        <translation>SPARK adres of contactlabel</translation>
+        <source>Sparkbase address or contact label</source>
+        <translation>Sparkbase adres of contactlabel</translation>
     </message>
     <message>
         <source>Enter address</source>
@@ -4779,8 +4779,8 @@ Weet je zeker dat?
 <context>
     <name>ShutdownWindow</name>
     <message>
-        <source>SPARK Token is shutting down...</source>
-        <translation>SPARK Token is aan het afsluiten...</translation>
+        <source>Sparkbase Token is shutting down...</source>
+        <translation>Sparkbase Token is aan het afsluiten...</translation>
     </message>
     <message>
         <source>Do not shut down the computer until this window disappears.</source>
@@ -4809,8 +4809,8 @@ Weet je zeker dat?
         <translation>Laden...</translation>
     </message>
     <message>
-        <source>SPARK Token</source>
-        <translation>SPARK Token</translation>
+        <source>Sparkbase Token</source>
+        <translation>Sparkbase</translation>
     </message>
 </context>
 <context>
@@ -5352,26 +5352,24 @@ Selecteer minder invoeren met muntcontrole.</translation>
         <translation>Selecteer uw taal</translation>
     </message>
     <message>
-        <source>Welcome to
-SPARK Token Wallet</source>
-        <translation>Welkom bij
-SPARK Token Portemonnee</translation>
+        <source>Welcome to Sparkbase.</source>
+        <translation>Welkom bij Sparkbase.</translation>
     </message>
     <message>
-        <source>SPARK is the world’s most innovative Proof of Stake blockchain based technology. Developed by a team of highly experienced developers and cryptographers.</source>
-        <translation>SPARK is 's werelds meest innovatieve Proof of Stake blockchain gebaseerde technologie. Ontwikkeld door een team van zeer ervaren ontwikkelaars en cryptografen.</translation>
+        <source>Sparkbase is the world’s most innovative Proof of Stake blockchain based technology. Developed by a team of highly experienced developers and cryptographers.</source>
+        <translation>Sparkbase is 's werelds meest innovatieve Proof of Stake blockchain gebaseerde technologie. Ontwikkeld door een team van zeer ervaren ontwikkelaars en cryptografen.</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;As our manifesto says: Privacy is a non-negotiable basic human right; it grants users the freedom to share their data whenever and with whomever they want - SPARK believes in self sovereignty.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Zoals ons manifest zegt: Privacy is een niet-onderhandelbaar fundamenteel mensenrecht; het geeft gebruikers de vrijheid om hun gegevens te delen wanneer en met wie ze maar willen - SPARK gelooft in soevereiniteit.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;As our manifesto says: Privacy is a non-negotiable basic human right; it grants users the freedom to share their data whenever and with whomever they want - Sparkbase believes in self sovereignty.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Zoals ons manifest zegt: Privacy is een niet-onderhandelbaar fundamenteel mensenrecht; het geeft gebruikers de vrijheid om hun gegevens te delen wanneer en met wie ze maar willen - Sparkbase gelooft in soevereiniteit.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <source>The masternode network is SPARK's second layer network on top of the blockchain that enables our DAO to provide decentralized governance and a treasury.</source>
-        <translation>Het masternode netwerk is SPARK's tweedelaagse netwerk bovenop de blockchain die onze DAO in staat stelt om gedecentraliseerd bestuur, treasury te leveren</translation>
+        <source>The masternode network is Sparkbase's second layer network on top of the blockchain that enables our DAO to provide decentralized governance and a treasury.</source>
+        <translation>Het masternode netwerk is Sparkbase's tweedelaagse netwerk bovenop de blockchain die onze DAO in staat stelt om gedecentraliseerd bestuur, treasury te leveren</translation>
     </message>
     <message>
-        <source>How SPARK respects your privacy?</source>
-        <translation>Hoe respecteert SPARK uw privacy?</translation>
+        <source>How Sparkbase respects your privacy?</source>
+        <translation>Hoe respecteert Sparkbase uw privacy?</translation>
     </message>
     <message>
         <source>What is a Masternode?</source>
@@ -5401,8 +5399,8 @@ SPARK Token Portemonnee</translation>
         <translation>Bind naar het opgegeven adres om te luisteren naar JSON-RPC verbindingen. Gebruik [host]:poort notatie voor IPv6. Deze optie kan meerdere keren worden opgegeven (standaard: bind aan alle interfaces)</translation>
     </message>
     <message>
-        <source>Cannot obtain a lock on data directory %s. SPARK Token is probably already running.</source>
-        <translation>Kan geen vergrendeling op data directory %s verkrijgen. SPARK Token loopt waarschijnlijk al.</translation>
+        <source>Cannot obtain a lock on data directory %s. Sparkbase Token is probably already running.</source>
+        <translation>Kan geen vergrendeling op data directory %s verkrijgen. Sparkbase Token loopt waarschijnlijk al.</translation>
     </message>
     <message>
         <source>Change automatic finalized budget voting behavior. mode=auto: Vote for only exact finalized budget match to my generated budget. (string, default: auto)</source>
@@ -5549,8 +5547,8 @@ SPARK Token Portemonnee</translation>
         <translation>De totale lengte van de netwerkversie (%i) overschrijdt de maximale lengte (%i). Verminder het aantal of de grootte van uacommentaren.</translation>
     </message>
     <message>
-        <source>Unable to bind to %s on this computer. SPARK Token is probably already running.</source>
-        <translation>Niet mogelijk te binden aan %s op deze computer. SPARK Token loopt waarschijnlijk al.</translation>
+        <source>Unable to bind to %s on this computer. Sparkbase Token is probably already running.</source>
+        <translation>Niet mogelijk te binden aan %s op deze computer. Sparkbase Token loopt waarschijnlijk al.</translation>
     </message>
     <message>
         <source>Use separate SOCKS5 proxy to reach peers via Tor hidden services (default: %s)</source>
@@ -5565,8 +5563,8 @@ SPARK Token Portemonnee</translation>
         <translation>Waarschuwing: -paytxfee is zeer hoog ingesteld! Dit zijn de transactie kosten die je betaalt als je een transactie verstuurt.</translation>
     </message>
     <message>
-        <source>Warning: Please check that your computer's date and time are correct! If your clock is wrong SPARK Token will not work properly.</source>
-        <translation>Waarschuwing: Controleer of de datum en tijd van je computer juist zijn! Als je klok verkeerd staat, werkt SPARK Token niet goed.</translation>
+        <source>Warning: Please check that your computer's date and time are correct! If your clock is wrong Sparkbase Token will not work properly.</source>
+        <translation>Waarschuwing: Controleer of de datum en tijd van je computer juist zijn! Als je klok verkeerd staat, werkt Sparkbase Token niet goed.</translation>
     </message>
     <message>
         <source>Warning: The network does not appear to fully agree! Some miners appear to be experiencing issues.</source>
@@ -5637,8 +5635,8 @@ SPARK Token Portemonnee</translation>
         <translation>Copyright (C) 2014-%i The Dash Kernontwikkelaars</translation>
     </message>
     <message>
-        <source>Copyright (C) 2015-%i The SPARK Token Developers</source>
-        <translation>Copyright (C) 2015-%i The SPARK Kernontwikkelaars</translation>
+        <source>Copyright (C) 2015-%i The Sparkbase Token Developers</source>
+        <translation>Copyright (C) 2015-%i The Sparkbase Kernontwikkelaars</translation>
     </message>
     <message>
         <source>Corrupted block database detected</source>
@@ -5757,8 +5755,8 @@ SPARK Token Portemonnee</translation>
         <translation>Informatie</translation>
     </message>
     <message>
-        <source>Initialization sanity check failed. SPARK Token is shutting down.</source>
-        <translation>Initialisatie saniteitscontrole mislukt. SPARK Token wordt afgesloten.</translation>
+        <source>Initialization sanity check failed. Sparkbase Token is shutting down.</source>
+        <translation>Initialisatie saniteitscontrole mislukt. Sparkbase Token wordt afgesloten.</translation>
     </message>
     <message>
         <source>Insufficient funds.</source>
@@ -5865,8 +5863,8 @@ Voer alstublieft 'sapling-fetch-params' of './util/fetch-params.sh' uit en herst
         <translation>Error bij het laden van %s: Portemonnee beschadigd</translation>
     </message>
     <message>
-        <source>Error loading %s: Wallet requires newer version of SPARK Token</source>
-        <translation>Error bij het laden van %s: Portemonnee vereist een nieuwere versie van SPARK Token</translation>
+        <source>Error loading %s: Wallet requires newer version of Sparkbase Token</source>
+        <translation>Error bij het laden van %s: Portemonnee vereist een nieuwere versie van Sparkbase</translation>
     </message>
     <message>
         <source>Error loading %s
@@ -6063,8 +6061,8 @@ Voer alstublieft 'sapling-fetch-params' of './util/fetch-params.sh' uit en herst
         <translation>Minimum geldige waarde (in SPARKS) toegestaan bij GUI en RPC voor de staking splitsdrempel (standaard: %s)</translation>
     </message>
     <message>
-        <source>Please check that your computer's date and time are correct! If your clock is wrong SPARK Token will not work properly.</source>
-        <translation>Controleer of de datum en tijd van je computer juist zijn! Als je klok verkeerd ingesteld staat, werkt SPARK Token niet goed.</translation>
+        <source>Please check that your computer's date and time are correct! If your clock is wrong Sparkbase Token will not work properly.</source>
+        <translation>Controleer of de datum en tijd van je computer juist zijn! Als je klok verkeerd ingesteld staat, werkt Sparkbase Token niet goed.</translation>
     </message>
     <message>
         <source>Query for peer addresses via DNS lookup, if low on addresses (default: 1 unless -connect/-noconnect)</source>
@@ -6429,8 +6427,8 @@ Voer alstublieft 'sapling-fetch-params' of './util/fetch-params.sh' uit en herst
         <translation>Portemonnee verifiëren...</translation>
     </message>
     <message>
-        <source>Wallet needed to be rewritten: restart SPARK Token to complete</source>
-        <translation>Wallet moest worden herschreven: start SPARK Token opnieuw om te voltooien</translation>
+        <source>Wallet needed to be rewritten: restart Sparkbase Token to complete</source>
+        <translation>Wallet moest worden herschreven: start Sparkbase Token opnieuw om te voltooien</translation>
     </message>
     <message>
         <source>Wallet options:</source>
@@ -6484,8 +6482,8 @@ Voer alstublieft 'sapling-fetch-params' of './util/fetch-params.sh' uit en herst
         <translation>Zenden</translation>
     </message>
     <message>
-        <source>SPARK address or contact label</source>
-        <translation>SPARK adres of contactlabel</translation>
+        <source>Sparkbase address or contact label</source>
+        <translation>Sparkbase adres of contactlabel</translation>
     </message>
     <message>
         <source>Amount</source>

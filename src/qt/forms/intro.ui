@@ -98,10 +98,10 @@
             <item>
              <widget class="QLabel" name="welcomeLabel">
               <property name="styleSheet">
-               <string notr="true">QLabel { font-style:italic; }</string>
+               <string notr="true">QLabel {  }</string>
               </property>
               <property name="text">
-               <string>Welcome to %1.</string>
+               <string>Welcome to Sparkbase.</string>
               </property>
               <property name="alignment">
                <set>Qt::AlignCenter</set>
