@@ -80,7 +80,7 @@ cd /home/SparkToken
 chmod 755 autogen.sh
 chmod 755 share/genbuild.sh
 ./autogen.sh
-./configure --with-unsupported-ssl
+./configure --with-unsupported-ssl --disable-tests
 make
 make install
 }
