@@ -2173,7 +2173,7 @@ Address: %4
     </message>
     <message>
         <location line="-54"/>
-        <source>Cannot start spark: click-to-pay handler</source>
+        <source>Cannot start Sparkbase: click-to-pay handler</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -4378,7 +4378,7 @@ There was an error trying to save the address list to %1. Please try again.</sou
     </message>
     <message>
         <location line="+152"/>
-        <source>1) What is SPARK?</source>
+        <source>1) What is the Sparkbase Token?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -4388,7 +4388,7 @@ There was an error trying to save the address list to %1. Please try again.</sou
     </message>
     <message>
         <location line="+148"/>
-        <source>https://SPARK.org/</source>
+        <source>https://www.sparkbase.io/</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -4398,7 +4398,7 @@ There was an error trying to save the address list to %1. Please try again.</sou
     </message>
     <message>
         <location line="+18"/>
-        <source>What is SPARK?</source>
+        <source>What is the Sparkbase Token?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6104,7 +6104,7 @@ backup will be created.
     </message>
     <message>
         <location line="+2"/>
-        <source>SEND</source>
+        <source>Send</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6230,7 +6230,7 @@ Select fewer inputs with coin control.</source>
     </message>
     <message>
         <location line="+116"/>
-        <source>Sparkbase is the world’s most innovative Proof of Stake blockchain based technology. Developed by a team of highly experienced developers and cryptographers.</source>
+        <source>Sparkbase Token is the world’s most innovative Proof of Stake blockchain based technology. Developed by a team of highly experienced developers and cryptographers.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

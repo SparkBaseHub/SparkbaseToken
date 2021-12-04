@@ -299,7 +299,7 @@
            <item>
             <widget class="QCheckBox" name="mapPortNatpmp">
              <property name="toolTip">
-              <string>Automatically open the SPARK client port on the router. This only works when your router supports NAT-PMP and it is enabled. The external port could be random.</string>
+              <string>Automatically open the Sparkbase client port on the router. This only works when your router supports NAT-PMP and it is enabled. The external port could be random.</string>
              </property>
              <property name="text">
               <string>Map port using NAT-PMP</string>

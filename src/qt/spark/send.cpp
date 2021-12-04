@@ -73,7 +73,7 @@ SendWidget::SendWidget(SPARKGUI* parent) :
 
     // Uri
     ui->btnUri->setTitleClassAndText("btn-title-grey", tr("Open URI"));
-    ui->btnUri->setSubTitleClassAndText("text-subtitle", tr("Parse a SPARK URI"));
+    ui->btnUri->setSubTitleClassAndText("text-subtitle", tr("Parse a Sparkbase URI"));
 
     // Shield coins
     ui->btnShieldCoins->setTitleClassAndText("btn-title-grey", tr("Shield Coins"));

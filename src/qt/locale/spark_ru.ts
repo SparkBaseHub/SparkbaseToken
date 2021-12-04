@@ -1642,46 +1642,32 @@ Are you sure?</source>
         <translation>Вид</translation>
     </message>
     <message>
-        <source>HOME
-</source>
-        <translation>ГЛАВНАЯ
-</translation>
+        <source>Home</source>
+        <translation>ГЛАВНАЯ</translation>
     </message>
     <message>
-        <source>SEND
-</source>
-        <translation>ОТПРАВИТЬ
-</translation>
+        <source>Send</source>
+        <translation>ОТПРАВИТЬ</translation>
     </message>
     <message>
-        <source>RECEIVE
-</source>
-        <translation>ПОЛУЧИТЬ
-</translation>
+        <source>Receive</source>
+        <translation>ПОЛУЧИТЬ</translation>
     </message>
     <message>
-        <source>CONTACTS
-</source>
-        <translation>КОНТАКТЫ
-</translation>
+        <source>Contacts</source>
+        <translation>КОНТАКТЫ</translation>
     </message>
     <message>
-        <source>MASTER
-NODES</source>
-        <translation>МАСТЕР
-НОДЫ</translation>
+        <source>Masternodes</source>
+        <translation>МАСТЕР НОДЫ</translation>
     </message>
     <message>
-        <source>COLD
-STAKING</source>
-        <translation>ХОЛОДНЫЙ
-СТЕКИНГ</translation>
+        <source>Cold Staking</source>
+        <translation>ХОЛОДНЫЙ СТЕКИНГ</translation>
     </message>
     <message>
-        <source>SETTINGS
-</source>
-        <translation>НАСТРОЙКИ
-</translation>
+        <source>Settings</source>
+        <translation>НАСТРОЙКИ</translation>
     </message>
     <message>
         <source>V 1.0.0</source>
@@ -1834,9 +1820,9 @@ STAKING</source>
     </message>
     <message>
         <source>Language missing or translation incomplete? Help contributing translations here:
-https://www.transifex.com/spark-project/spark-project-translations</source>
+https://www.transifex.com/sparkbase-token/sparkbase-token-translations</source>
         <translation>Отсутствует ваш язык или заметили незавершенный перевод? Вы можете помочь нам стать лучше:
-https://www.transifex.com/spark-project/spark-project-translations</translation>
+https://www.transifex.com/sparkbase-token/sparkbase-token-translations</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
@@ -2121,8 +2107,8 @@ Address: %4
         <translation>Неверный адрес оплаты %1</translation>
     </message>
     <message>
-        <source>Cannot start spark: click-to-pay handler</source>
-        <translation>Не удалось запустить spark: обработчик click-to-pay </translation>
+        <source>Cannot start Sparkbase: click-to-pay handler</source>
+        <translation>Не удалось запустить Sparkbase: обработчик click-to-pay </translation>
     </message>
     <message>
         <source>URI cannot be parsed! This can be caused by an invalid Sparkbase address or malformed URI parameters.</source>
@@ -3787,7 +3773,7 @@ There was an error trying to save the address list to %1. Please try again.</sou
         <translation>Вид</translation>
     </message>
     <message>
-        <source>1) What is SPARK?</source>
+        <source>1) What is the Sparkbase Token?</source>
         <translation>1) Что такое SPARK?</translation>
     </message>
     <message>
@@ -3795,15 +3781,15 @@ There was an error trying to save the address list to %1. Please try again.</sou
         <translation>2) Почему мои SPARKS невозможно потратить?</translation>
     </message>
     <message>
-        <source>https://SPARK.org/</source>
-        <translation>https://SPARK.org/</translation>
+        <source>https://www.sparkbase.io/</source>
+        <translation>https://www.sparkbase.io/</translation>
     </message>
     <message>
         <source>1</source>
         <translation>1</translation>
     </message>
     <message>
-        <source>What is SPARK?</source>
+        <source>What is the Sparkbase Token?</source>
         <translation>Что такое SPARK?</translation>
     </message>
     <message>
@@ -5205,7 +5191,7 @@ backup will be created.
         <translation>Подтвердить вашу транзакцию</translation>
     </message>
     <message>
-        <source>SEND</source>
+        <source>Send</source>
         <translation>отправить</translation>
     </message>
     <message>
@@ -5293,8 +5279,8 @@ Select fewer inputs with coin control.</source>
         <translation>Добро пожаловать в основной кошелек Sparkbase.</translation>
     </message>
     <message>
-        <source>Sparkbase is the world’s most innovative Proof of Stake blockchain based technology. Developed by a team of highly experienced developers and cryptographers.</source>
-        <translation>Sparkbase - самая инновационная в мире технология на основе блокчейна Proof of Stake. Разработана командой опытных разработчиков и криптографов.</translation>
+        <source>Sparkbase Token is the world’s most innovative Proof of Stake blockchain based technology. Developed by a team of highly experienced developers and cryptographers.</source>
+        <translation>Sparkbase Token - самая инновационная в мире технология на основе блокчейна Proof of Stake. Разработана командой опытных разработчиков и криптографов.</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;As our manifesto says: Privacy is a non-negotiable basic human right; it grants users the freedom to share their data whenever and with whomever they want - Sparkbase believes in self sovereignty.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>

@@ -1690,9 +1690,9 @@ Are you sure?</source>
     </message>
     <message>
         <source>Language missing or translation incomplete? Help contributing translations here:
-https://www.transifex.com/spark-project/spark-project-translations</source>
+https://www.transifex.com/sparkbase-token/sparkbase-token-translations</source>
         <translation>语言缺失或翻译不完整?帮助贡献翻译在这里:
-https://www.transifex.com/spark-project/spark-project-translations</translation>
+https://www.transifex.com/sparkbase-token/sparkbase-token-translations</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
@@ -1977,8 +1977,8 @@ Address: %4
         <translation>无效支付地址%1</translation>
     </message>
     <message>
-        <source>Cannot start spark: click-to-pay handler</source>
-        <translation>无法启动spark:点击支付处理程序</translation>
+        <source>Cannot start Sparkbase: click-to-pay handler</source>
+        <translation>无法启动Sparkbase:点击支付处理程序</translation>
     </message>
     <message>
         <source>URI cannot be parsed! This can be caused by an invalid Sparkbase address or malformed URI parameters.</source>
@@ -3477,7 +3477,7 @@ There was an error trying to save the address list to %1. Please try again.</sou
         <translation>来自</translation>
     </message>
     <message>
-        <source>1) What is SPARK?</source>
+        <source>1) What is the Sparkbase Token?</source>
         <translation>1）什么是SPARK?</translation>
     </message>
     <message>
@@ -3489,7 +3489,7 @@ There was an error trying to save the address list to %1. Please try again.</sou
         <translation>1</translation>
     </message>
     <message>
-        <source>What is SPARK?</source>
+        <source>What is the Sparkbase Token?</source>
         <translation>SPARK是什么?</translation>
     </message>
     <message>
@@ -4757,7 +4757,7 @@ backup will be created.
         <translation>确认交易</translation>
     </message>
     <message>
-        <source>SEND</source>
+        <source>Send</source>
         <translation>发送</translation>
     </message>
     <message>
@@ -4830,8 +4830,8 @@ backup will be created.
         <translation>欢迎 Sparkbase.</translation>
     </message>
     <message>
-        <source>Sparkbase is the world’s most innovative Proof of Stake blockchain based technology. Developed by a team of highly experienced developers and cryptographers.</source>
-        <translation>SPARK是世界上最先进的隐私保护技术，由经验丰富的开发人员和密码专家开发。</translation>
+        <source>Sparkbase Token is the world’s most innovative Proof of Stake blockchain based technology. Developed by a team of highly experienced developers and cryptographers.</source>
+        <translation>Sparkbase Token 是世界上最先进的隐私保护技术，由经验丰富的开发人员和密码专家开发。</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;As our manifesto says: Privacy is a non-negotiable basic human right; it grants users the freedom to share their data whenever and with whomever they want - Sparkbase believes in self sovereignty.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>

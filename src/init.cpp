@@ -568,7 +568,7 @@ std::string HelpMessage(HelpMessageMode mode)
     }
     strUsage += HelpMessageOpt("-shrinkdebugfile", "Shrink debug.log file on client startup (default: 1 when no -debug)");
     AppendParamsHelpMessages(strUsage, showDebug);
-    strUsage += HelpMessageOpt("-litemode=<n>", strprintf("Disable all SPARK specific functionality (Masternodes, Budgeting) (0-1, default: %u)", 0));
+    strUsage += HelpMessageOpt("-litemode=<n>", strprintf("Disable all Sparkbase Token specific functionality (Masternodes, Budgeting) (0-1, default: %u)", 0));
 
     strUsage += HelpMessageGroup("Masternode options:");
     strUsage += HelpMessageOpt("-masternode=<n>", strprintf("Enable the client to act as a masternode (0-1, default: %u)", DEFAULT_MASTERNODE));
@@ -762,7 +762,7 @@ void ThreadImport(const std::vector<fs::path>& vImportFiles)
 }
 
 /** Sanity checks
- *  Ensure that SPARK is running in a usable environment with all
+ *  Ensure that Sparkbase Wallet is running in a usable environment with all
  *  necessary library support.
  */
 bool InitSanityCheck(void)
@@ -1031,7 +1031,7 @@ void InitLogging()
 #else
     version_string += " (release build)";
 #endif
-    LogPrintf("SPARK version %s\n", version_string);
+    LogPrintf("Sparkbase version %s\n", version_string);
 }
 
 bool AppInitParameterInteraction()
@@ -1193,7 +1193,7 @@ bool AppInitParameterInteraction()
 
 static bool LockDataDirectory(bool probeOnly)
 {
-    // Make sure only a single SPARK process is using the data directory.
+    // Make sure only a single Sparkbase Wallet process is using the data directory.
     fs::path datadir = GetDataDir();
     if (!DirIsWritable(datadir)) {
         return UIError(strprintf(_("Cannot write to data directory '%s'; check permissions."), datadir.string()));
@@ -1255,9 +1255,9 @@ bool AppInitMain()
     // Warn about relative -datadir path.
     if (gArgs.IsArgSet("-datadir") && !fs::path(gArgs.GetArg("-datadir", "")).is_absolute()) {
         LogPrintf("Warning: relative datadir option '%s' specified, which will be interpreted relative to the "
-                  "current working directory '%s'. This is fragile because if SPARK is started in the future "
+                  "current working directory '%s'. This is fragile because if Sparkbase is started in the future "
                   "from a different location. It will be unable to locate the current data files. There could "
-                  "also be data loss if SPARK is started while in a temporary directory.\n",
+                  "also be data loss if Sparkbase is started while in a temporary directory.\n",
             gArgs.GetArg("-datadir", ""), fs::current_path().string());
     }
 
@@ -1570,7 +1570,7 @@ bool AppInitMain()
                 pcoinscatcher.reset();
                 pblocktree.reset(new CBlockTreeDB(nBlockTreeDBCache, false, fReset));
 
-                //SPARK specific: zerocoin and spork DB's
+                //Sparkbase specific: zerocoin and spork DB's
                 zerocoinDB.reset(new CZerocoinDB(0, false, fReindex));
                 pSporkDB.reset(new CSporkDB(0, false, false));
                 accumulatorCache.reset(new AccumulatorCache(zerocoinDB.get()));

@@ -5,7 +5,7 @@
 bin_PROGRAMS += qt/spark-qt
 EXTRA_LIBRARIES += qt/libbitcoinqt.a
 
-# spark qt core #
+# sparkbase qt core #
 include Makefile.qt_locale.include
 
 QT_FORMS_UI = \

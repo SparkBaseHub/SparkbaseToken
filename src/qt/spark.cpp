@@ -152,7 +152,7 @@ void DebugMessageHandler(QtMsgType type, const QMessageLogContext& context, cons
     }
 }
 
-/** Class encapsulating SPARK Token startup and shutdown.
+/** Class encapsulating Sparkbase Token startup and shutdown.
  * Allows running startup and shutdown in a different thread from the UI thread.
  */
 class BitcoinCore : public QObject
@@ -179,7 +179,7 @@ private:
     void handleRunawayException(const std::exception* e);
 };
 
-/** Main SPARK application object */
+/** Main Sparkbase application object */
 class BitcoinApplication : public QApplication
 {
     Q_OBJECT
@@ -531,7 +531,7 @@ void BitcoinApplication::shutdownResult(int retval)
 
 void BitcoinApplication::handleRunawayException(const QString& message)
 {
-    QMessageBox::critical(0, "Runaway exception", QObject::tr("A fatal error occurred. SPARK can no longer continue safely and will quit.") + QString("\n\n") + message);
+    QMessageBox::critical(0, "Runaway exception", QObject::tr("A fatal error occurred. Sparkbase can no longer continue safely and will quit.") + QString("\n\n") + message);
     ::exit(1);
 }
 

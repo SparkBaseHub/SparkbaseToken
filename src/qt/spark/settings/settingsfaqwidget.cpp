@@ -72,27 +72,29 @@ SettingsFaqWidget::SettingsFaqWidget(SPARKGUI* parent, ClientModel* _model) :
             }, "btn-faq-options");
 
     ui->labelContent_Support->setOpenExternalLinks(true);
+    ui->labelContent_MNController->setOpenExternalLinks(true);
+    //ui->pushButtonWebLink->setOpenExternalLinks(true);
 
     // Set FAQ content strings
     QString introContent = formatFAQContent(
         formatFAQParagraph(
-            tr("SPARK is a form of utility token using blockchain technology that can be easily transferred globally, instantly, and with near zero fees. SPARK incorporates market leading security & privacy and is also the first PoS (Proof of Stake) Cryptocurrency to implement Sapling(SHIELD), a zk-SNARKs based privacy protocol.")) +
+            tr("Sparkbase Token is a form of utility token using blockchain technology that can be easily transferred globally, instantly, and with near zero fees. Sparkbase incorporates market leading security & privacy and is also the first PoS (Proof of Stake) Cryptocurrency to implement Sapling(SHIELD), a zk-SNARKs based privacy protocol.")) +
         formatFAQParagraph(
-            tr("SPARK utilizes a Proof of Stake (PoS) consensus system algorithm, allowing all owners of SPARK to participate in earning block rewards while securing the network with full node wallets, as well as to run Masternodes to create and vote on proposals.")));
+            tr("Sparkbase Token utilizes a Proof of Stake (PoS) consensus system algorithm, allowing all owners of Sparkbase to participate in earning block rewards while securing the network with full node wallets, as well as to run Masternodes to create and vote on proposals.")));
     ui->labelContent_Intro->setText(introContent);
 
     QString unspendableSPARKSContent = formatFAQContent(
         formatFAQParagraph(
-            tr("Newly received SPARK requires 6 confirmations on the network to become eligible for spending which can take ~6 minutes.")) +
+            tr("Newly received SPARKS requires 6 confirmations on the network to become eligible for spending which can take ~6 minutes.")) +
         formatFAQParagraph(
-            tr("Your SPARK wallet also needs to be completely synchronized "
+            tr("Your Sparkbase Token wallet also needs to be completely synchronized "
                "to see and spend balances on the network.")));
     ui->labelContent_UnspendableSPARKS->setText(unspendableSPARKSContent);
 
     QString stakeContent = formatFAQContent(
         formatFAQOrderedList(
             formatFAQListItem(tr("Make sure your wallet is completely synchronized and you are using the latest release.")) +
-            formatFAQListItem(tr("You must have a balance of SPARK with a minimum of 600 confirmations.")) +
+            formatFAQListItem(tr("You must have a balance of SPARKS with a minimum of 600 confirmations.")) +
             formatFAQListItem(tr("Your wallet must stay online and be unlocked for staking purposes.")) +
             formatFAQListItem(tr("Once all those steps are followed staking should be enabled."))) +
         formatFAQParagraph(
@@ -103,7 +105,7 @@ SettingsFaqWidget::SettingsFaqWidget(SPARKGUI* parent, ClientModel* _model) :
     QString supportContent = formatFAQContent(
         formatFAQParagraph(
             tr("We have support channels in most of our official chat groups, for example %1")
-                .arg("<a style='color: #b088ff' href='https://www.sparkbase.io/discord'>" + tr("#support in our Discord") + "</a>.")));
+                .arg("<a style='color: #E42534' href='https://www.sparkbase.io/discord'>" + tr("#support in our Discord") + "</a>.")));
     ui->labelContent_Support->setText(supportContent);
 
     QString masternodeContent = formatFAQContent(
@@ -121,10 +123,10 @@ SettingsFaqWidget::SettingsFaqWidget(SPARKGUI* parent, ClientModel* _model) :
         formatFAQParagraph(
             tr("Masternode Perks:") +
             formatFAQUnorderedList(
-                formatFAQListItem(tr("Participate in SPARK Governance")) +
+                formatFAQListItem(tr("Participate in Sparkbase Governance")) +
                 formatFAQListItem(tr("Earn Masternode Rewards")) +
                 formatFAQListItem(tr("Commodity option for future sale")) +
-                formatFAQListItem(tr("Help secure the SPARK network")))) +
+                formatFAQListItem(tr("Help secure the Sparkbase network")))) +
         formatFAQParagraph(
             tr("Requirements:") +
             formatFAQUnorderedList(
@@ -137,7 +139,27 @@ SettingsFaqWidget::SettingsFaqWidget(SPARKGUI* parent, ClientModel* _model) :
 
     QString mNControllerContent = formatFAQContent(
         formatFAQParagraph(
-            tr("The Sparkbase app is an innovative portfolio tracker, manager and master available on iOS and Android, which enables you to:")
+            formatFAQParagraph(tr("The Sparkbase app is an innovative portfolio tracker, manager and master available on iOS and Android, which enables you to:")) +
+
+            formatFAQUnorderedList(
+              formatFAQListItem(
+                tr("Create Your Portfolio")
+              ) +
+              formatFAQListItem(
+                tr("Find Lucrative Assets")
+              ) +
+              formatFAQListItem(
+                tr("Optimize Your Strategy")
+              ) +
+              formatFAQListItem(
+                tr("Add Stocks, Bonds & More")
+              )
+            ) +
+            formatFAQParagraph(tr("Download the Sparkbase app now on iOS or Android.")) +
+            formatFAQParagraph(
+              tr("Read more at %1")
+              .arg("<a style='color: #E42534' href='https://www.sparkbase.io'>" + tr("www.sparkbase.io") + "</a>.")
+            )
                     .arg(GUIUtil::formatBalance(clientModel->getMNCollateralRequiredAmount(), BitcoinUnits::SPARKS))));
     ui->labelContent_MNController->setText(mNControllerContent);
 

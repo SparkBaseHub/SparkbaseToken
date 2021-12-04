@@ -1664,46 +1664,32 @@ Jeste li sigurni?</translation>
         <translation>Obrazac</translation>
     </message>
     <message>
-        <source>HOME
-</source>
-        <translation>POČETNA
-</translation>
+        <source>Home</source>
+        <translation>POČETNA</translation>
     </message>
     <message>
-        <source>SEND
-</source>
-        <translation>SLANJE
-</translation>
+        <source>Send</source>
+        <translation>SLANJE</translation>
     </message>
     <message>
-        <source>RECEIVE
-</source>
-        <translation>PRIMANJE
-</translation>
+        <source>Receive</source>
+        <translation>PRIMANJE</translation>
     </message>
     <message>
-        <source>CONTACTS
-</source>
-        <translation>IMENIK
-</translation>
+        <source>Contacts</source>
+        <translation>IMENIK</translation>
     </message>
     <message>
-        <source>MASTER
-NODES</source>
-        <translation>MASTER
-NODEOVI</translation>
+        <source>Masternodes</source>
+        <translation>MASTER NODEOVI</translation>
     </message>
     <message>
-        <source>COLD
-STAKING</source>
-        <translation>COLD
-STAKING</translation>
+        <source>Cold Staking</source>
+        <translation>Cold Staking</translation>
     </message>
     <message>
-        <source>SETTINGS
-</source>
-        <translation>POSTAVKE
-</translation>
+        <source>Settings</source>
+        <translation>POSTAVKE</translation>
     </message>
     <message>
         <source>V 1.0.0</source>
@@ -1856,9 +1842,9 @@ STAKING</translation>
     </message>
     <message>
         <source>Language missing or translation incomplete? Help contributing translations here:
-https://www.transifex.com/spark-project/spark-project-translations</source>
+https://www.transifex.com/sparkbase-token/sparkbase-token-translations</source>
         <translation>Jezik nedostaje ili prijevod nije potpun? Pomozite s prijevodom ovdje:
-https://www.transifex.com/spark-project/spark-project-translations</translation>
+https://www.transifex.com/sparkbase-token/sparkbase-token-translations</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
@@ -2143,8 +2129,8 @@ Adresa: %4
         <translation>Nevažeća adresa za plaćanje %1</translation>
     </message>
     <message>
-        <source>Cannot start spark: click-to-pay handler</source>
-        <translation>Ne može se pokrenuti spark: clik-to-pay handler</translation>
+        <source>Cannot start Sparkbase: click-to-pay handler</source>
+        <translation>Ne može se pokrenuti Sparkbase: clik-to-pay handler</translation>
     </message>
     <message>
         <source>URI cannot be parsed! This can be caused by an invalid Sparkbase address or malformed URI parameters.</source>
@@ -3954,7 +3940,7 @@ Došlo je do greške prilikom spremanja popisa adresa u %1. Molimo pokušajte po
         <translation>Obrazac</translation>
     </message>
     <message>
-        <source>1) What is SPARK?</source>
+        <source>1) What is the Sparkbase Token?</source>
         <translation>1) Što je SPARK?</translation>
     </message>
     <message>
@@ -3962,15 +3948,15 @@ Došlo je do greške prilikom spremanja popisa adresa u %1. Molimo pokušajte po
         <translation>2) Zašto se moji SPARKS ne mogu potrošiti?</translation>
     </message>
     <message>
-        <source>https://SPARK.org/</source>
-        <translation>https://SPARK.org/</translation>
+        <source>https://www.sparkbase.io/</source>
+        <translation>https://www.sparkbase.io/</translation>
     </message>
     <message>
         <source>1</source>
         <translation>1</translation>
     </message>
     <message>
-        <source>What is SPARK?</source>
+        <source>What is the Sparkbase Token?</source>
         <translation>Što je SPARK?</translation>
     </message>
     <message>
@@ -4064,20 +4050,20 @@ vodjenje Masternode-ova za stvaranje i glasanje o prijedlozima.
         <source>
                            &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="left"&gt;
                            We have support channels in most of our official chat groups, for example
-                           &lt;a style='color: #b088ff' href='https://discord.gg/4Vvvbbg'&gt;
+                           &lt;a style='color: #E42534' href='https://discord.gg/4Vvvbbg'&gt;
                            #support in our Discord&lt;/a&gt;.
                            If you prefer to submit a ticket, You can do so at
-                           &lt;a style='color: #b088ff' href='https://www.sparkbase.io/help'&gt;
+                           &lt;a style='color: #E42534' href='https://www.sparkbase.io/help'&gt;
                            our Sparkbase support site&lt;/a&gt;.
                            &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                          </source>
         <translation>
 &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="left"&gt;
 Imamo korisničku podršku u većini naših službenih chat grupa, na primjer
-&lt;a style='color: #b088ff' href='https://discord.gg/4Vvvbbg'&gt;
+&lt;a style='color: #E42534' href='https://discord.gg/4Vvvbbg'&gt;
 #support na Discordu&lt;/a&gt;.
 Možete i podnijeti zahtjev, a to možete
-&lt;a style='color: #b088ff' href='https://www.sparkbase.io/help'&gt;
+&lt;a style='color: #E42534' href='https://www.sparkbase.io/help'&gt;
 na našoj Sparkbase stranici za podršku&lt;/a&gt;.
 &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
 </translation>
@@ -5533,7 +5519,7 @@ stvorit će se nova sigurnosna kopija.
         <translation>Potvrdite svoju transakciju</translation>
     </message>
     <message>
-        <source>SEND</source>
+        <source>Send</source>
         <translation>ŠALJI</translation>
     </message>
     <message>
@@ -5642,8 +5628,8 @@ Odaberite manje ulaza pomoću Upravljanja novčićima.</translation>
         <translation>Dobrodošli u Sparkbase.</translation>
     </message>
     <message>
-        <source>Sparkbase is the world’s most innovative Proof of Stake blockchain based technology. Developed by a team of highly experienced developers and cryptographers.</source>
-        <translation>Sparkbase je najinovativnija blockchain tehnologija na svijetu bazirana na Proof of Stake tehnologiji. Razvijena je od strane vrlo iskusnih programera i kriptografa.</translation>
+        <source>Sparkbase Token is the world’s most innovative Proof of Stake blockchain based technology. Developed by a team of highly experienced developers and cryptographers.</source>
+        <translation>Sparkbase Token je najinovativnija blockchain tehnologija na svijetu bazirana na Proof of Stake tehnologiji. Razvijena je od strane vrlo iskusnih programera i kriptografa.</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;As our manifesto says: Privacy is a non-negotiable basic human right; it grants users the freedom to share their data whenever and with whomever they want - Sparkbase believes in self sovereignty.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>

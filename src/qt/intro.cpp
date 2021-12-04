@@ -134,7 +134,7 @@ Intro::Intro(QWidget* parent) : QDialog(parent, Qt::WindowSystemMenuHint | Qt::W
     connect(ui->pushButtonOk, &QPushButton::clicked, this, &Intro::accept);
     connect(ui->pushButtonCancel, &QPushButton::clicked, this, &Intro::close);
 
-    ui->welcomeLabel->setText(ui->welcomeLabel->text().arg(PACKAGE_NAME));
+    //ui->welcomeLabel->setText(ui->welcomeLabel->text().arg(PACKAGE_NAME));
     ui->storageLabel->setText(ui->storageLabel->text().arg(PACKAGE_NAME));
     ui->sizeWarningLabel->setText(ui->sizeWarningLabel->text().arg(PACKAGE_NAME).arg(BLOCK_CHAIN_SIZE / GB_BYTES));
     startThread();

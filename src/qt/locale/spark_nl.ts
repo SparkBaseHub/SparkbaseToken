@@ -1649,46 +1649,32 @@ Weet je het zeker?</translation>
         <translation>Formulier</translation>
     </message>
     <message>
-        <source>HOME
-</source>
-        <translation>THUIS
-</translation>
+        <source>Home</source>
+        <translation>THUIS</translation>
     </message>
     <message>
-        <source>SEND
-</source>
-        <translation>VERSTUREN
-</translation>
+        <source>Send</source>
+        <translation>VERSTUREN</translation>
     </message>
     <message>
-        <source>RECEIVE
-</source>
-        <translation>ONTVANGEN
-</translation>
+        <source>Receive</source>
+        <translation>ONTVANGEN</translation>
     </message>
     <message>
-        <source>CONTACTS
-</source>
-        <translation>CONTACTEN
-</translation>
+        <source>Contacts</source>
+        <translation>CONTACTEN</translation>
     </message>
     <message>
-        <source>MASTER
-NODES</source>
-        <translation>MASTER
-NODES</translation>
+        <source>Masternodes</source>
+        <translation>Masternodes</translation>
     </message>
     <message>
-        <source>COLD
-STAKING</source>
-        <translation>COLD
-STAKING</translation>
+        <source>Cold Staking</source>
+        <translation>Cold Staking</translation>
     </message>
     <message>
-        <source>SETTINGS
-</source>
-        <translation>INSTELLINGEN
-</translation>
+        <source>Settings</source>
+        <translation>INSTELLINGEN</translation>
     </message>
     <message>
         <source>V 1.0.0</source>
@@ -1841,9 +1827,9 @@ STAKING</translation>
     </message>
     <message>
         <source>Language missing or translation incomplete? Help contributing translations here:
-https://www.transifex.com/spark-project/spark-project-translations</source>
+https://www.transifex.com/sparkbase-token/sparkbase-token-translations</source>
         <translation>Taal ontbreekt of vertaling onvolledig? Help om bij te dragen aan vertalingen:
-https://www.transifex.com/spark-project/spark-project-translations</translation>
+https://www.transifex.com/sparkbase-token/sparkbase-token-translations</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
@@ -2128,7 +2114,7 @@ Adres: %4
         <translation>Ongeldig betalingsadres %1</translation>
     </message>
     <message>
-        <source>Cannot start spark: click-to-pay handler</source>
+        <source>Cannot start Sparkbase: click-to-pay handler</source>
         <translation>Kan spark niet starten: click-to-pay handler</translation>
     </message>
     <message>
@@ -3798,7 +3784,7 @@ Er was een fout opgetreden tijdens het opslaan van deze adreslijst naar %1. Prob
         <translation>Formulier</translation>
     </message>
     <message>
-        <source>1) What is SPARK?</source>
+        <source>1) What is the Sparkbase Token?</source>
         <translation>1) Wat is SPARK?</translation>
     </message>
     <message>
@@ -3806,15 +3792,15 @@ Er was een fout opgetreden tijdens het opslaan van deze adreslijst naar %1. Prob
         <translation>2) Waarom is mijn SPARKS niet besteedbaar?</translation>
     </message>
     <message>
-        <source>https://SPARK.org/</source>
-        <translation>https://SPARK.org/</translation>
+        <source>https://www.sparkbase.io/</source>
+        <translation>https://www.sparkbase.io/</translation>
     </message>
     <message>
         <source>1</source>
         <translation>1</translation>
     </message>
     <message>
-        <source>What is SPARK?</source>
+        <source>What is the Sparkbase Token?</source>
         <translation>Wat is SPARK?</translation>
     </message>
     <message>
@@ -3877,20 +3863,20 @@ Er was een fout opgetreden tijdens het opslaan van deze adreslijst naar %1. Prob
         <source>
                            &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="left"&gt;
                            We have support channels in most of our official chat groups, for example
-                           &lt;a style='color: #b088ff' href='https://discord.gg/4Vvvbbg'&gt;
+                           &lt;a style='color: #E42534' href='https://discord.gg/4Vvvbbg'&gt;
                            #support in our Discord&lt;/a&gt;.
                            If you prefer to submit a ticket, You can do so at
-                           &lt;a style='color: #b088ff' href='https://www.sparkbase.io/help'&gt;
+                           &lt;a style='color: #E42534' href='https://www.sparkbase.io/help'&gt;
                            our Sparkbase support site&lt;/a&gt;.
                            &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                          </source>
         <translation>
                            &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="left"&gt;
                            We hebben ondersteuningskanalen in de meeste van onze officiële chatgroepen, bijvoorbeeld
-                           &lt;a style='color: #b088ff' href='https://discord.gg/4Vvvbbg'&gt;
+                           &lt;a style='color: #E42534' href='https://discord.gg/4Vvvbbg'&gt;
                            #support in onze Discord&lt;/a&gt;.
                            Als u liever een ticket indient, kan jedat
-                           &lt;a style='color: #b088ff' href='https://www.sparkbase.io/help'&gt;
+                           &lt;a style='color: #E42534' href='https://www.sparkbase.io/help'&gt;
                            op onze Sparkbase ondersteuningssite.
                            &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                          </translation>
@@ -5267,7 +5253,7 @@ nieuwe back-up aangemaakt worden.
         <translation>Bevestig Uw Transactie</translation>
     </message>
     <message>
-        <source>SEND</source>
+        <source>Send</source>
         <translation>STUREN</translation>
     </message>
     <message>
@@ -5356,8 +5342,8 @@ Selecteer minder invoeren met muntcontrole.</translation>
         <translation>Welkom bij Sparkbase.</translation>
     </message>
     <message>
-        <source>Sparkbase is the world’s most innovative Proof of Stake blockchain based technology. Developed by a team of highly experienced developers and cryptographers.</source>
-        <translation>Sparkbase is 's werelds meest innovatieve Proof of Stake blockchain gebaseerde technologie. Ontwikkeld door een team van zeer ervaren ontwikkelaars en cryptografen.</translation>
+        <source>Sparkbase Token is the world’s most innovative Proof of Stake blockchain based technology. Developed by a team of highly experienced developers and cryptographers.</source>
+        <translation>Sparkbase Token is 's werelds meest innovatieve Proof of Stake blockchain gebaseerde technologie. Ontwikkeld door een team van zeer ervaren ontwikkelaars en cryptografen.</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;As our manifesto says: Privacy is a non-negotiable basic human right; it grants users the freedom to share their data whenever and with whomever they want - Sparkbase believes in self sovereignty.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>

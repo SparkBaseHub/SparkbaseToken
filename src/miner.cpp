@@ -64,8 +64,8 @@ std::unique_ptr<CBlockTemplate> CreateNewBlockWithScript(const CScript& coinbase
 
 bool ProcessBlockFound(const std::shared_ptr<const CBlock>& pblock, CWallet& wallet, std::unique_ptr<CReserveKey>& reservekey)
 {
-    LogPrintf("%s\n", pblock->ToString());
-    LogPrintf("generated %s\n", FormatMoney(pblock->vtx[0]->vout[0].nValue));
+    //LogPrintf("%s\n", pblock->ToString());
+    //LogPrintf("generated %s\n", FormatMoney(pblock->vtx[0]->vout[0].nValue));
 
     // Found a solution
     {
@@ -83,7 +83,7 @@ bool ProcessBlockFound(const std::shared_ptr<const CBlock>& pblock, CWallet& wal
     sc.registerEvent();
     bool res = ProcessNewBlock(pblock, nullptr);
     if (!res || sc.stateErrorFound()) {
-        return error("SPARKMiner : ProcessNewBlock, block not accepted");
+        return false;//error("SPARKMiner : ProcessNewBlock, block not accepted");
     }
 
     g_connman->ForEachNode([&pblock](CNode* node)
@@ -206,8 +206,8 @@ void BitcoinMiner(CWallet* pwallet, bool fProofOfStake)
                 if (hash <= hashTarget) {
                     // Found a solution
                     SetThreadPriority(THREAD_PRIORITY_NORMAL);
-                    LogPrintf("%s:\n", __func__);
-                    LogPrintf("proof-of-work found  \n  hash: %s  \ntarget: %s\n", hash.GetHex(), hashTarget.GetHex());
+                    //LogPrintf("%s:\n", __func__);
+                    //LogPrintf("proof-of-work found with nonce %u  \n  hash: %s  \ntarget: %s\n", pblock->nNonce, hash.GetHex(), hashTarget.GetHex());
                     ProcessBlockFound(pblock, *pwallet, pReservekey);
                     SetThreadPriority(THREAD_PRIORITY_LOWEST);
 

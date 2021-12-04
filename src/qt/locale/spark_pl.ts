@@ -1630,34 +1630,24 @@ Jesteś pewny?</translation>
         <translation>Formularz</translation>
     </message>
     <message>
-        <source>HOME
-</source>
-        <translation>DOM
-</translation>
+        <source>Home</source>
+        <translation>DOM</translation>
     </message>
     <message>
-        <source>SEND
-</source>
-        <translation>WYSŁANIE
-</translation>
+        <source>Send</source>
+        <translation>WYSŁANIE</translation>
     </message>
     <message>
-        <source>RECEIVE
-</source>
-        <translation>OTRZYWANIE
-</translation>
+        <source>Receive</source>
+        <translation>OTRZYWANIE</translation>
     </message>
     <message>
-        <source>CONTACTS
-</source>
-        <translation>KONTAKTY
-</translation>
+        <source>Contacts</source>
+        <translation>KONTAKTY</translation>
     </message>
     <message>
-        <source>SETTINGS
-</source>
-        <translation>USTAWIENIA
-</translation>
+        <source>Settings</source>
+        <translation>USTAWIENIA</translation>
     </message>
     <message>
         <source>V 1.0.0</source>
@@ -1810,9 +1800,9 @@ Jesteś pewny?</translation>
     </message>
     <message>
         <source>Language missing or translation incomplete? Help contributing translations here:
-https://www.transifex.com/spark-project/spark-project-translations</source>
+https://www.transifex.com/sparkbase-token/sparkbase-token-translations</source>
         <translation>Brakuje języka bądź nieukończona pełnego tłumaczenia? Pomóż w tłumaczeniu tutaj:
-https://www.transifex.com/spark-project/spark-project-translations </translation>
+https://www.transifex.com/sparkbase-token/sparkbase-token-translations </translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
@@ -2097,8 +2087,8 @@ Adres: %4
         <translation>Nieprawidłowy adres płatności %1</translation>
     </message>
     <message>
-        <source>Cannot start spark: click-to-pay handler</source>
-        <translation>Nie można uruchomić spark: click-to-pay handler</translation>
+        <source>Cannot start Sparkbase: click-to-pay handler</source>
+        <translation>Nie można uruchomić Sparkbase: click-to-pay handler</translation>
     </message>
     <message>
         <source>URI cannot be parsed! This can be caused by an invalid Sparkbase address or malformed URI parameters.</source>
@@ -3681,7 +3671,7 @@ Wystąpił błąd podczas próby zapisania listy adresów w %1. Proszę spróbuj
         <translation>Formularz</translation>
     </message>
     <message>
-        <source>1) What is SPARK?</source>
+        <source>1) What is the Sparkbase Token?</source>
         <translation>1) Co to jest SPARK?</translation>
     </message>
     <message>
@@ -3689,15 +3679,15 @@ Wystąpił błąd podczas próby zapisania listy adresów w %1. Proszę spróbuj
         <translation>2) Dlaczego mojego SPARKS nie można wydać?</translation>
     </message>
     <message>
-        <source>https://SPARK.org/</source>
-        <translation>https://SPARK.org/</translation>
+        <source>https://www.sparkbase.io/</source>
+        <translation>https://www.sparkbase.io/</translation>
     </message>
     <message>
         <source>1</source>
         <translation>1</translation>
     </message>
     <message>
-        <source>What is SPARK?</source>
+        <source>What is the Sparkbase Token?</source>
         <translation>Co to jest SPARK?</translation>
     </message>
     <message>
@@ -4922,7 +4912,7 @@ kopia zapasowa zostanie utworzona.
         <translation>Potwierdź swoją transakcję</translation>
     </message>
     <message>
-        <source>SEND</source>
+        <source>Send</source>
         <translation>Wyślij</translation>
     </message>
     <message>
@@ -5011,8 +5001,8 @@ Wybierz mniej nominałów kontrolą monet.</translation>
         <translation>Witamy Sparkbase.</translation>
     </message>
     <message>
-        <source>Sparkbase is the world’s most innovative Proof of Stake blockchain based technology. Developed by a team of highly experienced developers and cryptographers.</source>
-        <translation>Sparkbase to najbardziej innowacyjna na świecie technologia oparta na blockchain Proof of Stake. Opracowany przez zespół wysoce doświadczonych programistów i kryptografów.</translation>
+        <source>Sparkbase Token is the world’s most innovative Proof of Stake blockchain based technology. Developed by a team of highly experienced developers and cryptographers.</source>
+        <translation>Sparkbase Token to najbardziej innowacyjna na świecie technologia oparta na blockchain Proof of Stake. Opracowany przez zespół wysoce doświadczonych programistów i kryptografów.</translation>
     </message>
     <message>
         <source>The masternode network is Sparkbase's second layer network on top of the blockchain that enables our DAO to provide decentralized governance and a treasury.</source>

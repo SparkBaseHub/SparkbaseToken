@@ -38,7 +38,7 @@ class WalletModel;
 
 
 /**
-  SPARK GUI main class. This class represents the main window of the SPARK UI. It communicates with both the client and
+  Sparkbase GUI main class. This class represents the main window of the Sparkbase UI. It communicates with both the client and
   wallet models to give the user an up-to-date view of the current core state.
 */
 class SPARKGUI : public QMainWindow

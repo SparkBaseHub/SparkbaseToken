@@ -462,7 +462,7 @@ bool CBudgetManager::FillBlockPayee(CMutableTransaction& txCoinbase, CMutableTra
 
     CAmount blockValue = GetBlockValue(nHeight);
 
-    // Starting from SPARK v6.0 masternode and budgets are paid in the coinbase tx of PoS blocks
+    // Starting from Sparkbase v6.0 masternode and budgets are paid in the coinbase tx of PoS blocks
     const bool fPayCoinstake = fProofOfStake &&
                                !Params().GetConsensus().NetworkUpgradeActive(nHeight, Consensus::UPGRADE_V6_0);
 

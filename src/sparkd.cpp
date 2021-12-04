@@ -18,7 +18,7 @@
 #include "noui.h"
 #include "util/system.h"
 
-#include <stdio.h> 
+#include <stdio.h>
 
 /* Introduction text for doxygen: */
 
@@ -27,7 +27,7 @@
  * \section intro_sec Introduction
  *
  * This is the developer documentation of the reference client for an experimental new digital currency called SPARKS (http://www.sparkbase.io),
- * which enables instant payments to anyone, anywhere in the world. SPARK uses peer-to-peer technology to operate
+ * which enables instant payments to anyone, anywhere in the world. Sparkbase Token uses peer-to-peer technology to operate
  * with no central authority: managing transactions and issuing money are carried out collectively by the network.
  *
  * The software is a community-driven open source project, released under the MIT license.
@@ -127,7 +127,7 @@ bool AppInit(int argc, char* argv[])
 
 #ifndef WIN32
         if (gArgs.GetBoolArg("-daemon", false)) {
-            fprintf(stdout, "SPARK server starting\n");
+            fprintf(stdout, "Sparkbase server starting\n");
 
             // Daemonize
             pid_t pid = fork();

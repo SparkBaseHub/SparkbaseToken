@@ -373,7 +373,7 @@ void CMasternodePayments::FillBlockPayee(CMutableTransaction& txCoinbase, CMutab
         return;
     }
 
-    // Starting from SPARK v6.0 masternode and budgets are paid in the coinbase tx
+    // Starting from Sparkbase v6.0 masternode and budgets are paid in the coinbase tx
     const int nHeight = pindexPrev->nHeight + 1;
     bool fPayCoinstake = fProofOfStake && !Params().GetConsensus().NetworkUpgradeActive(nHeight, Consensus::UPGRADE_V6_0);
 

@@ -17,7 +17,7 @@ BEGIN
         BLOCK "040904E4" // U.S. English - multilingual (hex)
         BEGIN
             VALUE "CompanyName",        "Sparkbase AG"
-            VALUE "FileDescription",    "spark-tx (CLI SPARK transaction editor utility)"
+            VALUE "FileDescription",    "spark-tx (CLI Sparkbase transaction editor utility)"
             VALUE "FileVersion",        VER_FILEVERSION_STR
             VALUE "InternalName",       "spark-tx"
             VALUE "LegalCopyright",     COPYRIGHT_STR

@@ -1560,8 +1560,8 @@ this controller wallet (select the Masternode in the list and press "start").
 in die Zwischenablage zu kopieren.
 
 
-SIe müssen lediglich die Daten in die spark.conf Datei Ihres externen Servers einfügen,
-die SPARK-wallet starten, um dann von der Kontrollwallet aus
+Sie müssen lediglich die Daten in die spark.conf Datei Ihres externen Servers einfügen,
+die Sparkbase Token Wallet starten, um dann von der Kontrollwallet aus
 ihren Masternode zu starten (Wählen Sie den Masternode in der Liste aus und drücken SIe "Start").
 </translation>
     </message>
@@ -1839,9 +1839,9 @@ Sind sie sicher?</translation>
     </message>
     <message>
         <source>Language missing or translation incomplete? Help contributing translations here:
-https://www.transifex.com/spark-project/spark-project-translations</source>
+https://www.transifex.com/sparkbase-token/sparkbase-token-translations</source>
         <translation>Sprache fehlt oder ist unvollständig? Helfe mit und trage zur Übersetzung bei unter:
-https://www.transifex.com/spark-project/spark-project-translations</translation>
+https://www.transifex.com/sparkbase-token/sparkbase-token-translations</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
@@ -2126,7 +2126,7 @@ Adresse: %4
         <translation>Ungültige Zahlungsaufforderungsadresse %1</translation>
     </message>
     <message>
-        <source>Cannot start spark: click-to-pay handler</source>
+        <source>Cannot start Sparkbase: click-to-pay handler</source>
         <translation>Kann Sparkbase nicht starten: click-to-pay Handler</translation>
     </message>
     <message>
@@ -3931,24 +3931,24 @@ Es gab ein Problem bei dem Versuch die Adressen unter %1 zu speichern. Bitte ver
         <translation>Formular</translation>
     </message>
     <message>
-        <source>1) What is SPARK?</source>
-        <translation>1) Was ist SPARK?</translation>
+        <source>1) What is the Sparkbase Token?</source>
+        <translation>1) Was ist der Sparkbase Token?</translation>
     </message>
     <message>
         <source>2) Why are my SPARKS unspendable?</source>
         <translation>2) Wieso kann ich meine SPARKS nicht ausgeben?</translation>
     </message>
     <message>
-        <source>https://SPARK.org/</source>
-        <translation>https://SPARK.org/</translation>
+        <source>https://www.sparkbase.io/</source>
+        <translation>https://www.sparkbase.io/</translation>
     </message>
     <message>
         <source>1</source>
         <translation>1</translation>
     </message>
     <message>
-        <source>What is SPARK?</source>
-        <translation>Was ist SPARK</translation>
+        <source>What is the Sparkbase Token?</source>
+        <translation>Was ist der Sparkbase Token?</translation>
     </message>
     <message>
         <source>2</source>
@@ -4026,20 +4026,20 @@ Sparkbase nutzt einen Proof of Stake (PoS) Konsensalgorithmus, der es den Besitz
         <source>
                            &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="left"&gt;
                            We have support channels in most of our official chat groups, for example
-                           &lt;a style='color: #b088ff' href='https://discord.gg/4Vvvbbg'&gt;
+                           &lt;a style='color: #E42534' href='https://discord.gg/4Vvvbbg'&gt;
                            #support in our Discord&lt;/a&gt;.
                            If you prefer to submit a ticket, You can do so at
-                           &lt;a style='color: #b088ff' href='https://www.sparkbase.io/help'&gt;
+                           &lt;a style='color: #E42534' href='https://www.sparkbase.io/help'&gt;
                            our Sparkbase support site&lt;/a&gt;.
                            &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                          </source>
         <translation>
 &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="left"&gt;
 Wir haben Support-Kanäle in den meisten unserer offiziellen Chatgruppen, z.B.
-&lt;a style='color: #b088ff' href='https://discord.gg/4Vvvbbg'&gt;
+&lt;a style='color: #E42534' href='https://discord.gg/4Vvvbbg'&gt;
 #support in Discord&lt;/a&gt;
 Wenn Sie bevorzugen, uns ein Ticket zu schicken, besuchen Sie
-&lt;a style='color: #b088ff' href='https://www.sparkbase.io/help'&gt;
+&lt;a style='color: #E42534' href='https://www.sparkbase.io/help'&gt;
 unsere Support-Seite.&lt;/a&gt;
 &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
@@ -5441,11 +5441,11 @@ wird ein Backup erstellt.
     </message>
     <message>
         <source>CANCEL</source>
-        <translation>ABBRECHEN</translation>
+        <translation>abbrechen</translation>
     </message>
     <message>
         <source>OK</source>
-        <translation>OK</translation>
+        <translation>ok</translation>
     </message>
     <message>
         <source>Confirm Your Transaction</source>
@@ -5453,7 +5453,7 @@ wird ein Backup erstellt.
     </message>
     <message>
         <source>SEND</source>
-        <translation>SENDEN</translation>
+        <translation>senden</translation>
     </message>
     <message>
         <source>Note From Address</source>
@@ -5561,8 +5561,8 @@ Wählen Sie weniger Eingänge über coin control aus.</translation>
         <translation>Willkommen bei Sparkbase.</translation>
     </message>
     <message>
-        <source>Sparkbase is the world’s most innovative Proof of Stake blockchain based technology. Developed by a team of highly experienced developers and cryptographers.</source>
-        <translation>Sparkbase ist die innovativste, auf Proof of Stake Blockchain basierende Technologie. Es wurde von einem Team hoch erfahrener Entwickler und Kryptographen entwickelt.</translation>
+        <source>Sparkbase Token is the world’s most innovative Proof of Stake blockchain based technology. Developed by a team of highly experienced developers and cryptographers.</source>
+        <translation>Sparkbase Token ist die innovativste, auf Proof of Stake Blockchain basierende Technologie. Es wurde von einem Team hoch erfahrener Entwickler und Kryptographen entwickelt.</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;As our manifesto says: Privacy is a non-negotiable basic human right; it grants users the freedom to share their data whenever and with whomever they want - Sparkbase believes in self sovereignty.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>

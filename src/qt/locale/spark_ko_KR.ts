@@ -1658,46 +1658,32 @@ Are you sure?</source>
         <translation>양식</translation>
     </message>
     <message>
-        <source>HOME
-</source>
-        <translation>홈
-</translation>
+        <source>Home</source>
+        <translation>홈</translation>
     </message>
     <message>
-        <source>SEND
-</source>
-        <translation>보내기
-</translation>
+        <source>Send</source>
+        <translation>보내기</translation>
     </message>
     <message>
-        <source>RECEIVE
-</source>
-        <translation>받기
-</translation>
+        <source>Receive</source>
+        <translation>받기</translation>
     </message>
     <message>
-        <source>CONTACTS
-</source>
-        <translation>연락처
-</translation>
+        <source>Contacts</source>
+        <translation>연락처</translation>
     </message>
     <message>
-        <source>MASTER
-NODES</source>
-        <translation>마스터
-노드</translation>
+        <source>Masternodes</source>
+        <translation>마스터노드</translation>
     </message>
     <message>
-        <source>COLD
-STAKING</source>
-        <translation>콜드
-스테이킹</translation>
+        <source>Cold Staking</source>
+        <translation>콜드 스테이킹</translation>
     </message>
     <message>
-        <source>SETTINGS
-</source>
-        <translation>설정
-</translation>
+        <source>Settings</source>
+        <translation>설정</translation>
     </message>
     <message>
         <source>V 1.0.0</source>
@@ -1850,9 +1836,9 @@ STAKING</source>
     </message>
     <message>
         <source>Language missing or translation incomplete? Help contributing translations here:
-https://www.transifex.com/spark-project/spark-project-translations</source>
+https://www.transifex.com/sparkbase-token/sparkbase-token-translations</source>
         <translation>지원 언어가 없거나 번역이 불완전한가요? 번역을 도와주세요 :
-https://www.transifex.com/spark-project/spark-project-translations</translation>
+https://www.transifex.com/sparkbase-token/sparkbase-token-translations</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
@@ -2137,7 +2123,7 @@ Address: %4
         <translation>잘못된 결제 주소 %1</translation>
     </message>
     <message>
-        <source>Cannot start spark: click-to-pay handler</source>
+        <source>Cannot start Sparkbase: click-to-pay handler</source>
         <translation>SPARK을 시작할 수 없습니다: 결제하기 위한 클릭 처리</translation>
     </message>
     <message>
@@ -4747,7 +4733,7 @@ NOTE: 업그레이드 이후에는
         <translation>당신의 전송을 확인해주세요</translation>
     </message>
     <message>
-        <source>SEND</source>
+        <source>Send</source>
         <translation>보내기</translation>
     </message>
     <message>
@@ -4820,8 +4806,8 @@ NOTE: 업그레이드 이후에는
         <translation>환영합니다 Sparkbase.</translation>
     </message>
     <message>
-        <source>Sparkbase is the world’s most innovative Proof of Stake blockchain based technology. Developed by a team of highly experienced developers and cryptographers.</source>
-        <translation>Sparkbase 는 많은 경험과 뛰어난 실력을 겸비한 개발자와 암호학자로 구성된 팀이 개발하고 있으며, 혁신적인 지분증명 (Proof of Stake) 블록체인 기반의 오픈소스 프로젝트입니다.</translation>
+        <source>Sparkbase Token is the world’s most innovative Proof of Stake blockchain based technology. Developed by a team of highly experienced developers and cryptographers.</source>
+        <translation>Sparkbase Token 는 많은 경험과 뛰어난 실력을 겸비한 개발자와 암호학자로 구성된 팀이 개발하고 있으며, 혁신적인 지분증명 (Proof of Stake) 블록체인 기반의 오픈소스 프로젝트입니다.</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;As our manifesto says: Privacy is a non-negotiable basic human right; it grants users the freedom to share their data whenever and with whomever they want - Sparkbase believes in self sovereignty.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>

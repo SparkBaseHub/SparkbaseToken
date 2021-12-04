@@ -84,7 +84,7 @@ const char * const SPARK_PID_FILENAME = "spark.pid";
 const char * const SPARK_MASTERNODE_CONF_FILENAME = "masternode.conf";
 
 
-// SPARK only features
+// Sparkbase Token only features
 // Masternode
 std::atomic<bool> fMasterNode{false};
 bool fLiteMode = false;
