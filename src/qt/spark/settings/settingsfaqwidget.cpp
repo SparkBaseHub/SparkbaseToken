@@ -76,21 +76,26 @@ SettingsFaqWidget::SettingsFaqWidget(SPARKGUI* parent, ClientModel* _model) :
     //ui->pushButtonWebLink->setOpenExternalLinks(true);
 
     // Set FAQ content strings
+/*
     QString introContent = formatFAQContent(
         formatFAQParagraph(
             tr("Sparkbase Token is a form of utility token using blockchain technology that can be easily transferred globally, instantly, and with near zero fees. Sparkbase incorporates market leading security & privacy and is also the first PoS (Proof of Stake) Cryptocurrency to implement Sapling(SHIELD), a zk-SNARKs based privacy protocol.")) +
         formatFAQParagraph(
             tr("Sparkbase Token utilizes a Proof of Stake (PoS) consensus system algorithm, allowing all owners of Sparkbase to participate in earning block rewards while securing the network with full node wallets, as well as to run Masternodes to create and vote on proposals.")));
+*/
+    QString introContent = tr("introContent");
     ui->labelContent_Intro->setText(introContent);
-
+/*
     QString unspendableSPARKSContent = formatFAQContent(
         formatFAQParagraph(
             tr("Newly received SPARKS requires 6 confirmations on the network to become eligible for spending which can take ~6 minutes.")) +
         formatFAQParagraph(
             tr("Your Sparkbase Token wallet also needs to be completely synchronized "
                "to see and spend balances on the network.")));
+*/
+    QString unspendableSPARKSContent =  tr("unspendableSPARKSContent");
     ui->labelContent_UnspendableSPARKS->setText(unspendableSPARKSContent);
-
+/*
     QString stakeContent = formatFAQContent(
         formatFAQOrderedList(
             formatFAQListItem(tr("Make sure your wallet is completely synchronized and you are using the latest release.")) +
@@ -100,14 +105,18 @@ SettingsFaqWidget::SettingsFaqWidget(SPARKGUI* parent, ClientModel* _model) :
         formatFAQParagraph(
             tr("You can see the status of staking in the wallet by mousing over the package icon in the row on the top left of the wallet interface. The package will be lit up and will state \"Staking Enabled\" to indicate it is staking. Using the command line interface (%1); the command %2 will confirm that staking is active.")
                 .arg("spark-cli", "<span style=\"font-style:italic\">getstakingstatus</span>")));
+*/
+    QString stakeContent =  tr("stakeContent");
     ui->labelContent_Stake->setText(stakeContent);
-
+/*
     QString supportContent = formatFAQContent(
         formatFAQParagraph(
             tr("We have support channels in most of our official chat groups, for example %1")
                 .arg("<a style='color: #E42534' href='https://www.sparkbase.io/discord'>" + tr("#support in our Discord") + "</a>.")));
+*/
+    QString supportContent = tr("supportContent");
     ui->labelContent_Support->setText(supportContent);
-
+/*
     QString masternodeContent = formatFAQContent(
         formatFAQParagraph(
             tr("A masternode is a computer running a full node %1 wallet with a requirement of %2 secured collateral to provide extra services to the network and in return, receive a portion of the block reward regularly. These services include:")
@@ -135,8 +144,10 @@ SettingsFaqWidget::SettingsFaqWidget(SPARKGUI* parent, ClientModel* _model) :
                 formatFAQListItem(tr("Must be stored in a core wallet")) +
                 formatFAQListItem(tr("Need dedicated IP address")) +
                 formatFAQListItem(tr("Masternode wallet to remain online")))));
+*/
+    QString masternodeContent = tr("masternodeContent");
     ui->labelContent_Masternode->setText(masternodeContent);
-
+/*
     QString mNControllerContent = formatFAQContent(
         formatFAQParagraph(
             formatFAQParagraph(tr("The Sparkbase app is an innovative portfolio tracker, manager and master available on iOS and Android, which enables you to:")) +
@@ -161,6 +172,8 @@ SettingsFaqWidget::SettingsFaqWidget(SPARKGUI* parent, ClientModel* _model) :
               .arg("<a style='color: #E42534' href='https://www.sparkbase.io'>" + tr("www.sparkbase.io") + "</a>.")
             )
                     .arg(GUIUtil::formatBalance(clientModel->getMNCollateralRequiredAmount(), BitcoinUnits::SPARKS))));
+*/
+    QString mNControllerContent = tr("mNControllerContent");
     ui->labelContent_MNController->setText(mNControllerContent);
 
 

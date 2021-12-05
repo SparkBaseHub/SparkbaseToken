@@ -3979,18 +3979,10 @@ There was an error trying to save the address list to %1. Please try again.</tra
         <translation>Why are my SPARKS unspendable?</translation>
     </message>
     <message>
-        <source>
-                           &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="left"&gt;
-                           Newly received Sparkbase requires 6 confirmations on the network
-                           to become eligible for spending which can take ~6 minutes.
-                           &lt;/p&gt;&lt;p align="left"&gt;
-                           Your Sparkbase Wallet also needs to be completely synchronized
-                           to see and spend balances on the network.
-                           &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
-                         </source>
+        <source>unspendableSPARKSContent</source>
         <translation>
                            &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="left"&gt;
-                           Newly received Sparkbase requires 6 confirmations on the network
+                           Newly received SPARKS requires 6 confirmations on the network
                            to become eligible for spending which can take ~6 minutes.
                            &lt;/p&gt;&lt;p align="left"&gt;
                            Your Sparkbase Wallet also needs to be completely synchronized
@@ -4007,7 +3999,7 @@ There was an error trying to save the address list to %1. Please try again.</tra
         <translation>How do I stake SPARKS?</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;ol style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;"&gt;&lt;li align="left" style=" margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Make sure your wallet is completely synchronized and you are using the latest release. &lt;/li&gt;&lt;li align="left" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;You must have a balance of Sparkbase with a minimum of 600 confirmations. &lt;/li&gt;&lt;li align="left" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Your wallet must stay online and be unlocked for staking purposes. &lt;/li&gt;&lt;li align="left" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Once all those steps are followed staking should be enabled. &lt;/li&gt;&lt;li align="left" style=" margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;You can see the status of staking in the wallet by mousing over the package icon in the row on the top left of the wallet interface. There package will be lit up and will state &amp;quot;Staking Enabled&amp;quot; to indicate it is staking. Using the command line interface (spark-cli); the command &lt;span style=" font-style:italic;"&gt;getstakingstatus&lt;/span&gt; will confirm that staking is active. &lt;/li&gt;&lt;/ol&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <source>stakeContent</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;ol style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;"&gt;&lt;li align="left" style=" margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Make sure your wallet is completely synchronized and you are using the latest release. &lt;/li&gt;&lt;li align="left" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;You must have a balance of Sparkbase with a minimum of 600 confirmations. &lt;/li&gt;&lt;li align="left" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Your wallet must stay online and be unlocked for staking purposes. &lt;/li&gt;&lt;li align="left" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Once all those steps are followed staking should be enabled. &lt;/li&gt;&lt;li align="left" style=" margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;You can see the status of staking in the wallet by mousing over the package icon in the row on the top left of the wallet interface. There package will be lit up and will state &amp;quot;Staking Enabled&amp;quot; to indicate it is staking. Using the command line interface (spark-cli); the command &lt;span style=" font-style:italic;"&gt;getstakingstatus&lt;/span&gt; will confirm that staking is active. &lt;/li&gt;&lt;/ol&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
@@ -4027,20 +4019,7 @@ There was an error trying to save the address list to %1. Please try again.</tra
         <translation>Where should I go if I need support?</translation>
     </message>
     <message>
-        <source>
-                           &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="left"&gt;
-                           Sparkbase is a form of utility token using blockchain technology
-                           that can be easily transferred globally, instantly, and with near
-                           zero fees.  Sparkbase incorporates market leading security &amp;
-                           privacy and is also the first PoS (Proof of Stake) Cryptocurrency
-                           to implement Sapling(SHIELD), a zk-SNARKs based privacy protocol.
-                           &lt;/p&gt;&lt;p align="left"&gt;
-                           Sparkbase utilizes a Proof of Stake (PoS) consensus system algorithm,
-                           allowing all owners of Sparkbase to participate in earning block rewards
-                           while securing the network with full node wallets, as well as to
-                           run Masternodes to create and vote on proposals.
-                           &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
-                         </source>
+        <source>introContent</source>
         <translation>
                            &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="left"&gt;
                            Sparkbase is a form of utility token using blockchain technology
@@ -4057,16 +4036,7 @@ There was an error trying to save the address list to %1. Please try again.</tra
                          </translation>
     </message>
     <message>
-        <source>
-                           &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="left"&gt;
-                           We have support channels in most of our official chat groups, for example
-                           &lt;a style='color: #E42534' href='https://discord.gg/4Vvvbbg'&gt;
-                           #support in our Discord&lt;/a&gt;.
-                           If you prefer to submit a ticket, You can do so at
-                           &lt;a style='color: #E42534' href='https://www.sparkbase.io/help'&gt;
-                           our Sparkbase support site&lt;/a&gt;.
-                           &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
-                         </source>
+        <source>supportContent</source>
         <translation>
                            &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="left"&gt;
                            We have support channels in most of our official chat groups, for example
@@ -4083,59 +4053,10 @@ There was an error trying to save the address list to %1. Please try again.</tra
         <translation>What is a Masternode?</translation>
     </message>
     <message>
-        <source>What is the Sparkbase app?</source>
-        <translation>What is the Sparkbase app?</translation>
-    </message>
-    <message>
-        <source>The Sparkbase app is an innovative portfolio tracker, manager and master available on iOS and Android, which enables you to:</source>
-        <translation>The Sparkbase app is an innovative portfolio tracker, manager and master available on iOS and Android, which enables you to:</translation>
-    </message>
-    <message>
-        <source>
-                           &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="left"&gt;
-                           A masternode is a computer running a full node Sparkbase core wallet with a
-                           requirement of 5,000 SPARKS secured collateral to provide extra services
-                           to the network and in return, receive a portion of the block reward
-                           regularly.  These services include:
-                           &lt;/p&gt;&lt;p align="left"&gt;
-
-                           &lt;ul&gt;
-                           &lt;li&gt;Instant transactions (SwiftX)&lt;/li&gt;
-                           &lt;li&gt;A decentralized governance (Proposal Voting)&lt;/li&gt;
-                           &lt;li&gt;A decentralized budgeting system (Treasury)&lt;/li&gt;
-                           &lt;li&gt;Validation of transactions within each block&lt;/li&gt;
-                           &lt;li&gt;Act as an additional full node in the network&lt;/li&gt;
-                           &lt;/ul&gt;
-
-                           &lt;/p&gt;&lt;p align="left"&gt;
-                           For providing such services, masternodes are also paid a certain portion
-                           of reward for each block. This can serve as a passive income to the
-                           masternode owners minus their running cost.
-                           &lt;/p&gt;&lt;p align="left"&gt;
-
-                           Masternode Perks:
-                           &lt;/p&gt;&lt;p align="left"&gt;
-                           &lt;ul&gt;
-                           &lt;li&gt;Participate in Sparkbase Governance&lt;/li&gt;
-                           &lt;li&gt;Earn Masternode Rewards&lt;/li&gt;
-                           &lt;li&gt;Commodity option for future sale&lt;/li&gt;
-                           &lt;li&gt;Help secure the Sparkbase network&lt;/li&gt;
-                           &lt;/ul&gt;
-                           &lt;/p&gt;&lt;p align="left"&gt;
-
-                           Requirements:
-                           &lt;/p&gt;&lt;p align="left"&gt;
-                           &lt;ul&gt;
-                           &lt;li&gt;5,000 SPARKS per single Masternode instance&lt;/li&gt;
-                           &lt;li&gt;Must be stored in a core wallet&lt;/li&gt;
-                           &lt;li&gt;Need dedicated IP address&lt;/li&gt;
-                           &lt;li&gt;Masternode wallet to remain online&lt;/li&gt;
-                           &lt;/ul&gt;
-                           &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
-                         </source>
+        <source>masternodeContent</source>
         <translation>
                            &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="left"&gt;
-                           A masternode is a computer running a full node Sparkbase core wallet with a
+                           A masternode is a computer running a full node Sparkbase Token wallet with a
                            requirement of 5,000 SPARKS secured collateral to provide extra services
                            to the network and in return, receive a portion of the block reward
                            regularly.  These services include:
@@ -4175,6 +4096,31 @@ There was an error trying to save the address list to %1. Please try again.</tra
                            &lt;/ul&gt;
                            &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                          </translation>
+    </message>
+    <message>
+        <source>What is the Sparkbase app?</source>
+        <translation>What is the Sparkbase app?</translation>
+    </message>
+    <message>
+        <source>mNControllerContent</source>
+        <translation>
+    &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="left"&gt;
+    The Sparkbase app is an innovative portfolio tracker, manager and master available on iOS and Android, which enables you to:
+    &lt;/p&gt;&lt;p align="left"&gt;
+
+    &lt;ul&gt;
+    &lt;li&gt;Create Your Portfolio&lt;/li&gt;
+    &lt;li&gt;Find Lucrative Assets&lt;/li&gt;
+    &lt;li&gt;Optimize Your Strategy&lt;/li&gt;
+    &lt;li&gt;Add Stocks, Bonds &amp; More&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;/p&gt;&lt;p align="left"&gt;
+    Download the Sparkbase app now on iOS or Android.
+    &lt;/p&gt;&lt;p align="left"&gt;
+    &lt;a style="color: #E42534" href="https://www.sparkbase.io"&gt;www.sparkbase.io&lt;/a&gt;
+    &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
+    </translation>
     </message>
     <message>
         <source>Frequently Asked Questions</source>
