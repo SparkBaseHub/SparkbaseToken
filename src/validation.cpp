@@ -2826,11 +2826,11 @@ bool CheckWork(const CBlock& block, const CBlockIndex* const pindexPrev)
     }
 
     if (block.nBits != nBitsRequired) {
-        // Pivx Specific reference to the block with the wrong threshold was used.
+        // Sparkbase Specific reference to the block with the wrong threshold was used.
         /*
         const Consensus::Params& consensus = Params().GetConsensus();
         if ((block.nTime == (uint32_t) consensus.nSparkBadBlockTime) &&
-                (block.nBits == (uint32_t) consensus.nPivxBadBlockBits)) {
+                (block.nBits == (uint32_t) consensus.nSparkBadBlockTime)) {
             // accept Spakrbase Token block minted with incorrect proof of work threshold
             return true;
         }
