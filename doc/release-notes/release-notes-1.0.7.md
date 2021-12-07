@@ -1,14 +1,14 @@
-SparkBase version *1.0.7* is now available from:  <https://github.com/SparkBaseHub/SparkBase/releases>
+Sparkbase version *1.0.7* is now available from:  <https://github.com/SparkBaseHub/SparkbaseToken/releases>
 
 This is a new minor version release, including various bug fixes and performance improvements, as well as an updated community info display.
 
-Please report bugs using the issue tracker at github: <https://github.com/SparkBaseHub/SparkBase/issues>
+Please report bugs using the issue tracker at github: <https://github.com/SparkBaseHub/SparkbaseToken/issues>
 
 
 Mandatory Update
 ==============
 
-SparkBase v1.0.7 is a mandatory update for all users.
+Sparkbase v1.0.7 is a mandatory update for all users.
 
 How to Upgrade
 ==============

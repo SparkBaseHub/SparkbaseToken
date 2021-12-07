@@ -40,7 +40,7 @@ sudo apt-get -y update
 #sudo apt-get install -y build-essential libtool autotools-dev autoconf pkg-config libssl-dev libgmp3-dev libevent-dev automake git
 sudo apt-get install -y build-essential libtool bsdmainutils autotools-dev autoconf pkg-config automake python3 automake git cargo
 
-# new ssl support for SparkBase
+# new ssl support for Sparkbase
 sudo apt-get install -y libsecp256k1-dev
 
 # libboost library

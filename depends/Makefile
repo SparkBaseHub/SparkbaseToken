@@ -38,7 +38,7 @@ NO_ZMQ ?=
 NO_UPNP ?=
 NO_NATPMP ?=
 NO_RUST ?=
-FALLBACK_DOWNLOAD_PATH ?= https://depends.sparkbase.io
+FALLBACK_DOWNLOAD_PATH ?= https://depends.pivx.org
 
 BUILD = $(shell ./config.guess)
 HOST ?= $(BUILD)
