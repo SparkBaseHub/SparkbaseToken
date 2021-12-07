@@ -12,7 +12,7 @@
 
 /**
  * CBaseChainParams defines the base parameters (shared between spark-cli and sparkd)
- * of a given instance of the Pivx system.
+ * of a given instance of the Sparkbase system.
  */
 class CBaseChainParams
 {
