@@ -72,7 +72,7 @@ cd /home/SparkToken
 chmod 755 autogen.sh
 chmod 755 share/genbuild.sh
 ./autogen.sh
-./configure --without-gui --with-unsupported-ssl
+./configure --without-gui --with-unsupported-ssl --disable-tests --disable-bench
 make
 make install
 }
