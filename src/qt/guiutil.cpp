@@ -125,7 +125,7 @@ void setupAddressWidget(QValidatedLineEdit* widget, QWidget* parent)
     widget->setFont(bitcoinAddressFont());
     // We don't want translators to use own addresses in translations
     // and this is the only place, where this address is supplied.
-    widget->setPlaceholderText(QObject::tr("Enter SPARK address (e.g. %1)").arg("D7VFR83SQbiezrW72hjcWJtcfip5krte2Z"));
+    widget->setPlaceholderText(QObject::tr("Enter Sparkbase Token address (e.g. %1)").arg("D7VFR83SQbiezrW72hjcWJtcfip5krte2Z"));
     widget->setValidator(new BitcoinAddressEntryValidator(parent));
     widget->setCheckValidator(new BitcoinAddressCheckValidator(parent));
 }
@@ -451,9 +451,9 @@ fs::path static StartupShortcutPath()
 {
     std::string chain = gArgs.GetChainName();
     if (chain == CBaseChainParams::TESTNET)
-        return GetSpecialFolderPath(CSIDL_STARTUP) / "SPARK (testnet).lnk";
+        return GetSpecialFolderPath(CSIDL_STARTUP) / "Sparkbase (testnet).lnk";
     else if (chain == CBaseChainParams::REGTEST)
-        return GetSpecialFolderPath(CSIDL_STARTUP) / "SPARK (regtest).lnk";
+        return GetSpecialFolderPath(CSIDL_STARTUP) / "Sparkbase (regtest).lnk";
 
     return GetSpecialFolderPath(CSIDL_STARTUP) / "SPARK.lnk";
 }

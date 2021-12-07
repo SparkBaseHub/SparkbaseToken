@@ -13,7 +13,7 @@
 #include <QAbstractListModel>
 #include <QSettings>
 
-/** Interface from Qt to configuration data structure for SPARK client.
+/** Interface from Qt to configuration data structure for Sparkbase client.
    To Qt, the options are presented as a list with the different options
    laid out vertically.
    This can be changed to a tree once the settings become sufficiently

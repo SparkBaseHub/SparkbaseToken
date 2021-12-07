@@ -60,7 +60,7 @@
 
 
 #if defined(NDEBUG)
-#error "SPARK cannot be compiled without assertions."
+#error "Sparkbase cannot be compiled without assertions."
 #endif
 
 /**
@@ -847,10 +847,12 @@ CAmount GetBlockValue(int nHeight)
     if (nHeight > 129600)  return 36   * COIN;//Phase 4
     if (nHeight > 86400)  return 40.5 * COIN;//Phase 3
     if (nHeight > 43200)  return 45   * COIN;//Phase 2*/
-    if (nHeight > 1000)   return 0.4  * COIN;//Phase 1
-    if (nHeight !=1)       return 100  * COIN;
-    // Premine for 6 masternodes at block 1
-    return 30001 * COIN;
+    if (nHeight > 200)   return 0.4  * COIN;//Phase 1
+
+    // Premine for initial supply and masternodes
+    if (nHeight < 201) return 105000  * COIN;
+
+    return 1 * COIN;
 }
 
 int64_t GetMasternodePayment()
@@ -1434,7 +1436,7 @@ static bool ConnectBlock(const CBlock& block, CValidationState& state, CBlockInd
             // problems.
             return AbortNode(state, "Corrupt block found indicating potential hardware failure; shutting down");
         }
-        return error("%s: CheckBlock failed for %s: %s", __func__, block.GetHash().ToString(), FormatStateMessage(state));
+        return false;//error("%s: CheckBlock failed for %s: %s", __func__, block.GetHash().ToString(), FormatStateMessage(state));
     }
 
     // verify that the view's current state corresponds to the previous block
@@ -2825,12 +2827,14 @@ bool CheckWork(const CBlock& block, const CBlockIndex* const pindexPrev)
 
     if (block.nBits != nBitsRequired) {
         // Pivx Specific reference to the block with the wrong threshold was used.
+        /*
         const Consensus::Params& consensus = Params().GetConsensus();
-        if ((block.nTime == (uint32_t) consensus.nPivxBadBlockTime) &&
+        if ((block.nTime == (uint32_t) consensus.nSparkBadBlockTime) &&
                 (block.nBits == (uint32_t) consensus.nPivxBadBlockBits)) {
-            // accept SPARK block minted with incorrect proof of work threshold
+            // accept Spakrbase Token block minted with incorrect proof of work threshold
             return true;
         }
+        */
 
         return error("%s : incorrect proof of work at %d", __func__, pindexPrev->nHeight + 1);
     }

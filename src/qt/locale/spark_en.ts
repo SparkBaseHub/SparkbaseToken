@@ -152,12 +152,12 @@
     </message>
     <message>
         <location line="+7"/>
-        <source>These are your SPARK addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <source>These are your Sparkbase addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+4"/>
-        <source>These are your SPARK addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <source>These are your Sparkbase addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1332,7 +1332,7 @@ It will start automatically as soon as the wallet has enough confirmations on an
     </message>
     <message>
         <location line="+67"/>
-        <source>The entered address &quot;%1&quot; is not a valid SPARK address.</source>
+        <source>The entered address &quot;%1&quot; is not a valid Sparkbase address.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1425,17 +1425,17 @@ It will start automatically as soon as the wallet has enough confirmations on an
     </message>
     <message>
         <location line="+90"/>
-        <source>Welcome to SPARK Token.</source>
+        <source>Welcome to Sparkbase.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+35"/>
-        <source>As this is the first time the program is launched, you can choose where SPARK Token will store its data.</source>
+        <source>As this is the first time the program is launched, you can choose where Sparkbase Token will store its data.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+18"/>
-        <source>SPARK Token will download and store a copy of the SPARK block chain. At least %2GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
+        <source>Sparkbase Token will download and store a copy of the Sparkbase block chain. At least %2GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1672,7 +1672,7 @@ It will start automatically as soon as the wallet has enough confirmations on an
     </message>
     <message>
         <location line="-210"/>
-        <source>To create a SPARK Masternode you must dedicate %1 (the unit of SPARK) to the network (however, these coins are still yours and will never leave your possession).</source>
+        <source>To create a Sparkbase Masternode you must dedicate %1 (the unit of SPARK) to the network (however, these coins are still yours and will never leave your possession).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1992,44 +1992,37 @@ Are you sure?</source>
     </message>
     <message>
         <location line="+156"/>
-        <source>HOME
-</source>
+        <source>Home</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+29"/>
-        <source>SEND
-</source>
+        <source>Send</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+26"/>
-        <source>RECEIVE
-</source>
+        <source>Receive</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+20"/>
-        <source>CONTACTS
-</source>
+        <source>Contacts</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+26"/>
-        <source>MASTER
-NODES</source>
+        <source>Masternodes</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+26"/>
-        <source>COLD
-STAKING</source>
+        <source>Cold Staking</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+26"/>
-        <source>SETTINGS
-</source>
+        <source>Settings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2052,7 +2045,7 @@ STAKING</source>
     </message>
     <message>
         <location line="+45"/>
-        <source>Open SPARK URI</source>
+        <source>Open Sparkbase URI</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2180,12 +2173,12 @@ Address: %4
     </message>
     <message>
         <location line="-54"/>
-        <source>Cannot start spark: click-to-pay handler</source>
+        <source>Cannot start Sparkbase: click-to-pay handler</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+60"/>
-        <source>URI cannot be parsed! This can be caused by an invalid SPARK address or malformed URI parameters.</source>
+        <source>URI cannot be parsed! This can be caused by an invalid Sparkbase address or malformed URI parameters.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -2221,7 +2214,7 @@ Address: %4
     </message>
     <message>
         <location filename="../guiutil.cpp" line="+127"/>
-        <source>Enter SPARK address (e.g. %1)</source>
+        <source>Enter Sparkbase address (e.g. %1)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2277,7 +2270,7 @@ Address: %4
     </message>
     <message>
         <location filename="../spark.cpp" line="+533"/>
-        <source>A fatal error occurred. SPARK can no longer continue safely and will quit.</source>
+        <source>A fatal error occurred. Sparkbase can no longer continue safely and will quit.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2659,7 +2652,7 @@ Address: %4
     </message>
     <message>
         <location line="+93"/>
-        <source>Open the SPARK debug log file from the current data directory. This can take a few seconds for large log files.</source>
+        <source>Open the Sparkbase debug log file from the current data directory. This can take a few seconds for large log files.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2926,7 +2919,7 @@ Address: %4
     </message>
     <message>
         <location line="-40"/>
-        <source>Welcome to the SPARK RPC console.</source>
+        <source>Welcome to the Sparkbase RPC console.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3297,7 +3290,7 @@ try unlocking the wallet</source>
     </message>
     <message>
         <location line="-117"/>
-        <source>Instead of sharing only a SPARK address, you can create a payment request, bundling up more information</source>
+        <source>Instead of sharing only a Sparkbase address, you can create a payment request, bundling up more information</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3411,7 +3404,7 @@ try unlocking the wallet</source>
     </message>
     <message>
         <location line="+72"/>
-        <source>The remainder of the value resultant from the inputs minus the outputs value goes to the &quot;change&quot; SPARK address</source>
+        <source>The remainder of the value resultant from the inputs minus the outputs value goes to the &quot;change&quot; Sparkbase address</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3625,7 +3618,7 @@ Do you want to continue?</source>
     </message>
     <message>
         <location line="-225"/>
-        <source>Parse a SPARK URI</source>
+        <source>Parse a Sparkbase URI</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3933,7 +3926,7 @@ Remember to write it down and store it safely, otherwise you might lose access t
     </message>
     <message>
         <location line="+7"/>
-        <source>Encrypt your SPARK addresses (key pair actually) using BIP38 encryption.
+        <source>Encrypt your Sparkbase addresses (key pair actually) using BIP38 encryption.
 Using this mechanism you can share your keys without middle-man risk, only need to store your passphrase safely</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3980,7 +3973,7 @@ Using this mechanism you can share your keys without middle-man risk, only need 
     </message>
     <message>
         <location line="+77"/>
-        <source>SPARK address</source>
+        <source>Sparkbase address</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -4152,7 +4145,7 @@ Verify that you have installed a predetermined text editor.</source>
     </message>
     <message>
         <location line="+138"/>
-        <source>Welcome to the SPARK RPC console.</source>
+        <source>Welcome to the Sparkbase RPC console.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -4385,7 +4378,7 @@ There was an error trying to save the address list to %1. Please try again.</sou
     </message>
     <message>
         <location line="+152"/>
-        <source>1) What is SPARK?</source>
+        <source>1) What is the Sparkbase Token?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -4395,7 +4388,7 @@ There was an error trying to save the address list to %1. Please try again.</sou
     </message>
     <message>
         <location line="+148"/>
-        <source>https://SPARK.org/</source>
+        <source>https://www.sparkbase.io/</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -4405,7 +4398,7 @@ There was an error trying to save the address list to %1. Please try again.</sou
     </message>
     <message>
         <location line="+18"/>
-        <source>What is SPARK?</source>
+        <source>What is the Sparkbase Token?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -4455,7 +4448,7 @@ There was an error trying to save the address list to %1. Please try again.</sou
     </message>
     <message>
         <location line="+90"/>
-        <source>What is a Masternode Controller?</source>
+        <source>What is the Sparkbase app?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -4485,7 +4478,7 @@ There was an error trying to save the address list to %1. Please try again.</sou
     </message>
     <message>
         <location line="+22"/>
-        <source>6) What is a Masternode Controller?</source>
+        <source>6) What is the Sparkbase app?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -4495,143 +4488,125 @@ There was an error trying to save the address list to %1. Please try again.</sou
     </message>
     <message>
         <location filename="../spark/settings/settingsfaqwidget.cpp" line="+78"/>
-        <source>SPARK is a form of digital online money using blockchain technology that can be easily transferred globally, instantly, and with near zero fees. SPARK incorporates market leading security &amp; privacy and is also the first PoS (Proof of Stake) Cryptocurrency to implement Sapling(SHIELD), a zk-SNARKs based privacy protocol.</source>
-        <translation type="unfinished"></translation>
+        <source>introContent</source>
+        <translation>
+                           &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="left"&gt;
+                           Sparkbase is a form of utility token using blockchain technology
+                           that can be easily transferred globally, instantly, and with near
+                           zero fees.  Sparkbase incorporates market leading security &amp;
+                           privacy and is also the first PoS (Proof of Stake) Cryptocurrency
+                           to implement Sapling(SHIELD), a zk-SNARKs based privacy protocol.
+                           &lt;/p&gt;&lt;p align="left"&gt;
+                           Sparkbase utilizes a Proof of Stake (PoS) consensus system algorithm,
+                           allowing all owners of Sparkbase to participate in earning block rewards
+                           while securing the network with full node wallets, as well as to
+                           run Masternodes to create and vote on proposals.
+                           &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
+                         </translation>
     </message>
-    <message>
-        <location line="+6"/>
-        <source>SPARK utilizes a Proof of Stake (PoS) consensus system algorithm, allowing all owners of SPARK to participate in earning block rewards while securing the network with full node wallets, as well as to run Masternodes to create and vote on proposals.</source>
-        <translation type="unfinished"></translation>
-    </message>
+
     <message>
         <location line="+8"/>
-        <source>Newly received SPARK requires 6 confirmations on the network to become eligible for spending which can take ~6 minutes.</source>
-        <translation type="unfinished"></translation>
+        <source>unspendableSPARKSContent</source>
+        <translation>
+                           &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="left"&gt;
+                           Newly received SPARKS requires 6 confirmations on the network
+                           to become eligible for spending which can take ~6 minutes.
+                           &lt;/p&gt;&lt;p align="left"&gt;
+                           Your Sparkbase Wallet also needs to be completely synchronized
+                           to see and spend balances on the network.
+                           &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
+                         </translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>Your SPARK wallet also needs to be completely synchronized to see and spend balances on the network.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+6"/>
-        <source>Make sure your wallet is completely synchronized and you are using the latest release.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>You must have a balance of SPARK with a minimum of 600 confirmations.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Your wallet must stay online and be unlocked for staking purposes.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Once all those steps are followed staking should be enabled.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+2"/>
-        <source>You can see the status of staking in the wallet by mousing over the package icon in the row on the top left of the wallet interface. The package will be lit up and will state &quot;Staking Enabled&quot; to indicate it is staking. Using the command line interface (%1); the command %2 will confirm that staking is active.</source>
-        <translation type="unfinished"></translation>
+        <source>stakeContent</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;ol style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;"&gt;&lt;li align="left" style=" margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Make sure your wallet is completely synchronized and you are using the latest release. &lt;/li&gt;&lt;li align="left" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;You must have a balance of Sparkbase with a minimum of 600 confirmations. &lt;/li&gt;&lt;li align="left" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Your wallet must stay online and be unlocked for staking purposes. &lt;/li&gt;&lt;li align="left" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Once all those steps are followed staking should be enabled. &lt;/li&gt;&lt;li align="left" style=" margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;You can see the status of staking in the wallet by mousing over the package icon in the row on the top left of the wallet interface. There package will be lit up and will state &amp;quot;Staking Enabled&amp;quot; to indicate it is staking. Using the command line interface (spark-cli); the command &lt;span style=" font-style:italic;"&gt;getstakingstatus&lt;/span&gt; will confirm that staking is active. &lt;/li&gt;&lt;/ol&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location line="+10"/>
-        <source>We have support channels in most of our official chat groups, for example %1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>#support in our Discord</source>
-        <translation type="unfinished"></translation>
+        <source>supportContent</source>
+        <translation>
+                           &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="left"&gt;
+                           We have support channels in most of our official chat groups, for example
+                           &lt;a style='color: #E42534' href='https://discord.gg/4Vvvbbg'&gt;
+                           #support in our Discord&lt;/a&gt;.
+                           If you prefer to submit a ticket, You can do so at
+                           &lt;a style='color: #E42534' href='https://www.sparkbase.io/help'&gt;
+                           our Sparkbase support site&lt;/a&gt;.
+                           &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
+                         </translation>
     </message>
     <message>
         <location line="+30"/>
-        <source>%1 per single Masternode instance</source>
-        <translation type="unfinished"></translation>
+        <source>masternodeContent</source>
+        <translation>
+                           &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="left"&gt;
+                           A masternode is a computer running a full node Sparkbase Token wallet with a
+                           requirement of 5,000 SPARKS secured collateral to provide extra services
+                           to the network and in return, receive a portion of the block reward
+                           regularly.  These services include:
+                           &lt;/p&gt;&lt;p align="left"&gt;
+
+                           &lt;ul&gt;
+                           &lt;li&gt;Instant transactions (SwiftX)&lt;/li&gt;
+                           &lt;li&gt;A decentralized governance (Proposal Voting)&lt;/li&gt;
+                           &lt;li&gt;A decentralized budgeting system (Treasury)&lt;/li&gt;
+                           &lt;li&gt;Validation of transactions within each block&lt;/li&gt;
+                           &lt;li&gt;Act as an additional full node in the network&lt;/li&gt;
+                           &lt;/ul&gt;
+
+                           &lt;/p&gt;&lt;p align="left"&gt;
+                           For providing such services, masternodes are also paid a certain portion
+                           of reward for each block. This can serve as a passive income to the
+                           masternode owners minus their running cost.
+                           &lt;/p&gt;&lt;p align="left"&gt;
+
+                           Masternode Perks:
+                           &lt;/p&gt;&lt;p align="left"&gt;
+                           &lt;ul&gt;
+                           &lt;li&gt;Participate in Sparkbase Governance&lt;/li&gt;
+                           &lt;li&gt;Earn Masternode Rewards&lt;/li&gt;
+                           &lt;li&gt;Commodity option for future sale&lt;/li&gt;
+                           &lt;li&gt;Help secure the Sparkbase network&lt;/li&gt;
+                           &lt;/ul&gt;
+                           &lt;/p&gt;&lt;p align="left"&gt;
+
+                           Requirements:
+                           &lt;/p&gt;&lt;p align="left"&gt;
+                           &lt;ul&gt;
+                           &lt;li&gt;5,000 SPARKS per single Masternode instance&lt;/li&gt;
+                           &lt;li&gt;Must be stored in a core wallet&lt;/li&gt;
+                           &lt;li&gt;Need dedicated IP address&lt;/li&gt;
+                           &lt;li&gt;Masternode wallet to remain online&lt;/li&gt;
+                           &lt;/ul&gt;
+                           &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
+                         </translation>
     </message>
     <message>
-        <location line="+9"/>
-        <source>A Masternode Controller wallet is where the %1 collateral can reside during a Controller-Remote masternode setup. It is a wallet that can activate the remote masternode wallet(s) and allows you to keep your collateral coins offline while the remote masternode remains online.</source>
-        <translation type="unfinished"></translation>
+        <source>What is the Sparkbase app?</source>
+        <translation>What is the Sparkbase app?</translation>
     </message>
     <message>
-        <location line="-27"/>
-        <source>A decentralized governance (Proposal Voting)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="-7"/>
-        <source>A masternode is a computer running a full node %1 wallet with a requirement of %2 secured collateral to provide extra services to the network and in return, receive a portion of the block reward regularly. These services include:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+8"/>
-        <source>A decentralized budgeting system (Treasury)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Validation of transactions within each block</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Act as an additional full node in the network</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+2"/>
-        <source>For providing such services, masternodes are also paid a certain portion of reward for each block. This can serve as a passive income to the masternode owners minus their running cost.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+4"/>
-        <source>Masternode Perks:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+2"/>
-        <source>Participate in SPARK Governance</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Earn Masternode Rewards</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Commodity option for future sale</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Help secure the SPARK network</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+2"/>
-        <source>Requirements:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+4"/>
-        <source>Must be stored in a core wallet</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Need dedicated IP address</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Masternode wallet to remain online</source>
-        <translation type="unfinished"></translation>
+        <source>mNControllerContent</source>
+        <translation>
+    &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="left"&gt;
+    The Sparkbase app is an innovative portfolio tracker, manager and master available on iOS and Android, which enables you to:
+    &lt;/p&gt;&lt;p align="left"&gt;
+
+    &lt;ul&gt;
+    &lt;li&gt;Create Your Portfolio&lt;/li&gt;
+    &lt;li&gt;Find Lucrative Assets&lt;/li&gt;
+    &lt;li&gt;Optimize Your Strategy&lt;/li&gt;
+    &lt;li&gt;Add Stocks, Bonds &amp; More&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;/p&gt;&lt;p align="left"&gt;
+    Download the Sparkbase app now on iOS or Android.
+    &lt;/p&gt;&lt;p align="left"&gt;
+    &lt;a style="color: #E42534" href="https://www.sparkbase.io"&gt;www.sparkbase.io&lt;/a&gt;
+    &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
+    </translation>
     </message>
 </context>
 <context>
@@ -4902,7 +4877,7 @@ Are you sure?
     </message>
     <message>
         <location line="-62"/>
-        <source>SPARK address or contact label</source>
+        <source>Sparkbase address or contact label</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5064,7 +5039,7 @@ Are you sure?
     </message>
     <message>
         <location line="+58"/>
-        <source>Automatically open the SPARK client port on the router. This only works when your router supports NAT-PMP and it is enabled. The external port could be random.</source>
+        <source>Automatically open the Sparkbase client port on the router. This only works when your router supports NAT-PMP and it is enabled. The external port could be random.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6111,7 +6086,7 @@ backup will be created.
     </message>
     <message>
         <location line="+2"/>
-        <source>SEND</source>
+        <source>Send</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6237,12 +6212,12 @@ Select fewer inputs with coin control.</source>
     </message>
     <message>
         <location line="+116"/>
-        <source>SPARK is the world’s most innovative Proof of Stake blockchain based technology. Developed by a team of highly experienced developers and cryptographers.</source>
+        <source>Sparkbase Token is the world’s most innovative Proof of Stake blockchain based technology. Developed by a team of highly experienced developers and cryptographers.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+93"/>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;As our manifesto says: Privacy is a non-negotiable basic human right; it grants users the freedom to share their data whenever and with whomever they want - SPARK believes in self sovereignty.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;As our manifesto says: Privacy is a non-negotiable basic human right; it grants users the freedom to share their data whenever and with whomever they want - Sparkbase believes in self sovereignty.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6252,7 +6227,7 @@ Select fewer inputs with coin control.</source>
     </message>
     <message>
         <location line="-103"/>
-        <source>How SPARK respects your privacy?</source>
+        <source>How Sparkbase respects your privacy?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -7140,7 +7115,7 @@ Please run &apos;sapling-fetch-params&apos; or &apos;./util/fetch-params.sh&apos
     </message>
     <message>
         <location line="+53"/>
-        <source>SPARK address or contact label</source>
+        <source>Sparkbase address or contact label</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

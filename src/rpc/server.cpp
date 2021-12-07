@@ -260,11 +260,11 @@ UniValue stop(const JSONRPCRequest& jsonRequest)
     if (jsonRequest.fHelp || !jsonRequest.params.empty())
         throw std::runtime_error(
             "stop\n"
-            "\nStop SPARK server.");
+            "\nStop Sparkbase server.");
     // Event loop will exit after current HTTP requests have been handled, so
     // this reply will get back to the client.
     StartShutdown();
-    return "SPARK server stopping";
+    return "Sparkbase server stopping";
 }
 
 

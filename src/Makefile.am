@@ -138,7 +138,7 @@ LIBSAPLING_H = \
   sapling/sapling_operation.h
 
 .PHONY: FORCE cargo-build check-symbols check-security
-# spark core #
+# sparkbase core #
 BITCOIN_CORE_H = \
   activemasternode.h \
   addrdb.h \

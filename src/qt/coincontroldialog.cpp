@@ -679,7 +679,7 @@ void CoinControlDialog::loadAvailableCoin(bool treeMode,
     itemOutput->setFlags(flgCheckbox);
     itemOutput->setCheckState(COLUMN_CHECKBOX, Qt::Unchecked);
 
-    // if listMode or change => show SPARK address. In tree mode, address is not shown again for direct wallet address outputs
+    // if listMode or change => show Sparkbase Token address. In tree mode, address is not shown again for direct wallet address outputs
     if (!treeMode) {
         itemOutput->setText(COLUMN_ADDRESS, sWalletAddress);
     }else {

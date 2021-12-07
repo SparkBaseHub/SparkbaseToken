@@ -43,7 +43,7 @@ public:
     GUIException(const std::string &message) : message(message) {}
 };
 
-/** Utility functions used by the SPARK Qt UI.
+/** Utility functions used by the Sparkbase Qt UI.
  */
 namespace GUIUtil
 {
@@ -52,7 +52,7 @@ QString dateTimeStr(const QDateTime& datetime);
 QString dateTimeStrWithSeconds(const QDateTime& date);
 QString dateTimeStr(qint64 nTime);
 
-// Render SPARK addresses in monospace font
+// Render Sparkbase Token addresses in monospace font
 QFont bitcoinAddressFont();
 
 // Parse string into a CAmount value

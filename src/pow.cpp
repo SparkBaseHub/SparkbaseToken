@@ -36,9 +36,13 @@ unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHead
     arith_uint256 PastDifficultyAveragePrev;
     const arith_uint256& powLimit = UintToArith256(consensus.powLimit);
 
+    //LogPrintf("get new difficulty: %u \n", powLimit.GetCompact());
+
     if (BlockLastSolved == NULL || BlockLastSolved->nHeight == 0 || BlockLastSolved->nHeight < PastBlocksMin) {
         return powLimit.GetCompact();
     }
+
+    //LogPrintf("processing difficulty 1: %u \n", powLimit.GetCompact());
 
     if (consensus.NetworkUpgradeActive(pindexLast->nHeight + 1, Consensus::UPGRADE_POS)) {
         const bool fTimeV2 = !Params().IsRegTestNet() && consensus.IsTimeProtocolV2(pindexLast->nHeight+1);
@@ -69,8 +73,12 @@ unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHead
         if (bnNew <= 0 || bnNew > bnTargetLimit)
             bnNew = bnTargetLimit;
 
+        //LogPrintf("processing difficulty 2: %s  \n", bnNew.GetHex());
+
         return bnNew.GetCompact();
     }
+
+
 
     for (unsigned int i = 1; BlockReading && BlockReading->nHeight > 0; i++) {
         if (PastBlocksMax > 0 && i > PastBlocksMax) {
@@ -109,6 +117,8 @@ unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHead
     if (nActualTimespan > _nTargetTimespan * 3)
         nActualTimespan = _nTargetTimespan * 3;
 
+  //LogPrintf("processing difficulty 3: %s  \n", bnNew.GetHex());
+
     // Retarget
     bnNew *= nActualTimespan;
     bnNew /= _nTargetTimespan;
@@ -116,7 +126,7 @@ unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHead
     if (bnNew > powLimit) {
         bnNew = powLimit;
     }
-
+    //LogPrintf("final difficulty: %s  \n", bnNew.GetHex());
     return bnNew.GetCompact();
 }
 
@@ -133,9 +143,10 @@ bool CheckProofOfWork(uint256 hash, unsigned int nBits)
         return error("CheckProofOfWork() : nBits below minimum work");
 
     // Check proof of work matches claimed amount
-    if (UintToArith256(hash) > bnTarget)
-        return error("CheckProofOfWork() : hash doesn't match nBits");
-
+    if (UintToArith256(hash) > bnTarget){
+        //LogPrintf("CheckProofOfWork nBits: %s > %s\n", hash.ToString().c_str(), bnTarget.ToString().c_str());
+        return false;//error("CheckProofOfWork() : hash doesn't match nBits");
+    }
     return true;
 }
 

@@ -7,16 +7,16 @@ define(_CLIENT_VERSION_BUILD, 0)
 define(_CLIENT_VERSION_RC, 0)
 define(_CLIENT_VERSION_IS_RELEASE, false)
 define(_COPYRIGHT_YEAR, 2021)
-AC_INIT([SPARK Token],m4_join([.], _CLIENT_VERSION_MAJOR, _CLIENT_VERSION_MINOR, _CLIENT_VERSION_REVISION, m4_if(_CLIENT_VERSION_BUILD, [0], [], _CLIENT_VERSION_BUILD))m4_if(_CLIENT_VERSION_RC, [0], [], [rc]_CLIENT_VERSION_RC),[https://github.com/SparkBaseHub/SparkBase/issues],[SparkToken],[https://www.sparkbase.io/])
+AC_INIT([Sparkbase],m4_join([.], _CLIENT_VERSION_MAJOR, _CLIENT_VERSION_MINOR, _CLIENT_VERSION_REVISION, m4_if(_CLIENT_VERSION_BUILD, [0], [], _CLIENT_VERSION_BUILD))m4_if(_CLIENT_VERSION_RC, [0], [], [rc]_CLIENT_VERSION_RC),[https://github.com/SparkBaseHub/SparkBase/issues],[SparkbaseToken],[https://www.sparkbase.io/])
 AC_CONFIG_SRCDIR([src/validation.cpp])
 AC_CONFIG_HEADERS([src/config/spark-config.h])
 AC_CONFIG_AUX_DIR([build-aux])
 AC_CONFIG_MACRO_DIR([build-aux/m4])
 
-BITCOIN_DAEMON_NAME=sparkd
-BITCOIN_GUI_NAME=spark-qt
-BITCOIN_CLI_NAME=spark-cli
-BITCOIN_TX_NAME=spark-tx
+BITCOIN_DAEMON_NAME=sparkbased
+BITCOIN_GUI_NAME=sparkbase-qt
+BITCOIN_CLI_NAME=sparkbase-cli
+BITCOIN_TX_NAME=sparkbase-tx
 
 dnl Unless the user specified ARFLAGS, force it to be cr
 AC_ARG_VAR(ARFLAGS, [Flags for the archiver, defaults to <cr> if not set])

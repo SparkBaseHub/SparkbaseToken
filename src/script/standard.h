@@ -66,7 +66,7 @@ public:
  *  * CNoDestination: no destination set
  *  * CKeyID: TX_PUBKEYHASH destination
  *  * CScriptID: TX_SCRIPTHASH destination
- *  A CTxDestination is the internal data type encoded in a SPARK address
+ *  A CTxDestination is the internal data type encoded in a Sparkbase Token address
  */
 typedef boost::variant<CNoDestination, CKeyID, CScriptID> CTxDestination;
 
@@ -109,7 +109,7 @@ bool ExtractDestination(const CScript& scriptPubKey, CTxDestination& addressRet,
 bool ExtractDestinations(const CScript& scriptPubKey, txnouttype& typeRet, std::vector<CTxDestination>& addressRet, int& nRequiredRet);
 
 /**
- * Generate a SPARK scriptPubKey for the given CTxDestination. Returns a P2PKH
+ * Generate a Sparkbase scriptPubKey for the given CTxDestination. Returns a P2PKH
  * script for a CKeyID destination, a P2SH script for a CScriptID, and an empty
  * script for CNoDestination.
  */

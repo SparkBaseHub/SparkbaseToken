@@ -425,7 +425,7 @@ void SPARKGUI::message(const QString& title, const QString& message, unsigned in
     } else if (style & CClientUIInterface::MSG_INFORMATION_SNACK) {
         messageInfo(message);
     } else {
-        // Append title to "SPARK - "
+        // Append title to "Sparkbase - "
         if (!msgType.isEmpty())
             strTitle += " - " + msgType;
         notificator->notify(static_cast<Notificator::Class>(nNotifyIcon), strTitle, message);

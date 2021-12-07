@@ -142,7 +142,7 @@ public:
 };
 
 /**
- * SPARK RPC command dispatcher.
+ * Sparkbase RPC command dispatcher.
  */
 class CRPCTable
 {

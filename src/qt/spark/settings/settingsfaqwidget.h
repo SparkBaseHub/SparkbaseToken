@@ -53,7 +53,7 @@ private:
 
     // Formats a QString into a FAQ content paragraph with HTML
     static inline QString formatFAQParagraph(const QString& str) {
-        return "<p align=\"justify\">" + str + "</p>";
+        return "<p align=\"left\">" + str + "</p>";
     }
 
     // Formats a QString into a FAQ content ordered list with HTML

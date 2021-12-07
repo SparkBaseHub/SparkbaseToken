@@ -52,7 +52,7 @@ extern const char * const SPARK_PID_FILENAME;
 extern const char * const SPARK_MASTERNODE_CONF_FILENAME;
 extern const char * const DEFAULT_DEBUGLOGFILE;
 
-//SPARK only features
+//Sparkbase Token only features
 
 extern std::atomic<bool> fMasterNode;
 extern bool fLiteMode;

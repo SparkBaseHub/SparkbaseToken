@@ -61,7 +61,7 @@ MasterNodeWizardDialog::MasterNodeWizardDialog(WalletModel* model, ClientModel* 
 
     QString collateralAmountStr = GUIUtil::formatBalance(clientModel->getMNCollateralRequiredAmount());
     ui->labelMessage1a->setText(formatHtmlContent(
-                formatParagraph(tr("To create a SPARK Masternode you must dedicate %1 (the unit of SPARK) "
+                formatParagraph(tr("To create a Sparkbase Token Masternode you must dedicate %1 (the unit of SPARK) "
                         "to the network (however, these coins are still yours and will never leave your possession).").arg(collateralAmountStr)) +
                 formatParagraph(tr("You can deactivate the node and unlock the coins at any time."))));
 

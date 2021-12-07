@@ -55,7 +55,7 @@ enum ProRegParam {
 
 static const std::map<ProRegParam, std::string> mapParamHelp = {
         {collateralAddress,
-            "%d. \"collateralAddress\"     (string, required) The SPARK address to send the collateral to.\n"
+            "%d. \"collateralAddress\"     (string, required) The Sparkbase Token address to send the collateral to.\n"
         },
         {collateralHash,
             "%d. \"collateralHash\"        (string, required) The collateral transaction hash.\n"
@@ -100,7 +100,7 @@ static const std::map<ProRegParam, std::string> mapParamHelp = {
             "                                between 0.00 and 100.00. If not set, it takes the default value of 0.0\n"
         },
         {ownerAddress,
-            "%d. \"ownerAddress\"          (string, required) The SPARK address to use for payee updates and proposal voting.\n"
+            "%d. \"ownerAddress\"          (string, required) The Sparkbase Token address to use for payee updates and proposal voting.\n"
             "                                The private key belonging to this address must be known in your wallet, in order to send updates.\n"
             "                                The address must not be already registered, and must differ from the collateralAddress\n"
         },
@@ -109,10 +109,10 @@ static const std::map<ProRegParam, std::string> mapParamHelp = {
             "                                If not specified, or set to an empty string, then the mn key must be known by your wallet, in order to sign the tx.\n"
         },
         {payoutAddress_register,
-            "%d. \"payoutAddress\"          (string, required) The SPARK address to use for masternode reward payments.\n"
+            "%d. \"payoutAddress\"          (string, required) The Sparkbase Token address to use for masternode reward payments.\n"
         },
         {payoutAddress_update,
-            "%d. \"payoutAddress\"          (string, required) The SPARK address to use for masternode reward payments.\n"
+            "%d. \"payoutAddress\"          (string, required) The Sparkbase Token address to use for masternode reward payments.\n"
             "                                 If set to an empty string, the currently active payout address is reused.\n"
         },
         {proTxHash,
@@ -164,7 +164,7 @@ static void CheckEvoUpgradeEnforcement()
     }
 }
 
-// Allows to specify SPARK address or priv key (as strings). In case of SPARK address, the priv key is taken from the wallet
+// Allows to specify Sparkbase Token address or priv key (as strings). In case of Sparkbase Token address, the priv key is taken from the wallet
 static CKey ParsePrivKey(CWallet* pwallet, const std::string &strKeyOrAddress, bool allowAddresses = true) {
     bool isStaking{false}, isShield{false};
     const CWDestination& cwdest = Standard::DecodeDestination(strKeyOrAddress, isStaking, isShield);
@@ -206,7 +206,7 @@ static CKeyID ParsePubKeyIDFromAddress(const std::string& strAddress)
     }
     const CKeyID* keyID = boost::get<CKeyID>(Standard::GetTransparentDestination(cwdest));
     if (!keyID) {
-        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, strprintf("invalid SPARK address %s", strAddress));
+        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, strprintf("invalid Sparkbase Token address %s", strAddress));
     }
     return *keyID;
 }
@@ -1056,7 +1056,7 @@ static const CRPCCommand commands[] =
 void RegisterEvoRPCCommands(CRPCTable &tableRPC)
 {
     if (!Params().IsRegTestNet()) {
-        // Disabled before SPARK v6.0
+        // Disabled before Sparkbase v6.0
         return;
     }
 

@@ -105,7 +105,7 @@ public:
     }
 };
 
-/** Interface to SPARK wallet from Qt view code. */
+/** Interface to Sparkbase Token wallet from Qt view code. */
 class WalletModel : public QObject
 {
     Q_OBJECT

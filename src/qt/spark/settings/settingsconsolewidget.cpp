@@ -220,7 +220,7 @@ void SettingsConsoleWidget::clear(bool clearHistory)
     QString clsKey = "Ctrl-L";
 #endif
 
-    messageInternal(RPCExecutor::CMD_REPLY, (tr("Welcome to the SPARK RPC console.") + "<br>" +
+    messageInternal(RPCExecutor::CMD_REPLY, (tr("Welcome to the Sparkbase RPC console.") + "<br>" +
                         tr("Use up and down arrows to navigate history, and %1 to clear screen.").arg("<b>"+clsKey+"</b>") + "<br>" +
                         tr("Type %1 for an overview of available commands.").arg("<b>help</b>") + "<br>" +
                         tr("For more information on using this console type %1.").arg("<b>help-console</b>") +

@@ -8,6 +8,8 @@
 
 #include "chainparams.h"
 
+#include "util/system.h"
+
 #include "chainparamsseeds.h"
 #include "consensus/merkle.h"
 #include "tinyformat.h"
@@ -51,7 +53,8 @@ void CChainParams::UpdateNetworkUpgradeParameters(Consensus::UpgradeIndex idx, i
 static CBlock CreateGenesisBlock(uint32_t nTime, uint32_t nNonce, uint32_t nBits, int32_t nVersion, const CAmount& genesisReward)
 {
     const char* pszTimestamp = "To change something, build a new model that makes the old model obsolete - Richard Buckminster Fuller - 1982";
-    const CScript genesisOutputScript = CScript() << ParseHex("04a4a60cbc6a5f40807bd7666d95eaa9485643319ae8380d35005d03b348f8d0c213388d87b6f186313679aaa4b4361b170cf2151bc78771b9704fa7b05c5ec553") << OP_CHECKSIG;
+    //const CScript genesisOutputScript = CScript() << ParseHex("04a4a60cbc6a5f40807bd7666d95eaa9485643319ae8380d35005d03b348f8d0c213388d87b6f186313679aaa4b4361b170cf2151bc78771b9704fa7b05c5ec553") << OP_CHECKSIG;
+    const CScript genesisOutputScript = CScript() << ParseHex("04678afdb0fe5548271967f1a67130b7105cd6a828e03909a67962e0ea1f61deb649f6bc3f4cef38c4f35504e51ec112de5c384df7ba0b8d578a4c702b6bf11d5f") << OP_CHECKSIG;
     return CreateGenesisBlock(pszTimestamp, genesisOutputScript, nTime, nNonce, nBits, nVersion, genesisReward);
 }
 
@@ -106,16 +109,54 @@ public:
         //bnProofOfWorkLimit = ~uint256(0) >> 20;
 
         //genesis = CreateGenesisBlock(1545066000, 3497963, 0x1e0ffff0, 1, 100 * COIN);
-        genesis = CreateGenesisBlock(1545066000, 3497963, 504365055, 1, 100 * COIN);
+        //genesis = CreateGenesisBlock(1545066000, 3497963, 504365055, 1, 100 * COIN);
+        bnProofOfWorkNonce = 100000;
+
+
+        genesis = CreateGenesisBlock(1638571443, 1251586, 504365040, 1, 100 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
 
+        if (true && genesis.GetHash() != uint256S("0x00000028e85a5769b418399cd878a579302b656cfcfc1807f45b585398f4a49f"))
+        {
+           printf("Searching for genesis block...\n");
+           arith_uint256 hashTarget;
+           hashTarget.SetCompact(genesis.nBits);
 
-        assert(consensus.hashGenesisBlock == uint256S("0x0000025257de26888da19a24038d1a58c81639136e7cf92307518f17220138e1"));
-        assert(genesis.hashMerkleRoot == uint256S("0xd37d0acd6c4df804265fc3c187b43552cb5aeb4e42eaee2818296961ea1ec96f"));
+           arith_uint256 thash;
 
-        consensus.fPowAllowMinDifficultyBlocks = false;
+           while (true)
+           {
+               thash = UintToArith256(genesis.GetHash());
+               if (thash <= hashTarget)
+                   break;
+               if ((genesis.nNonce & 0xFFF) == 0)
+               {
+                   printf("nonce %08X: hash = %s (target = %s)\n", genesis.nNonce, thash.ToString().c_str(), hashTarget.ToString().c_str());
+               }
+               ++genesis.nNonce;
+               if (genesis.nNonce == 0)
+               {
+                   printf("NONCE WRAPPED, incrementing time\n");
+                   ++genesis.nTime;
+               }
+           }
+           printf("genesis.nTime = %u \n", genesis.nTime);
+           printf("genesis.nNonce = %u \n", genesis.nNonce);
+           printf("genesis.nVersion = %u \n", genesis.nVersion);
+           printf("genesis.GetHash = %s\n", genesis.GetHash().ToString().c_str()); //first this, then comment this line out and uncomment the one under.
+          // printf("genesis.hashMerkleRoot = %s \n", genesis.hashMerkleRoot.ToString().c_str()); //improvised. worked for me, to find merkle root
+        }
+
+        //assert(consensus.hashGenesisBlock == uint256S("0x0000025257de26888da19a24038d1a58c81639136e7cf92307518f17220138e1"));
+        assert(consensus.hashGenesisBlock == uint256S("0x00000028e85a5769b418399cd878a579302b656cfcfc1807f45b585398f4a49f"));
+
+        //assert(genesis.hashMerkleRoot == uint256S("0xd37d0acd6c4df804265fc3c187b43552cb5aeb4e42eaee2818296961ea1ec96f"));
+        assert(genesis.hashMerkleRoot == uint256S("0x2e7e82b3f1623a8ebc85256f896088b8eee0de06e2c0200be165508acd089529"));
+
+        consensus.fPowAllowMinDifficultyBlocks = true;
         consensus.fPowNoRetargeting = false;
-        consensus.powLimit   = uint256S("0x00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
+        //consensus.powLimit   = uint256S("0x00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
+        consensus.powLimit   = uint256S("0x0fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
         consensus.posLimitV1 = uint256S("0x000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
         consensus.posLimitV2 = uint256S("0x00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
         consensus.nBudgetCycleBlocks = 43200;       // approx. 1 every 30 days
@@ -124,13 +165,13 @@ public:
         consensus.nFutureTimeDriftPoW = 7200;
         consensus.nFutureTimeDriftPoS = 180;
         consensus.nMaxMoneyOut = 21000000 * COIN;
-        consensus.nMNCollateralAmt = 10000 * COIN;
+        consensus.nMNCollateralAmt = 5000 * COIN;
         consensus.nPoolMaxTransactions = 3;
         consensus.nProposalEstablishmentTime = 60 * 60 * 24;    // must be at least a day old to make it into a budget
         consensus.nStakeMinAge = 60 * 60;
         consensus.nStakeMinDepth = 600;
-        consensus.nTargetTimespan = 40 * 60;
-        consensus.nTargetTimespanV2 = 30 * 60;
+        consensus.nTargetTimespan = 1 * 60;// Sparkbase Token: 1 minute
+        consensus.nTargetTimespanV2 = 1 * 60;
         consensus.nTargetSpacing = 1 * 60;
         consensus.nTimeSlotLength = 15;
         consensus.nMaxProposalPayments = 6;
@@ -148,8 +189,8 @@ public:
         consensus.height_ZC_RecalcAccumulators = 200;
 
         // validation by-pass
-        consensus.nPivxBadBlockTime = 1471401614;    // Skip nBit validation of Block 259201 per PR #915
-        consensus.nPivxBadBlockBits = 0x1c056dac;    // Skip nBit validation of Block 259201 per PR #915
+        consensus.nSparkBadBlockTime = 1471401614;    // Skip nBit validation of Block 259201 per PR #915
+        consensus.nSparkBadBlockBits = 0x1c056dac;    // Skip nBit validation of Block 259201 per PR #915
 
         // Zerocoin-related params
         consensus.ZC_Modulus = "25195908475657893494027183240048398571429282126204032027777137836043662020707595556264018525880784"
@@ -273,7 +314,7 @@ public:
 
         consensus.fPowAllowMinDifficultyBlocks = true;
         consensus.fPowNoRetargeting = false;
-        consensus.powLimit   = uint256S("0x00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
+        consensus.powLimit   = uint256S("0x0fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
         consensus.posLimitV1 = uint256S("0x000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
         consensus.posLimitV2 = uint256S("0x00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
         consensus.nBudgetCycleBlocks = 144;         // approx 10 cycles per day
@@ -282,13 +323,13 @@ public:
         consensus.nFutureTimeDriftPoW = 7200;
         consensus.nFutureTimeDriftPoS = 180;
         consensus.nMaxMoneyOut = 21000000 * COIN;
-        consensus.nMNCollateralAmt = 10000 * COIN;
+        consensus.nMNCollateralAmt = 5000 * COIN;
         consensus.nPoolMaxTransactions = 3;
         consensus.nProposalEstablishmentTime = 60 * 5;  // at least 5 min old to make it into a budget
         consensus.nStakeMinAge = 60 * 60;
         consensus.nStakeMinDepth = 100;
-        consensus.nTargetTimespan = 40 * 60;
-        consensus.nTargetTimespanV2 = 30 * 60;
+        consensus.nTargetTimespan = 1 * 60;
+        consensus.nTargetTimespanV2 = 1 * 60;
         consensus.nTargetSpacing = 1 * 60;
         consensus.nTimeSlotLength = 15;
         consensus.nMaxProposalPayments = 20;
@@ -359,15 +400,15 @@ public:
         vSeeds.push_back(CDNSSeedData("207.148.89.89", "207.148.89.89"));           // Testnet WL5
         vSeeds.push_back(CDNSSeedData("51.15.234.144", "51.15.234.144"));           // Testnet MN1
 
-        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 139); // Testnet spark addresses start with 'x' or 'y'
-        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 19);  // Testnet spark script addresses start with '8' or '9'
+        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 139); // Testnet Sparkbase Token addresses start with 'x' or 'y'
+        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 19);  // Testnet Sparkbase Token script addresses start with '8' or '9'
         base58Prefixes[STAKING_ADDRESS] = std::vector<unsigned char>(1, 73);     // starting with 'W'
         base58Prefixes[SECRET_KEY] = std::vector<unsigned char>(1, 239);     // Testnet private keys start with '9' or 'c' (Bitcoin defaults)
-        // Testnet spark BIP32 pubkeys start with 'DRKV'
+        // Testnet Sparkbase Token BIP32 pubkeys start with 'DRKV'
         base58Prefixes[EXT_PUBLIC_KEY] = {0x3a, 0x80, 0x61, 0xa0};
-        // Testnet spark BIP32 prvkeys start with 'DRKP'
+        // Testnet Sparkbase Token BIP32 prvkeys start with 'DRKP'
         base58Prefixes[EXT_SECRET_KEY] = {0x3a, 0x80, 0x58, 0x37};
-        // Testnet spark BIP44 coin type is '1' (All coin's testnet default)
+        // Testnet Sparkbase Token BIP44 coin type is '1' (All coin's testnet default)
         base58Prefixes[EXT_COIN_TYPE] = {0x80, 0x00, 0x00, 0x01};
 
         vFixedSeeds.clear();
@@ -489,15 +530,15 @@ public:
         pchMessageStart[3] = 0xac;
         nDefaultPort = 5441;
 
-        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 139); // Testnet spark addresses start with 'x' or 'y'
-        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 19);  // Testnet spark script addresses start with '8' or '9'
+        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 139); // Testnet Sparkbase Token addresses start with 'x' or 'y'
+        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 19);  // Testnet Sparkbase Token script addresses start with '8' or '9'
         base58Prefixes[STAKING_ADDRESS] = std::vector<unsigned char>(1, 73);     // starting with 'W'
         base58Prefixes[SECRET_KEY] = std::vector<unsigned char>(1, 239);     // Testnet private keys start with '9' or 'c' (Bitcoin defaults)
-        // Testnet spark BIP32 pubkeys start with 'DRKV'
+        // Testnet Sparkbase Token BIP32 pubkeys start with 'DRKV'
         base58Prefixes[EXT_PUBLIC_KEY] = {0x3a, 0x80, 0x61, 0xa0};
-        // Testnet spark BIP32 prvkeys start with 'DRKP'
+        // Testnet Sparkbase Token BIP32 prvkeys start with 'DRKP'
         base58Prefixes[EXT_SECRET_KEY] = {0x3a, 0x80, 0x58, 0x37};
-        // Testnet spark BIP44 coin type is '1' (All coin's testnet default)
+        // Testnet Sparkbase Token BIP44 coin type is '1' (All coin's testnet default)
         base58Prefixes[EXT_COIN_TYPE] = {0x80, 0x00, 0x00, 0x01};
 
         // Reject non-standard transactions by default
