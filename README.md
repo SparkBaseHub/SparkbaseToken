@@ -55,7 +55,7 @@ More information at [sparkbase.io](https://www.sparkbase.io)
 
 <table>
 <th>Reward</th><th>Masternode Rewards</th><th>Staking Rewards</th>
-<tr><td>1 BASE</td><td>70% (0.6 SPARKS)</td><td>25% (0.4 SPARKS)</td><td>5% (0.05 SPARKS)</td></tr>
+<tr><td>1 BASE</td><td>70% (0.6 SPARKS)</td><td>25% (0.4 SPARKS)</td></tr>
 </table>
 
 
