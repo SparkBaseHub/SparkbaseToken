@@ -5,7 +5,7 @@ SetCompressor /SOLID lzma
 
 # General Symbol Definitions
 !define REGKEY "SOFTWARE\$(^Name)"
-!define COMPANY "@PACKAGE_NAME@ project"
+!define COMPANY "Sparkbase AG"
 !define URL @PACKAGE_URL@
 
 # MUI Symbol Definitions
@@ -57,8 +57,8 @@ VIAddVersionKey ProductVersion "@PACKAGE_VERSION@"
 VIAddVersionKey CompanyName "${COMPANY}"
 VIAddVersionKey CompanyWebsite "${URL}"
 VIAddVersionKey FileVersion "@PACKAGE_VERSION@"
-VIAddVersionKey FileDescription "Installer for @PACKAGE_NAME@"
-VIAddVersionKey LegalCopyright "Copyright (C) 2015-@COPYRIGHT_YEAR@ The @PACKAGE_NAME@ developers"
+VIAddVersionKey FileDescription "Installer for @PACKAGE_NAME@ Token"
+VIAddVersionKey LegalCopyright "Copyright (C) 2017-@COPYRIGHT_YEAR@ ${COMPANY}"
 InstallDirRegKey HKCU "${REGKEY}" Path
 ShowUninstDetails show
 
