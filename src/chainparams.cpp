@@ -106,17 +106,10 @@ public:
     {
         strNetworkID = "main";
 
-        //bnProofOfWorkLimit = ~uint256(0) >> 20;
-
-        //genesis = CreateGenesisBlock(1545066000, 3497963, 0x1e0ffff0, 1, 100 * COIN);
-        //genesis = CreateGenesisBlock(1545066000, 3497963, 504365055, 1, 100 * COIN);
-        bnProofOfWorkNonce = 100000;
-
-
-        genesis = CreateGenesisBlock(1638571443, 1251586, 504365040, 1, 100 * COIN);
+        genesis = CreateGenesisBlock(1639418952, 1730726, 504365040, 1, 100 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
 
-        if (true && genesis.GetHash() != uint256S("0x00000028e85a5769b418399cd878a579302b656cfcfc1807f45b585398f4a49f"))
+        if (true && genesis.GetHash() != uint256S("0x00000b026f8d789e7c7e60b0a19f385204295d40b4fa0975822e09c6e4bfa914"))
         {
            printf("Searching for genesis block...\n");
            arith_uint256 hashTarget;
@@ -148,7 +141,7 @@ public:
         }
 
         //assert(consensus.hashGenesisBlock == uint256S("0x0000025257de26888da19a24038d1a58c81639136e7cf92307518f17220138e1"));
-        assert(consensus.hashGenesisBlock == uint256S("0x00000028e85a5769b418399cd878a579302b656cfcfc1807f45b585398f4a49f"));
+        assert(consensus.hashGenesisBlock == uint256S("0x00000b026f8d789e7c7e60b0a19f385204295d40b4fa0975822e09c6e4bfa914"));
 
         //assert(genesis.hashMerkleRoot == uint256S("0xd37d0acd6c4df804265fc3c187b43552cb5aeb4e42eaee2818296961ea1ec96f"));
         assert(genesis.hashMerkleRoot == uint256S("0x2e7e82b3f1623a8ebc85256f896088b8eee0de06e2c0200be165508acd089529"));
@@ -156,8 +149,8 @@ public:
         consensus.fPowAllowMinDifficultyBlocks = true;
         consensus.fPowNoRetargeting = false;
         //consensus.powLimit   = uint256S("0x00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
-        consensus.powLimit   = uint256S("0x0fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
-        consensus.posLimitV1 = uint256S("0x000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
+        consensus.powLimit   = uint256S("0x00ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
+        consensus.posLimitV1 = uint256S("0x00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
         consensus.posLimitV2 = uint256S("0x00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
         consensus.nBudgetCycleBlocks = 43200;       // approx. 1 every 30 days
         consensus.nBudgetFeeConfirmations = 6;      // Number of confirmations for the finalization fee
@@ -169,9 +162,9 @@ public:
         consensus.nPoolMaxTransactions = 3;
         consensus.nProposalEstablishmentTime = 60 * 60 * 24;    // must be at least a day old to make it into a budget
         consensus.nStakeMinAge = 60 * 60;
-        consensus.nStakeMinDepth = 600;
-        consensus.nTargetTimespan = 1 * 60;// Sparkbase Token: 1 minute
-        consensus.nTargetTimespanV2 = 1 * 60;
+        consensus.nStakeMinDepth = 100;
+        consensus.nTargetTimespan = 40 * 60;
+        consensus.nTargetTimespanV2 = 30 * 60;
         consensus.nTargetSpacing = 1 * 60;
         consensus.nTimeSlotLength = 15;
         consensus.nMaxProposalPayments = 6;

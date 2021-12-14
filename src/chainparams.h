@@ -91,7 +91,6 @@ protected:
 
     std::string strNetworkID;
     CBlock genesis;
-    int bnProofOfWorkNonce;
     //uint256 bnProofOfWorkLimit;
     Consensus::Params consensus;
     CMessageHeader::MessageStartChars pchMessageStart;
