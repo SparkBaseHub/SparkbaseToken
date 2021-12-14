@@ -64,11 +64,11 @@ clear
 
 function fetch_wallet() {
 cd /home
-git -C SparkToken pull || git clone https://github.com/SparkBaseHub/SparkToken.git
+git -C SparkbaseToken pull || git clone https://github.com/SparkBaseHub/SparkbaseToken.git
 }
 
 function compile_wallet() {
-cd /home/SparkToken
+cd /home/SparkbaseToken
 chmod 755 autogen.sh
 chmod 755 share/genbuild.sh
 ./autogen.sh
