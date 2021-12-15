@@ -64,14 +64,14 @@ More information at [sparkbase.io](https://www.sparkbase.io)
 ### QT Wallet (gui) install script (Ubuntu 16.04 or Ubuntu 18.04)
 ```
 cd /home
-wget https://raw.githubusercontent.com/SparkBaseHub/SparkToken/master/shell/wallet_install.sh
+wget https://raw.githubusercontent.com/SparkBaseHub/SparkbaseToken/master/shell/wallet_install.sh
 chmod 755 wallet_install.sh
 ./wallet_install.sh
 ```
 ### Staking Wallet (no gui) install script (Ubuntu 16.04 or Ubuntu 18.04)
 ```
 cd /home
-wget https://raw.githubusercontent.com/SparkBaseHub/SparkToken/master/shell/staking_install.sh
+wget https://raw.githubusercontent.com/SparkBaseHub/SparkbaseToken/master/shell/staking_install.sh
 chmod 755 staking_install.sh
 ./staking_install.sh
 ```
@@ -79,7 +79,7 @@ chmod 755 staking_install.sh
 ### Masternode install script (Ubuntu 16.04 or Ubuntu 18.04)
 ```
 cd /home
-wget https://raw.githubusercontent.com/SparkBaseHub/SparkToken/master/shell/masternode_install.sh
+wget https://raw.githubusercontent.com/SparkBaseHub/SparkbaseToken/master/shell/masternode_install.sh
 chmod 755 masternode_install.sh
 ./masternode_install.sh
 ```
