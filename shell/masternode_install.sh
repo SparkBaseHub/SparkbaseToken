@@ -8,7 +8,7 @@ COIN_CLI='spark-cli'
 COIN_PATH='/usr/local/bin/'
 COIN_TGZ='https://github.com/SparkBaseHub/SparkbaseToken/releases/download/v5.3.0/SparkToken-5.3.0-x86_64-linux-gnu_masternode-only.tar.gz'
 COIN_ZIP=$(echo $COIN_TGZ | awk -F'/' '{print $NF}')
-COIN_NAME='spark'
+COIN_NAME='sparkbase'
 COIN_PORT=5421
 RPC_PORT=5422
 
