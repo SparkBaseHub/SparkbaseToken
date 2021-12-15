@@ -97,7 +97,7 @@ function download_node() {
   cd - >/dev/null 2>&1
   rm -rf $TMP_FOLDER >/dev/null 2>&1
   wget https://raw.githubusercontent.com/SparkBaseHub/SparkbaseToken/master/util/fetch-params.sh
-  chmod 755 staking_install.sh
+  chmod 755 fetch-params.sh
   ./fetch-params.sh
   clear
 }
