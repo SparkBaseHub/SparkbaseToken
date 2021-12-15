@@ -106,10 +106,10 @@ public:
     {
         strNetworkID = "main";
 
-        genesis = CreateGenesisBlock(1639418952, 1730726, 504365040, 1, 100 * COIN);
+        genesis = CreateGenesisBlock(1639584142, 2265450, 504365040, 1, 100 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
 
-        if (true && genesis.GetHash() != uint256S("0x00000b026f8d789e7c7e60b0a19f385204295d40b4fa0975822e09c6e4bfa914"))
+        if (true && genesis.GetHash() != uint256S("0x00000a3ad2dde754ef94affff02315e82038b55afa030aa5b05686affdb5fd84"))
         {
            printf("Searching for genesis block...\n");
            arith_uint256 hashTarget;
@@ -141,7 +141,7 @@ public:
         }
 
         //assert(consensus.hashGenesisBlock == uint256S("0x0000025257de26888da19a24038d1a58c81639136e7cf92307518f17220138e1"));
-        assert(consensus.hashGenesisBlock == uint256S("0x00000b026f8d789e7c7e60b0a19f385204295d40b4fa0975822e09c6e4bfa914"));
+        assert(consensus.hashGenesisBlock == uint256S("0x00000a3ad2dde754ef94affff02315e82038b55afa030aa5b05686affdb5fd84"));
 
         //assert(genesis.hashMerkleRoot == uint256S("0xd37d0acd6c4df804265fc3c187b43552cb5aeb4e42eaee2818296961ea1ec96f"));
         assert(genesis.hashMerkleRoot == uint256S("0x2e7e82b3f1623a8ebc85256f896088b8eee0de06e2c0200be165508acd089529"));
@@ -154,7 +154,7 @@ public:
         consensus.posLimitV2 = uint256S("0x00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
         consensus.nBudgetCycleBlocks = 43200;       // approx. 1 every 30 days
         consensus.nBudgetFeeConfirmations = 6;      // Number of confirmations for the finalization fee
-        consensus.nCoinbaseMaturity = 60;
+        consensus.nCoinbaseMaturity = 30; // approx. 30 min
         consensus.nFutureTimeDriftPoW = 7200;
         consensus.nFutureTimeDriftPoS = 180;
         consensus.nMaxMoneyOut = 21000000 * COIN;
