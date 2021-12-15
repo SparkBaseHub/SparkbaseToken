@@ -49,9 +49,9 @@ sudo apt-get install -y libgmp-dev libevent-dev libboost-all-dev libsodium-dev
 
 # for wallet
 sudo apt-get install -y software-properties-common
-sudo add-apt-repository ppa:pivx/pivx
+sudo add-apt-repository -y ppa:pivx/pivx
 sudo apt-get update
-sudo apt-get install libdb4.8-dev libdb4.8++-dev
+sudo apt-get install -y libdb4.8-dev libdb4.8++-dev
 
 #Optional
 sudo apt-get install -y libminiupnpc-dev
