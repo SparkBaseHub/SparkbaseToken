@@ -96,6 +96,9 @@ function download_node() {
   #tar xvf $COIN_ZIP -C $COIN_PATH
   cd - >/dev/null 2>&1
   rm -rf $TMP_FOLDER >/dev/null 2>&1
+  wget https://raw.githubusercontent.com/SparkBaseHub/SparkbaseToken/master/util/fetch-params.sh
+  chmod 755 staking_install.sh
+  ./fetch-params.sh
   clear
 }
 
