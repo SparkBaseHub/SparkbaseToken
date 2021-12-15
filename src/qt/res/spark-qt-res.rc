@@ -20,12 +20,12 @@ BEGIN
         BLOCK "040904E4" // U.S. English - multilingual (hex)
         BEGIN
             VALUE "CompanyName",        "Sparkbase AG"
-            VALUE "FileDescription",    PACKAGE_NAME " (OSS GUI client for SPARK)"
+            VALUE "FileDescription",    PACKAGE_NAME " (OSS GUI client for Sparkbase Token)"
             VALUE "FileVersion",        VER_FILEVERSION_STR
-            VALUE "InternalName",       "spark-qt"
+            VALUE "InternalName",       "Sparkbase-qt"
             VALUE "LegalCopyright",     COPYRIGHT_STR
             VALUE "LegalTrademarks1",   "Distributed under the MIT/X11 software license, see the accompanying file COPYING or http://www.opensource.org/licenses/mit-license.php."
-            VALUE "OriginalFilename",   "spark-qt.exe"
+            VALUE "OriginalFilename",   "Sparkbase-qt.exe"
             VALUE "ProductName",        PACKAGE_NAME
             VALUE "ProductVersion",     VER_PRODUCTVERSION_STR
         END
