@@ -170,7 +170,7 @@ public:
         consensus.nMaxProposalPayments = 6;
 
         // spork keys
-        consensus.strSporkPubKey = "0403fd85f442beb80842a5b2dac0bb60d6195f4d55d810d3bf95fd0846ca96a000193ee96eaff683dd0f591fd064f7dc429e87188f2a62b3d13920deaebef4b058";
+        consensus.strSporkPubKey = "043db68a3c9046c7c24f08c5039e54f6103bef322b84e95c43a4349919be845781846f9bf6182d41a2c35e23f2670333e5176f569ea54d4454be680eb5328d6d56";
         consensus.strSporkPubKeyOld = "";
         consensus.nTime_EnforceNewSporkKey = 0;    //!> December 21, 2020 01:00:00 AM GMT
         consensus.nTime_RejectOldSporkKey = 0;     //!> March 1, 2021 01:00:00 AM GMT
@@ -328,7 +328,7 @@ public:
         consensus.nMaxProposalPayments = 20;
 
         // spork keys
-        consensus.strSporkPubKey = "04a976754c65def539ac5bd722bd8f84bdf4ea100089f22ca9ff07d54e0e415bccba6c5e4ca10b4e7f9c83c0557916b12c4b7b9d68e7d1eb479c35603e19e10602";
+        consensus.strSporkPubKey = "043db68a3c9046c7c24f08c5039e54f6103bef322b84e95c43a4349919be845781846f9bf6182d41a2c35e23f2670333e5176f569ea54d4454be680eb5328d6d56";
         consensus.strSporkPubKeyOld = "";
         consensus.nTime_EnforceNewSporkKey = 0;
         consensus.nTime_RejectOldSporkKey = 0;
@@ -465,7 +465,7 @@ public:
         private key hex: bd4960dcbd9e7f2223f24e7164ecb6f1fe96fc3a416f5d3a830ba5720c84b8ca
         Address: yCvUVd72w7xpimf981m114FSFbmAmne7j9
         */
-        consensus.strSporkPubKey = "043969b1b0e6f327de37f297a015d37e2235eaaeeb3933deecd8162c075cee0207b13537618bde640879606001a8136091c62ec272dd0133424a178704e6e75bb7";
+        consensus.strSporkPubKey = "043db68a3c9046c7c24f08c5039e54f6103bef322b84e95c43a4349919be845781846f9bf6182d41a2c35e23f2670333e5176f569ea54d4454be680eb5328d6d56";
         consensus.strSporkPubKeyOld = "";
         consensus.nTime_EnforceNewSporkKey = 0;
         consensus.nTime_RejectOldSporkKey = 0;
