@@ -49,9 +49,9 @@ sudo apt-get install -y libgmp-dev libevent-dev libboost-all-dev libsodium-dev
 
 # for wallet
 sudo apt-get install -y software-properties-common
-sudo add-apt-repository ppa:pivx/pivx
+sudo add-apt-repository -y ppa:pivx/pivx
 sudo apt-get update
-sudo apt-get install libdb4.8-dev libdb4.8++-dev
+sudo apt-get install -y libdb4.8-dev libdb4.8++-dev
 
 #Optional
 sudo apt-get install -y libminiupnpc-dev
@@ -61,7 +61,7 @@ sudo apt-get install -y libzmq3-dev
 
 # Dependencies for the GUI: Ubuntu
 #sudo apt-get install libqt5gui5 libqt5core5a libqt5dbus5 qttools5-dev qttools5-dev-tools libprotobuf-dev protobuf-compiler
-sudo apt-get install libqt5gui5 libqt5core5a libqt5dbus5 libqt5svg5-dev libqt5charts5-dev qttools5-dev qttools5-dev-tools libqrencode-dev
+sudo apt-get install -y libqt5gui5 libqt5core5a libqt5dbus5 libqt5svg5-dev libqt5charts5-dev qttools5-dev qttools5-dev-tools libqrencode-dev
 
 
 # libqrencode (optional) can be installed with:
