@@ -108,7 +108,7 @@ public:
 
         genesis = CreateGenesisBlock(1639584142, 2265450, 504365040, 1, 100 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
-
+/*
         if (true && genesis.GetHash() != uint256S("0x00000a3ad2dde754ef94affff02315e82038b55afa030aa5b05686affdb5fd84"))
         {
            printf("Searching for genesis block...\n");
@@ -139,16 +139,12 @@ public:
            printf("genesis.GetHash = %s\n", genesis.GetHash().ToString().c_str()); //first this, then comment this line out and uncomment the one under.
           // printf("genesis.hashMerkleRoot = %s \n", genesis.hashMerkleRoot.ToString().c_str()); //improvised. worked for me, to find merkle root
         }
-
-        //assert(consensus.hashGenesisBlock == uint256S("0x0000025257de26888da19a24038d1a58c81639136e7cf92307518f17220138e1"));
+*/
         assert(consensus.hashGenesisBlock == uint256S("0x00000a3ad2dde754ef94affff02315e82038b55afa030aa5b05686affdb5fd84"));
-
-        //assert(genesis.hashMerkleRoot == uint256S("0xd37d0acd6c4df804265fc3c187b43552cb5aeb4e42eaee2818296961ea1ec96f"));
         assert(genesis.hashMerkleRoot == uint256S("0x2e7e82b3f1623a8ebc85256f896088b8eee0de06e2c0200be165508acd089529"));
 
         consensus.fPowAllowMinDifficultyBlocks = true;
         consensus.fPowNoRetargeting = false;
-        //consensus.powLimit   = uint256S("0x00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
         consensus.powLimit   = uint256S("0x00ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
         consensus.posLimitV1 = uint256S("0x00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
         consensus.posLimitV2 = uint256S("0x00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
@@ -170,7 +166,7 @@ public:
         consensus.nMaxProposalPayments = 6;
 
         // spork keys
-        consensus.strSporkPubKey = "043db68a3c9046c7c24f08c5039e54f6103bef322b84e95c43a4349919be845781846f9bf6182d41a2c35e23f2670333e5176f569ea54d4454be680eb5328d6d56";
+        consensus.strSporkPubKey = "04b3e868b7c39695ea464f0401aecc125f765e47f0ceab326bef336ffa04278a570a57d592d729c67918635933ed4f5f5c57bcc31f52b9869e3dc46f4830751338";
         consensus.strSporkPubKeyOld = "";
         consensus.nTime_EnforceNewSporkKey = 0;    //!> December 21, 2020 01:00:00 AM GMT
         consensus.nTime_RejectOldSporkKey = 0;     //!> March 1, 2021 01:00:00 AM GMT
@@ -264,6 +260,7 @@ public:
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 13);
         base58Prefixes[STAKING_ADDRESS] = std::vector<unsigned char>(1, 63);     // starting with 'S'
         base58Prefixes[SECRET_KEY] = std::vector<unsigned char>(1, 212);
+
         base58Prefixes[EXT_PUBLIC_KEY] = {0x02, 0x2D, 0x25, 0x33};
         base58Prefixes[EXT_SECRET_KEY] = {0x02, 0x21, 0x31, 0x2B};
         // BIP44 coin type is from https://github.com/satoshilabs/slips/blob/master/slip-0044.md
@@ -300,10 +297,11 @@ public:
     {
         strNetworkID = "test";
 
-        genesis = CreateGenesisBlock(1545066000, 1704884, 0x1e0ffff0, 1, 100 * COIN);
+        genesis = CreateGenesisBlock(1639584142, 2265450, 0x1e0ffff0, 1, 100 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
-        assert(consensus.hashGenesisBlock == uint256S("0x0000036cb6fc2608bf464283f7bf5ca8bd9010350b86c919980b6ad38e2c042c"));
-        assert(genesis.hashMerkleRoot == uint256S("0xd37d0acd6c4df804265fc3c187b43552cb5aeb4e42eaee2818296961ea1ec96f"));
+
+        assert(consensus.hashGenesisBlock == uint256S("0x00000a3ad2dde754ef94affff02315e82038b55afa030aa5b05686affdb5fd84"));
+        assert(genesis.hashMerkleRoot == uint256S("0x2e7e82b3f1623a8ebc85256f896088b8eee0de06e2c0200be165508acd089529"));
 
         consensus.fPowAllowMinDifficultyBlocks = true;
         consensus.fPowNoRetargeting = false;
@@ -328,7 +326,7 @@ public:
         consensus.nMaxProposalPayments = 20;
 
         // spork keys
-        consensus.strSporkPubKey = "043db68a3c9046c7c24f08c5039e54f6103bef322b84e95c43a4349919be845781846f9bf6182d41a2c35e23f2670333e5176f569ea54d4454be680eb5328d6d56";
+        consensus.strSporkPubKey = "04b3e868b7c39695ea464f0401aecc125f765e47f0ceab326bef336ffa04278a570a57d592d729c67918635933ed4f5f5c57bcc31f52b9869e3dc46f4830751338";
         consensus.strSporkPubKeyOld = "";
         consensus.nTime_EnforceNewSporkKey = 0;
         consensus.nTime_RejectOldSporkKey = 0;
@@ -433,9 +431,12 @@ public:
     {
         strNetworkID = "regtest";
 
-        genesis = CreateGenesisBlock(1545066000, 12347, 0x207fffff, 1, 100 * COIN);
+        genesis = CreateGenesisBlock(1639584142, 12347, 0x207fffff, 1, 100 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
-        assert(consensus.hashGenesisBlock == uint256S("0x7295045fbeb1869fd908c8307e2da2a9f74693d298964884ab1414e8f766e023"));
+
+
+
+        assert(consensus.hashGenesisBlock == uint256S("0x2208229f62e664c18c18b84af04cf16ad7ff224469bb7458b92e49c8577808cb"));
         //assert(genesis.hashMerkleRoot == uint256S("0x1b2ef6e2f28be914103a277377ae7729dcd125dfeb8bf97bd5964ba72b6dc39b"));
 
         consensus.fPowAllowMinDifficultyBlocks = true;
@@ -460,12 +461,7 @@ public:
         consensus.nTimeSlotLength = 15;
         consensus.nMaxProposalPayments = 20;
 
-        /* Spork Key for RegTest:
-        WIF private key: 932HEevBSujW2ud7RfB1YF91AFygbBRQj3de3LyaCRqNzKKgWXi
-        private key hex: bd4960dcbd9e7f2223f24e7164ecb6f1fe96fc3a416f5d3a830ba5720c84b8ca
-        Address: yCvUVd72w7xpimf981m114FSFbmAmne7j9
-        */
-        consensus.strSporkPubKey = "043db68a3c9046c7c24f08c5039e54f6103bef322b84e95c43a4349919be845781846f9bf6182d41a2c35e23f2670333e5176f569ea54d4454be680eb5328d6d56";
+        consensus.strSporkPubKey = "045d9743352f12af62db690e10b775ccad17da556b91ffa032cfdcac1c74e2144dc90e67db17fb992c28ef4fcdeaf1f785bee44d182cbe142224f81a3aa017835a";
         consensus.strSporkPubKeyOld = "";
         consensus.nTime_EnforceNewSporkKey = 0;
         consensus.nTime_RejectOldSporkKey = 0;

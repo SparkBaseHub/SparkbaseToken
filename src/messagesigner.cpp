@@ -136,7 +136,7 @@ bool CSignedMessage::Sign(const std::string strSignKey)
     CPubKey pubkey;
 
     if (!CMessageSigner::GetKeysFromSecret(strSignKey, key, pubkey)) {
-        return error("%s : Invalid strSignKey", __func__);
+        return error("%s : Invalid strSignKey: %s / %s", __func__, strSignKey, pubkey.GetID().ToString() );
     }
 
     return Sign(key, pubkey.GetID());
@@ -180,4 +180,3 @@ std::string CSignedMessage::GetSignatureBase64() const
 {
     return EncodeBase64(vchSig);
 }
-

@@ -273,6 +273,8 @@ bool CSporkManager::SetPrivKey(std::string strPrivKey)
     spork.Sign(strPrivKey);
 
     bool fValidSig = spork.CheckSignature(spork.GetPublicKey().GetID());
+    LogPrintf("CSporkManager::SetPrivKey failed: %s\n", strPrivKey);
+
     if (!fValidSig) {
         // See if window is open that allows for old spork key to sign messages
         if (GetAdjustedTime() < Params().GetConsensus().nTime_RejectOldSporkKey) {
@@ -329,4 +331,3 @@ void CSporkMessage::Relay()
     CInv inv(MSG_SPORK, GetHash());
     g_connman->RelayInv(inv);
 }
-
