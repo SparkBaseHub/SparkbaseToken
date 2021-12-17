@@ -1272,7 +1272,7 @@ bool AppInitMain()
     if (gArgs.IsArgSet("-sporkkey")) // spork priv key
     {
         if (!sporkManager.SetPrivKey(gArgs.GetArg("-sporkkey", ""))){
-          LogPrintf("Unable to sign spork message %s\n", gArgs.GetArg("-sporkkey","") );
+          //LogPrintf("Unable to sign spork message %s\n", gArgs.GetArg("-sporkkey","") );
           return UIError(_("Unable to sign spork message, wrong key?"));
         }
     }
