@@ -32,7 +32,7 @@ For the following packages, no action is required by the user:
 
 For the other packages, the user must save the param files in the proper location:
 - macOS/Linux `tar.gz` tarballs include a bash script (`install-params.sh`) to copy the parameters in the appropriate location.
-- Windows `.zip` users need to manually copy the files from the `share/pivx` folder to the `%APPDATA%\SparkbaseParams` directory.
+- Windows `.zip` users need to manually copy the files from the `share/sparkbase` folder to the `%APPDATA%\SparkbaseParams` directory.
 - self compilers can run the script from the repository sources (`params/install-params.sh`), or copy the files directly from the `params` subdirectory.
 
 Compatibility
