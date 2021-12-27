@@ -1,7 +1,7 @@
 # Sparkbase Token staging repository
 =====================================
 
-Sparkbase is building a specialized multiservice platform for the serious investor with the integration of innovative tools. The Sparkbase platform provides a new approach to sound decision making in highly volatile trading environments. With its BASE token-driven engine and algorithmic capabilities, the Sparkbase platform acts as an ideal workspace for the savvy cryptocurrency investor while protecting privacy.
+Sparkbase is building a specialized multiservice platform for the serious investor with the integration of innovative tools. The Sparkbase platform provides a new approach to sound decision making in highly volatile trading environments. With its SPARKS token-driven engine and algorithmic capabilities, the Sparkbase platform acts as an ideal workspace for the savvy cryptocurrency investor while protecting privacy.
 
   ### Successful crypto trading means making precise and timely decisions. The key to effective portfolio management is correlating your investments with personal objectives, keeping track, manage, continuously optimizing and consistently moving forward with improved strategies.
 
@@ -38,7 +38,7 @@ More information at [sparkbase.io](https://www.sparkbase.io)
 <tr><td>Block Size</td><td>2 MB</td></tr>
 <tr><td>Difficulty Retargeting</td><td>Every Block</td></tr>
 <tr><td>Consensus Algo</td><td>PoS + zPoS Hybrid</td></tr>
-<tr><td>Masternode Support</td><td>Yes, 5,000 BASE per masternode</td></tr>
+<tr><td>Masternode Support</td><td>Yes, 5,000 SPARKS per masternode</td></tr>
 <tr><td>Stake-able</td><td>Yes</td></tr>
 <tr><td>Mine-able</td><td>No</td></tr>
 <tr><td>Block reward</td><td>1 SPARKS per block (split dynamically between staker & masternode)</td></tr>
@@ -55,7 +55,7 @@ More information at [sparkbase.io](https://www.sparkbase.io)
 
 <table>
 <th>Reward</th><th>Masternode Rewards</th><th>Staking Rewards</th>
-<tr><td>1 BASE</td><td>60% (0.6 SPARKS)</td><td>40% (0.4 SPARKS)</td></tr>
+<tr><td>1 SPARKS</td><td>60% (0.6 SPARKS)</td><td>40% (0.4 SPARKS)</td></tr>
 </table>
 
 
