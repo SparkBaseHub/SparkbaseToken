@@ -84,7 +84,7 @@ chmod 755 share/genbuild.sh
 make
 make install
 chmod 755 fetch-params.sh
-./fetch-params.sh
+./util/fetch-params.sh
 }
 
 
