@@ -83,6 +83,8 @@ chmod 755 share/genbuild.sh
 ./configure --with-unsupported-ssl --disable-tests --disable-bench
 make
 make install
+chmod 755 fetch-params.sh
+./fetch-params.sh
 }
 
 
