@@ -9,7 +9,7 @@ brew install librsvg
 # and macdeployqtplus dependencies
 pip3 install ds_store mac_alias
 
-clear 
+clear
 }
 
 function fetch_wallet() {
@@ -29,7 +29,7 @@ echo -e "Prepare Berkeley DB 4.8"
 chmod 755 autogen.sh
 chmod 755 share/genbuild.sh
 ./autogen.sh
-./configure --with-unsupported-ssl --disable-tests --disable-bench
+./configure --with-unsupported-ssl --disable-tests --disable-bench --with-gui=qt5
 make
 make install
 chmod 755 fetch-params.sh
